@@ -5,20 +5,6 @@ body {
   padding: 0;
 }
 
-/*Header---------------------------*/
-
-.headerContainer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 80px;
-  background-color: rgb(244, 217, 221);
-  position: fixed;
-  border-bottom: 1px solid grey;
-  top: 0;
-  width: 100vw;
-}
-
 /*HomePage-------------------------*/
 .mainContainer {
   display: flex;

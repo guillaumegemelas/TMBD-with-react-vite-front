@@ -4,7 +4,7 @@ import Cookies from "js-cookie";
 
 //import des pages
 import Home from "./pages/Home";
-import Header from "./components/Header";
+import Header from "./components/Header/Header";
 import MoviebyIdDetails from "./pages/MoviebyIdDetails";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
