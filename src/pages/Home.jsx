@@ -1,15 +1,11 @@
 //A faire:
 //créer des pages et des liens pour naiviguer vers films, realisateurs... (Cf gamepad)
 //carroussel de photos
-//installer bootstrap
 //installer pour chargement icones tournante
 //voir sites similaires pour trouver features sympas
 
 //ou style site d'actualités avec header et navbar bootstrap qui link vers des
 //pages avec requetes axios vers API TMDB
-
-//voir pour liste en page avec Bootstrap
-//bootstrap est bien installé!
 
 import { React, useState, useEffect } from "react";
 
