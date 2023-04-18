@@ -1,0 +1,42 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  /* pour remettre à 0 les marges et padding */
+  margin: 0;
+  padding: 0;
+}
+
+/*Header---------------------------*/
+
+.headerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  background-color: rgb(244, 217, 221);
+  position: fixed;
+  border-bottom: 1px solid grey;
+  top: 0;
+  width: 100vw;
+}
+
+/*HomePage-------------------------*/
+.mainContainer {
+  display: flex;
+  /* padding pour que le container ne soit pas caché par le header */
+  padding-top: 80px;
+  flex-direction: column;
+  background-color: yellow;
+}
+
+.secondContainer {
+  background-color: lightsalmon;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/*Sign et log Page----------------------------*/
+
+.signupContainer {
+  display: flex;
+  padding-top: 80px;
+}
