@@ -3,7 +3,7 @@ import { React, useState, useEffect } from "react";
 // import { Link } from "react-router-dom";
 import axios from "axios";
 import uuid4 from "uuid4";
-//poiur récupérer l'Id venant de Home
+//pour récupérer l'Id venant de Home
 import { useParams } from "react-router-dom";
 
 export default function MoviebyIdDetails() {
