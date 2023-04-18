@@ -7,6 +7,9 @@ import {
   // useLocation
 } from "react-router-dom";
 
+//import style.css
+import "../Signup/style.css";
+
 export default function Signup({ handleToken }) {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");

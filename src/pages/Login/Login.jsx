@@ -7,6 +7,9 @@ import {
   // useLocation
 } from "react-router-dom";
 
+//import style.css
+import "../Login/style.css";
+
 export default function Login({ handleToken }) {
   //variables
   const [email, setEmail] = useState("");

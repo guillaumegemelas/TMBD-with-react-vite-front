@@ -6,8 +6,8 @@ import Cookies from "js-cookie";
 import Home from "./pages/Home";
 import Header from "./components/Header/Header";
 import MoviebyIdDetails from "./pages/MoviebyIdDetails";
-import Login from "./pages/Login";
-import Signup from "./pages/Signup";
+import Login from "./pages/Login/Login";
+import Signup from "./pages/Signup/Signup";
 
 //import du CSS
 import "./App.css";
