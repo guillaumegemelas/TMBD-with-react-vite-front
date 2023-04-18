@@ -13,7 +13,7 @@ export default function Login({ handleToken }) {
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
-  //pour naviguer vers la page Home
+  //pour naviguer vers la page Home--
   const navigate = useNavigate();
 
   //décalaration de fonction pour requete vers Backend
