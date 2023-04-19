@@ -49,7 +49,7 @@ export default function MoviebyIdDetails() {
       </div>
       <div>
         {dataId.spoken_languages.map((even) => {
-          //ne mettre que le premier language d'origine
+          //ne mettre que le premier language d'origine--
           return <div key={uuid4()}>Languages: {even.name}</div>;
         })}
       </div>
