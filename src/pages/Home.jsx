@@ -1,6 +1,6 @@
 //A faire:
 //créer des pages et des liens pour naiviguer vers films, realisateurs... (Cf gamepad)
-//carroussel de photos
+//carroussel de photos puis
 //installer pour chargement icones tournante
 //voir sites similaires pour trouver features sympas
 
