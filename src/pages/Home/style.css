@@ -4,7 +4,7 @@
   /* padding pour que le container ne soit pas caché par le header */
   padding-top: 80px;
   flex-direction: column;
-  background-color: yellow;
+  /* background-color: yellow; */
 }
 
 .mainContainerMinColumn {
@@ -12,11 +12,11 @@
   flex-direction: column;
   width: 85vw;
   margin: 0 auto;
-  background-color: lightgreen;
+  /* background-color: lightgreen; */
 }
 
 .secondContainer {
-  background-color: lightsalmon;
+  /* background-color: lightsalmon; */
   display: flex;
   flex-wrap: wrap;
 }

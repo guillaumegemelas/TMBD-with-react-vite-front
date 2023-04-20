@@ -1,0 +1,19 @@
+.containerIdMovie {
+  display: flex;
+  /* padding pour que le container ne soit pas caché par le header */
+  padding-top: 80px;
+  flex-direction: column;
+  /* background-color: pink; */
+}
+
+.mainContainerIdMinColumn {
+  display: flex;
+  flex-direction: column;
+  width: 85vw;
+  margin: 0 auto;
+  background-color: lightgreen;
+}
+
+.movieIdImg img {
+  max-width: 300px;
+}

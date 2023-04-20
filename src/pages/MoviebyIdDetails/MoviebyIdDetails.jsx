@@ -9,15 +9,19 @@ import uuid4 from "uuid4";
 //pour récupérer l'Id venant de Home
 import { useParams } from "react-router-dom";
 
+//import des composants
+import MovieCard from "../../components/MovieCard/MovieCard";
+
 export default function MoviebyIdDetails() {
   const [dataId, setDataId] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   const [dataIdSimilar, setDataIdSimilar] = useState([]);
+  const [isLoading1, setIsLoading1] = useState(true);
 
   //Id récupéré par params
   const { id } = useParams();
-  // console.log(id, "Id d movie-----");
+  console.log(id, "Id d movie-----");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -48,7 +52,7 @@ export default function MoviebyIdDetails() {
         );
         setDataIdSimilar(response.data);
         console.log(response.data, "response data similar-----------");
-        setIsLoading(false);
+        setIsLoading1(false);
       } catch (error) {
         console.log(error.message, "error message 🤒");
       }
@@ -60,28 +64,46 @@ export default function MoviebyIdDetails() {
   return isLoading ? (
     <div>chargement</div>
   ) : (
-    <div>
-      <h1>{dataId.original_title}</h1>
-      <h2>Realeased date: {dataId.release_date}</h2>
-      <p>{dataId.overview}</p>
-      <p>Popularity: {dataId.popularity}</p>
-      <p>Revenue: {dataId.popularity}</p>
-      <div>
-        {dataId.production_companies.map((even) => {
-          return <div key={uuid4()}>{even.name}</div>;
-        })}
+    <div className="containerIdMovie">
+      <div className="mainContainerIdMinColumn">
+        <h1>{dataId.original_title}</h1>
+        <h2>Realeased date: {dataId.release_date}</h2>
+        <p>{dataId.overview}</p>
+        <p>Popularity: {dataId.popularity}</p>
+        <p>Revenue: {dataId.popularity}</p>
+        <div>
+          {dataId.production_companies.map((even) => {
+            return <div key={uuid4()}>{even.name}</div>;
+          })}
+        </div>
+        <div>
+          {dataId.spoken_languages.map((even) => {
+            //ne mettre que le premier language d'origine--
+            return <div key={uuid4()}>Languages: {even.name}</div>;
+          })}
+        </div>
+        <div className="movieIdImg">
+          <img
+            //   il faut concaténer l'adresse des images avec la taille
+            src={`${"https://image.tmdb.org/t/p/w500"}${dataId.poster_path}`}
+            alt=""
+          />
+        </div>
       </div>
-      <div>
-        {dataId.spoken_languages.map((even) => {
-          //ne mettre que le premier language d'origine--
-          return <div key={uuid4()}>Languages: {even.name}</div>;
-        })}
-      </div>
-      <img
-        //   il faut concaténer l'adresse des images avec la taille
-        src={`${"https://image.tmdb.org/t/p/w500"}${dataId.poster_path}`}
-        alt=""
-      />
+      {/* test similar movies------------------- */}
+      {/* il faut mettre un isloading sinon les données ne sont pas chargées et map undefined */}
+      {isLoading1 ? (
+        <div>chargement</div>
+      ) : (
+        <div className="similarMovieContainer">
+          <MovieCard data={dataIdSimilar} />
+          {/* {dataIdSimilar.results.map((even) => {
+            return <div></div>;
+          })} */}
+        </div>
+      )}
+
+      {/* fin test similar movies----------------- */}
     </div>
   );
 }
