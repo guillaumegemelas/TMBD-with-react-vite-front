@@ -13,9 +13,11 @@ export default function MoviebyIdDetails() {
   const [dataId, setDataId] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
+  const [dataIdSimilar, setDataIdSimilar] = useState([]);
+
   //Id récupéré par params
   const { id } = useParams();
-  console.log(id, "Id d movie-----");
+  // console.log(id, "Id d movie-----");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -26,7 +28,7 @@ export default function MoviebyIdDetails() {
           `http://localhost:3000/movie/${id}`
         );
         setDataId(response.data);
-        console.log(response.data);
+        console.log(response.data, "response initiale++++");
         setIsLoading(false);
       } catch (error) {
         console.log(error.message, "error message 🤒");
@@ -34,6 +36,25 @@ export default function MoviebyIdDetails() {
     };
 
     fetchData();
+  }, []);
+
+  useEffect(() => {
+    const fetchDataSimilar = async () => {
+      try {
+        //à voir pour filtrer les films par pafge, date de sortie, notes...
+        const response = await axios.get(
+          // `https://api.themoviedb.org/3/movie/${id}?api_key=ec1d52844155d66f88c3111938c459f7`
+          `http://localhost:3000/movie/${id}/similar`
+        );
+        setDataIdSimilar(response.data);
+        console.log(response.data, "response data similar-----------");
+        setIsLoading(false);
+      } catch (error) {
+        console.log(error.message, "error message 🤒");
+      }
+    };
+
+    fetchDataSimilar();
   }, []);
 
   return isLoading ? (
