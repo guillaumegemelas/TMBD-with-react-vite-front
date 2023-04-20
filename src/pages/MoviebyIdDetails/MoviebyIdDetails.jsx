@@ -96,10 +96,8 @@ export default function MoviebyIdDetails() {
         <div>chargement</div>
       ) : (
         <div className="similarMovieContainer">
+          <h1>Films similaires:</h1>
           <MovieCard data={dataIdSimilar} />
-          {/* {dataIdSimilar.results.map((even) => {
-            return <div></div>;
-          })} */}
         </div>
       )}
 
