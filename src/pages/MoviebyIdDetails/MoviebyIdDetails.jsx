@@ -10,7 +10,8 @@ import uuid4 from "uuid4";
 import { useParams } from "react-router-dom";
 
 //import des composants
-import MovieCard from "../../components/MovieCard/MovieCard";
+// import MovieCard from "../../components/MovieCard/MovieCard";
+import MoviesimilarCard from "../../components/MoviesimilarCard/MoviesimilarCard";
 
 export default function MoviebyIdDetails() {
   const [dataId, setDataId] = useState([]);
@@ -97,7 +98,9 @@ export default function MoviebyIdDetails() {
       ) : (
         <div className="similarMovieContainer">
           <h1>Films similaires:</h1>
-          <MovieCard data={dataIdSimilar} />
+          <div className="similarCarousel">
+            <MoviesimilarCard data={dataIdSimilar} />
+          </div>
         </div>
       )}
 

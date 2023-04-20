@@ -1,0 +1,31 @@
+.secondContainer1 {
+  display: flex;
+  justify-content: space-evenly;
+  /* background-color: #fff; */
+}
+
+.movieCard1 {
+  display: flex;
+  border: 1px solid grey;
+  background-color: #fff;
+  margin: 15px;
+  max-width: 200px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 15px rgb(69, 68, 68);
+}
+
+.movieCardImg1 img {
+  max-width: 200px;
+  height: 100%;
+  border-radius: 9px;
+}
+.movieTitle1 h1 {
+  font-size: 16px;
+  margin: 10px 5px 0 10px;
+  color: black;
+}
+.movieP1 {
+  font-size: 12px;
+  margin: 10px 5px 0 10px;
+  color: black;
+}
