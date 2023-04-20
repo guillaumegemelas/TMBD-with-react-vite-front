@@ -3,9 +3,9 @@ import { useState } from "react";
 import Cookies from "js-cookie";
 
 //import des pages
-import Home from "./pages/Home";
+import Home from "./pages/Home/Home";
 import Header from "./components/Header/Header";
-import MoviebyIdDetails from "./pages/MoviebyIdDetails";
+import MoviebyIdDetails from "./pages/MoviebyIdDetails/MoviebyIdDetails";
 import Login from "./pages/Login/Login";
 import Signup from "./pages/Signup/Signup";
 

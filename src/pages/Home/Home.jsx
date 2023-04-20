@@ -9,11 +9,14 @@
 
 import { React, useState, useEffect } from "react";
 
+//import style.css
+import "../Home/style.css";
+
 import { Link } from "react-router-dom";
 import axios from "axios";
 // import uuid4 from "uuid4";
 
-import MovieCard from "../components/MovieCard/MovieCard";
+import MovieCard from "../../components/MovieCard/MovieCard";
 
 export default function Home() {
   //test requete vers API TMDB
@@ -44,17 +47,19 @@ export default function Home() {
     <div>chargement</div>
   ) : (
     <div className="mainContainer">
-      <p>you are on the home page </p>
-      {/* Test pour voir si pages login et signup fonctionnent */}
-      <Link to="/user/login">
-        <p>vers la page login</p>
-      </Link>
-      <Link to="/user/signup">
-        <p>vers la page signup</p>
-      </Link>
-      {/* --------------------------------------------------- */}
-      <div>
-        <MovieCard data={data} />
+      <div className="mainContainerMinColumn">
+        <p>you are on the home page </p>
+        {/* Test pour voir si pages login et signup fonctionnent */}
+        <Link to="/user/login">
+          <p>vers la page login</p>
+        </Link>
+        <Link to="/user/signup">
+          <p>vers la page signup</p>
+        </Link>
+        {/* --------------------------------------------------- */}
+        <div>
+          <MovieCard data={data} />
+        </div>
       </div>
     </div>
   );

@@ -1,5 +1,8 @@
 import { React, useState, useEffect } from "react";
 
+//import style.css
+import "../MoviebyIdDetails/style.css";
+
 // import { Link } from "react-router-dom";
 import axios from "axios";
 import uuid4 from "uuid4";
