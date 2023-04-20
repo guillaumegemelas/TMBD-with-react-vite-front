@@ -8,7 +8,7 @@
 
 .mainContainerIdMinColumn {
   display: flex;
-  flex-direction: column;
+  flex-direction: row-reverse;
   width: 85vw;
   margin: 0 auto;
   background-color: lightgreen;
@@ -16,6 +16,11 @@
 
 .movieIdImg img {
   max-width: 300px;
+  margin: 50px;
+  border-radius: 10px;
+}
+.firstColumn {
+  margin-top: 50px;
 }
 .similarMovieContainer {
   display: flex;

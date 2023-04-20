@@ -19,7 +19,7 @@ export default function MovieCard({ data }) {
                   src={`${"https://image.tmdb.org/t/p/w500"}${
                     even.poster_path
                   }`}
-                  alt=""
+                  alt="imgmovie"
                 />
               </div>
               <div className="movieTitle">

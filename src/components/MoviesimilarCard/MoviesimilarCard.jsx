@@ -15,7 +15,7 @@ export default function MoviesimilarCard({ data }) {
               <img
                 //   il faut concaténer l'adresse des images avec la taille
                 src={`${"https://image.tmdb.org/t/p/w500"}${even.poster_path}`}
-                alt=""
+                alt="imgsimilar"
               />
             </div>
           </div>

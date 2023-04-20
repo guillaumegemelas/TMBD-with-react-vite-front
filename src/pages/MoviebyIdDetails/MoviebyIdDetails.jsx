@@ -52,7 +52,7 @@ export default function MoviebyIdDetails() {
           `http://localhost:3000/movie/${id}/similar`
         );
         setDataIdSimilar(response.data);
-        console.log(response.data, "response data similar-----------");
+        // console.log(response.data, "response data similar-----------");
         setIsLoading1(false);
       } catch (error) {
         console.log(error.message, "error message 🤒");
@@ -66,23 +66,27 @@ export default function MoviebyIdDetails() {
     <div>chargement</div>
   ) : (
     <div className="containerIdMovie">
+      {/* il faut essayer de mettre en background l'image ci dessous avec opacity ou couleur dominate */}
       <div className="mainContainerIdMinColumn">
-        <h1>{dataId.original_title}</h1>
-        <h2>Realeased date: {dataId.release_date}</h2>
-        <p>{dataId.overview}</p>
-        <p>Popularity: {dataId.popularity}</p>
-        <p>Revenue: {dataId.popularity}</p>
-        <div>
-          {dataId.production_companies.map((even) => {
-            return <div key={uuid4()}>{even.name}</div>;
-          })}
+        <div className="firstColumn">
+          <h1>{dataId.original_title}</h1>
+          <h2>Realeased date: {dataId.release_date}</h2>
+          <p>{dataId.overview}</p>
+          <p>Popularity: {dataId.popularity}</p>
+          <p>Revenue: {dataId.popularity}</p>
+          <div>
+            {dataId.production_companies.map((even) => {
+              return <div key={uuid4()}>{even.name}</div>;
+            })}
+          </div>
+          <div>
+            {dataId.spoken_languages.map((even) => {
+              //ne mettre que le premier language d'origine--
+              return <div key={uuid4()}>Languages: {even.name}</div>;
+            })}
+          </div>
         </div>
-        <div>
-          {dataId.spoken_languages.map((even) => {
-            //ne mettre que le premier language d'origine--
-            return <div key={uuid4()}>Languages: {even.name}</div>;
-          })}
-        </div>
+
         <div className="movieIdImg">
           <img
             //   il faut concaténer l'adresse des images avec la taille
