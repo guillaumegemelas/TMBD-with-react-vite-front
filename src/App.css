@@ -5,17 +5,7 @@ body {
   padding: 0;
 }
 
-/*HomePage----------------------------*/
-.mainContainer {
-  display: flex;
-  /* padding pour que le container ne soit pas caché par le header */
-  padding-top: 80px;
-  flex-direction: column;
-  background-color: yellow;
-}
-
-.secondContainer {
-  background-color: lightsalmon;
-  display: flex;
-  flex-wrap: wrap;
+/* pour supprimer les soulignements pour les liens */
+a {
+  text-decoration: none;
 }

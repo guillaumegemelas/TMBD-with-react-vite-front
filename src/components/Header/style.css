@@ -2,17 +2,38 @@
 
 .headerContainer {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
   height: 80px;
-  background-color: white;
+  background-color: rgb(203, 127, 127);
   position: fixed;
   border-bottom: 1px solid grey;
-  top: 0;
-  width: 100vw;
+  /* initialement mis 100vw mais cela creait un décalage donc mis 100% */
+  width: 100%;
+}
+.headerContainerMinColumn {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  width: 85vw;
+  margin: 0 auto;
+  background-color: lightskyblue;
+}
+
+.firstHeader {
+  display: flex;
+  background-color: #fff;
+  height: 40px;
 }
 
 .logo img {
   width: 150px;
-  margin-left: 20px;
+}
+.navBar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  gap: 30px;
+  width: 50%;
+  height: 40px;
+  background-color: lightgrey;
 }
