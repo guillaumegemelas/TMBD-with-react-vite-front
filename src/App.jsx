@@ -9,6 +9,11 @@ import MoviebyIdDetails from "./pages/MoviebyIdDetails/MoviebyIdDetails";
 import Login from "./pages/Login/Login";
 import Signup from "./pages/Signup/Signup";
 
+//import des font d'icones vectorielles
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faHouse } from "@fortawesome/free-solid-svg-icons";
+library.add(faHouse);
+
 //import du CSS
 import "./App.css";
 

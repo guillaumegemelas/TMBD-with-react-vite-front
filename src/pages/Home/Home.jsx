@@ -12,6 +12,9 @@ import { React, useState, useEffect } from "react";
 //import style.css
 import "../Home/style.css";
 
+//import icones
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import { Link } from "react-router-dom";
 import axios from "axios";
 // import uuid4 from "uuid4";
@@ -48,7 +51,10 @@ export default function Home() {
   ) : (
     <div className="mainContainer">
       <div className="mainContainerMinColumn">
-        <p>you are on the home page </p>
+        <p>
+          <FontAwesomeIcon icon="house" />
+          you are on the home page
+        </p>
         {/* Test pour voir si pages login et signup fonctionnent */}
         <Link to="/user/login">
           <p>vers la page login</p>
