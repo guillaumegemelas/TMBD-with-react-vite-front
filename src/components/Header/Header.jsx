@@ -23,7 +23,9 @@ export default function Header() {
             <p>News</p>
           </Link>
           {/* il faudra link vers la page cinéma, séries... */}
-          <p>Upcoming</p>
+          <Link to="/movie/upcoming">
+            <p>Upcoming</p>
+          </Link>
           <p>Séries</p>
         </div>
       </div>

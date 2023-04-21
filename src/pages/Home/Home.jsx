@@ -25,6 +25,7 @@ export default function Home() {
   //test requete vers API TMDB
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [page, setPage] = useState(1);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -33,7 +34,7 @@ export default function Home() {
         const response = await axios.get(
           //   "https://api.themoviedb.org/3/discover/movie?api_key=ec1d52844155d66f88c3111938c459f7"
           //test avec backend ok!
-          "http://localhost:3000/"
+          `http://localhost:3000/?page=${page}`
         );
         setData(response.data);
         console.log(response.data);
@@ -44,7 +45,8 @@ export default function Home() {
     };
 
     fetchData();
-  }, []);
+  }, [page]);
+  //penser à page dans le tableau dedépendances pour actualiser la page choisie
 
   return isLoading ? (
     <div>chargement</div>
@@ -55,6 +57,16 @@ export default function Home() {
           <FontAwesomeIcon icon="house" />
           you are on the home page
         </p>
+        <div className="pagination">
+          <input
+            type="number"
+            min="1"
+            max="100"
+            value={page}
+            placeholder="page"
+            onChange={(event) => setPage(event.target.value)}
+          />
+        </div>
         {/* Test pour voir si pages login et signup fonctionnent */}
         <Link to="/user/login">
           <p>vers la page login</p>
