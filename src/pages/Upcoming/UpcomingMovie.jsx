@@ -14,15 +14,15 @@ export default function UpcomingMovie() {
   const [dataUp, setDataUp] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  //le système de pagination ne fonctionne pas, il faudra voir pourquoi
-  //   const [page, setPage] = useState(1);
+  //le système de pagination
+  const [page, setPage] = useState(1);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         //à voir pour filtrer les films par pafge, date de sortie, notes...
         const response = await axios.get(
-          `http://localhost:3000/movie/upcoming`
+          `http://localhost:3000/upcoming?page=${page}`
         );
         setDataUp(response.data);
         console.log(response.data, "response initiale upcoming++++");
@@ -33,7 +33,7 @@ export default function UpcomingMovie() {
     };
 
     fetchData();
-  }, []);
+  }, [page]);
 
   return isLoading ? (
     <div>chargement</div>
@@ -41,7 +41,7 @@ export default function UpcomingMovie() {
     <div className="containerUpMovie">
       <div className="mainContainerMinUpColumn">
         Upcoming movie: from {dataUp.dates.minimum} to {dataUp.dates.maximum}
-        {/* <div className="pagination">
+        <div className="pagination">
           <input
             type="number"
             min="1"
@@ -50,7 +50,7 @@ export default function UpcomingMovie() {
             placeholder="page"
             onChange={(event) => setPage(event.target.value)}
           />
-        </div> */}
+        </div>
         <div>
           <MovieCard data={dataUp} />
         </div>
