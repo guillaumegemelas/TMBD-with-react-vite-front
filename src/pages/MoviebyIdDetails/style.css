@@ -11,7 +11,7 @@
   flex-direction: row-reverse;
   width: 85vw;
   margin: 0 auto;
-  background-color: lightgreen;
+  /* background-color: lightgreen; */
 }
 
 .movieIdImg img {
