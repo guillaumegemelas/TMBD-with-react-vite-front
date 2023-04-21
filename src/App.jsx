@@ -7,6 +7,7 @@ import Home from "./pages/Home/Home";
 import Header from "./components/Header/Header";
 import MoviebyIdDetails from "./pages/MoviebyIdDetails/MoviebyIdDetails";
 import UpcomingMovie from "./pages/Upcoming/UpcomingMovie";
+import Search from "./pages/Search/Search";
 import Login from "./pages/Login/Login";
 import Signup from "./pages/Signup/Signup";
 
@@ -40,6 +41,7 @@ function App() {
           {/* route avec params id--- */}
           <Route path="/movie/:id" element={<MoviebyIdDetails />} />
           <Route path="/movie/upcoming" element={<UpcomingMovie />} />
+          <Route path="/search" element={<Search />} />
           <Route
             path="/user/login"
             element={<Login handleToken={handleToken} />}
