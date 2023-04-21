@@ -10,7 +10,6 @@ import uuid4 from "uuid4";
 import { useParams } from "react-router-dom";
 
 //import des composants
-// import MovieCard from "../../components/MovieCard/MovieCard";
 import MoviesimilarCard from "../../components/MoviesimilarCard/MoviesimilarCard";
 
 export default function MoviebyIdDetails() {
