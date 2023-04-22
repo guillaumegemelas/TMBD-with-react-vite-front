@@ -72,7 +72,7 @@ export default function MoviebyIdDetails() {
           <h2>Realeased date: {dataId.release_date}</h2>
           <p>{dataId.overview}</p>
           <p>Popularity: {dataId.popularity}</p>
-          <p>Revenue: {dataId.popularity}</p>
+          <p>Note: {dataId.vote_average}</p>
           <div>
             {dataId.production_companies.map((even) => {
               return <div key={uuid4()}>{even.name}</div>;
