@@ -31,7 +31,7 @@ export default function Header() {
     };
     fetchData();
   }, [search]);
-  //-----------------------------------------------------------------------------+++++
+  //-------------------------------------------------------------------------+++++
 
   return (
     //il faut faire un hader avec une navbar avec liens vers pages du site
