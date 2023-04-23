@@ -3,9 +3,10 @@
 .headerContainer {
   display: flex;
   height: 80px;
-  background-color: rgb(203, 127, 127);
+  background-color: #fff;
   position: fixed;
   border-bottom: 1px solid grey;
+  box-shadow: 1px 1px 15px rgb(190, 188, 188);
   /* initialement mis 100vw mais cela creait un décalage donc mis 100% */
   width: 100%;
 }
@@ -20,7 +21,8 @@
 
 .firstHeader {
   display: flex;
-  background-color: #fff;
+  align-items: center;
+  background-color: lightcoral;
   height: 40px;
 }
 
@@ -35,5 +37,14 @@
   gap: 30px;
   width: 50%;
   height: 40px;
-  background-color: lightgrey;
+  /* background-color: lightgrey; */
+}
+.headerSearchBar input {
+  width: 15vw;
+  margin-left: 100px;
+  /* background-color: yellow; */
+  height: 25px;
+  border-radius: 5px;
+  border: 1px solid rgb(204, 203, 203);
+  padding-left: 30px;
 }

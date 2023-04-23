@@ -3,6 +3,9 @@ import logo from "../../img/logo.png";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
+//import icones
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 //import style.css
 import "../Header/style.css";
 
@@ -37,9 +40,7 @@ export default function Header() {
     //il faut faire un hader avec une navbar avec liens vers pages du site
     <div className="headerContainer">
       {isLoading ? (
-        <div className="isLoading">
-          <h1></h1>
-        </div>
+        <div className="isLoading"></div>
       ) : (
         <div className="headerContainerMinColumn">
           <div className="firstHeader">
@@ -51,7 +52,7 @@ export default function Header() {
                 className="search"
                 value={search}
                 type="text"
-                placeholder=" 🔎 Recherche"
+                placeholder="🔎   Search"
                 onChange={(event) => {
                   setSearch(event.target.value);
                 }}
@@ -68,11 +69,16 @@ export default function Header() {
             <Link to="/movie/upcoming">
               <p>Upcoming</p>
             </Link>
+            <p>Sort by:</p>
             <Link to="/averageasc">
-              <p>test asc</p>
+              <p>
+                <FontAwesomeIcon icon="arrow-up-wide-short" />
+              </p>
             </Link>
             <Link to="/averagedesc">
-              <p>test desc</p>
+              <p>
+                <FontAwesomeIcon icon="arrow-down-short-wide" />
+              </p>
             </Link>
           </div>
         </div>
