@@ -68,7 +68,12 @@ export default function Header() {
             <Link to="/movie/upcoming">
               <p>Upcoming</p>
             </Link>
-            <p>Séries</p>
+            <Link to="/averageasc">
+              <p>test asc</p>
+            </Link>
+            <Link to="/averagedesc">
+              <p>test desc</p>
+            </Link>
           </div>
         </div>
       )}

@@ -68,21 +68,71 @@ export default function MoviebyIdDetails() {
       {/* il faut essayer de mettre en background l'image ci dessous avec opacity ou couleur dominate */}
       <div className="mainContainerIdMinColumn">
         <div className="firstColumn">
-          <h1>{dataId.original_title}</h1>
-          <h2>Realeased date: {dataId.release_date}</h2>
-          <p>{dataId.overview}</p>
-          <p>Popularity: {dataId.popularity}</p>
-          <p>Note: {dataId.vote_average}</p>
           <div>
-            {dataId.production_companies.map((even) => {
-              return <div key={uuid4()}>{even.name}</div>;
-            })}
+            <h1>{dataId.original_title}</h1>
           </div>
-          <div>
-            {dataId.spoken_languages.map((even) => {
-              //ne mettre que le premier language d'origine--
-              return <div key={uuid4()}>Languages: {even.name}</div>;
-            })}
+
+          <div className="release">
+            <div>
+              <span>{dataId.release_date}</span>
+            </div>
+            <div className="point">•</div>
+            <div className="maprelease">
+              {dataId.genres.map((even) => {
+                return (
+                  <div key={uuid4()}>
+                    <span>{even.name}, </span>
+                  </div>
+                );
+              })}
+            </div>
+            <div className="point">•</div>
+
+            <div className="moviePB">
+              {dataId.vote_average >= 7.5 && (
+                <p className="vote">
+                  {Number(dataId.vote_average * 10).toFixed(0)} <span>%</span>{" "}
+                </p>
+              )}
+              {dataId.vote_average < 7.5 && dataId.vote_average >= 5 && (
+                <p className="vote1">
+                  {Number(dataId.vote_average * 10).toFixed(0)} <span>%</span>{" "}
+                </p>
+              )}
+              {dataId.vote_average < 5 && dataId.vote_average >= 2.5 && (
+                <p className="vote2">
+                  {Number(dataId.vote_average * 10).toFixed(0)} <span>%</span>{" "}
+                </p>
+              )}
+              {dataId.vote_average < 2.5 && dataId.vote_average > 0 && (
+                <p className="vote3">
+                  {Number(dataId.vote_average * 10).toFixed(0)} <span>%</span>{" "}
+                </p>
+              )}
+            </div>
+          </div>
+          <div className="overview">
+            <p>{dataId.overview}</p>
+          </div>
+
+          <div className="divers">
+            <div className="langage">
+              <span>Production companies</span>
+              {dataId.production_companies.map((even) => {
+                return <div key={uuid4()}>{even.name}</div>;
+              })}
+            </div>
+            <div className="langage">
+              <span>Languages:</span>
+              {dataId.spoken_languages.map((even) => {
+                //ne mettre que le premier language d'origine--
+                return <div key={uuid4()}> {even.name}</div>;
+              })}
+            </div>
+            <div className="langage">
+              <span>Popularity:</span>
+              <div>{dataId.popularity}</div>
+            </div>
           </div>
         </div>
 
@@ -100,7 +150,7 @@ export default function MoviebyIdDetails() {
         <div>chargement</div>
       ) : (
         <div className="similarMovieContainer">
-          <h1>Films similaires:</h1>
+          <h1>Similar movies</h1>
           <div className="similarCarousel">
             <MoviesimilarCard data={dataIdSimilar} />
           </div>

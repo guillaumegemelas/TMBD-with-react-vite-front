@@ -31,11 +31,33 @@ export default function MovieCard({ data }) {
                   />
                 )}
               </div>
-              <div className="movieTitle">
-                <h1>{even.original_title}</h1>
-              </div>
-              <div className="movieP">
-                <p>{even.release_date}</p>
+              <div className="movieCardDesc">
+                <div className="movieTitle">
+                  <h1>{even.original_title}</h1>
+                </div>
+                <div className="movieP">
+                  <p>{even.release_date}</p>
+                  {even.vote_average >= 7.5 && (
+                    <p className="vote">
+                      {Number(even.vote_average * 10)} <span>%</span>{" "}
+                    </p>
+                  )}
+                  {even.vote_average < 7.5 && even.vote_average >= 5 && (
+                    <p className="vote1">
+                      {Number(even.vote_average * 10)} <span>%</span>{" "}
+                    </p>
+                  )}
+                  {even.vote_average < 5 && even.vote_average >= 2.5 && (
+                    <p className="vote2">
+                      {Number(even.vote_average * 10)} <span>%</span>{" "}
+                    </p>
+                  )}
+                  {even.vote_average < 2.5 && even.vote_average > 0 && (
+                    <p className="vote3">
+                      {Number(even.vote_average * 10)} <span>%</span>{" "}
+                    </p>
+                  )}
+                </div>
               </div>
             </Link>
           </div>

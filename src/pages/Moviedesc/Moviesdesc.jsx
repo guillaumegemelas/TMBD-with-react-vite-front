@@ -1,16 +1,7 @@
-//A faire:
-//créer des pages et des liens pour naiviguer vers films, realisateurs... (Cf gamepad)
-//carroussel de photos puis
-//installer pour chargement icones tournante
-//voir sites similaires pour trouver features sympas
-
-//ou style site d'actualités avec header et navbar bootstrap qui link vers des
-//pages avec requetes axios vers API TMDB
-
 import { React, useState, useEffect } from "react";
 
 //import style.css
-import "../Home/style.css";
+import "../Moviedesc/style.css";
 
 //import icones
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -21,7 +12,7 @@ import axios from "axios";
 
 import MovieCard from "../../components/MovieCard/MovieCard";
 
-export default function Home() {
+export default function Moviedesc() {
   //test requete vers API TMDB
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -32,12 +23,11 @@ export default function Home() {
       try {
         //à voir pour filtrer les films par pafge, date de sortie, notes...
         const response = await axios.get(
-          //   "https://api.themoviedb.org/3/discover/movie?api_key=ec1d52844155d66f88c3111938c459f7"
           //test avec backend ok!
-          `http://localhost:3000/?page=${page}`
+          `http://localhost:3000/averagedesc?page=${page}`
         );
         setData(response.data);
-        console.log(response.data, "data page home ++++++++++++");
+        console.log(response.data, "data page movieasc ++++++++++++");
         setIsLoading(false);
       } catch (error) {
         console.log(error.message, "error message 🤒");
@@ -55,7 +45,7 @@ export default function Home() {
       <div className="mainContainerMinColumn">
         <p>
           <FontAwesomeIcon icon="house" />
-          you are on the home page
+          you are on movieascpage
         </p>
         <div className="pagination">
           <input
@@ -68,12 +58,7 @@ export default function Home() {
           />
         </div>
         {/* Test pour voir si pages login et signup fonctionnent */}
-        <Link to="/user/login">
-          <p>vers la page login</p>
-        </Link>
-        <Link to="/user/signup">
-          <p>vers la page signup</p>
-        </Link>
+
         {/* --------------------------------------------------- */}
         <div>
           <MovieCard data={data} />
