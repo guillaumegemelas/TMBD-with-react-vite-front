@@ -13,6 +13,7 @@ export default function Search() {
   //pour la searchbar
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
+  const regex = /%20/g;
 
   //-----------------------
   const location = useLocation();
@@ -44,10 +45,16 @@ export default function Search() {
   ) : (
     <div className="mainSearchContainer">
       <div className="mainSearchContainerMinColumn">
-        <h1>Search for: {search}</h1>
+        <h1>Search for: {search.replace(regex, " ").slice(1, 35)}</h1>
         <div>
           <MovieCard data={data} />
         </div>
+        {data.results.length === 0 && (
+          <div>
+            {" "}
+            <h2>No result for "{search.replace(regex, " ").slice(1, 35)}"</h2>
+          </div>
+        )}
       </div>
     </div>
   );

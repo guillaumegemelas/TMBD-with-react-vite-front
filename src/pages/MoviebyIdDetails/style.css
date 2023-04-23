@@ -38,6 +38,7 @@
   flex-direction: column;
   margin: 0 auto;
   max-width: 85vw;
+  margin-bottom: 30px;
 }
 
 .similarCarousel {
@@ -45,9 +46,15 @@
   /* background-color: pink; */
   max-width: 85vw;
   margin: 0 auto;
-  overflow-y: hidden;
-  overflow-x: scroll;
+
+  overflow-x: auto;
 }
+/* .similarCarousel::-webkit-scrollbar-thumb {
+  background: white;
+  color: #21a1b3;
+  border-radius: 8px;
+} */
+
 .langage {
   margin-top: 20px;
 }

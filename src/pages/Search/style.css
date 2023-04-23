@@ -3,6 +3,7 @@
   /* padding pour que le container ne soit pas caché par le header */
   padding-top: 80px;
   flex-direction: column;
+  height: 100vw;
   /* background-color: yellow; */
 }
 
@@ -11,5 +12,5 @@
   flex-direction: column;
   width: 85vw;
   margin: 0 auto;
-  background-color: lightgreen;
+  /* background-color: lightgreen; */
 }

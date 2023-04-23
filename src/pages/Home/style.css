@@ -20,3 +20,18 @@
   display: flex;
   flex-wrap: wrap;
 }
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  color: #052d50;
+  margin: 20px;
+  /* background-color: pink; */
+}
+.pagination input {
+  text-align: center;
+  border: 1px solid #05b4e1;
+  border-radius: 5px;
+  color: #042541;
+}

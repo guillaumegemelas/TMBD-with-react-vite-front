@@ -57,7 +57,12 @@ export default function Home() {
           <FontAwesomeIcon icon="house" />
           you are on the home page
         </p>
+
+        <div>
+          <MovieCard data={data} />
+        </div>
         <div className="pagination">
+          <FontAwesomeIcon icon="file" />
           <input
             type="number"
             min="1"
@@ -66,10 +71,6 @@ export default function Home() {
             placeholder="page"
             onChange={(event) => setPage(event.target.value)}
           />
-        </div>
-
-        <div>
-          <MovieCard data={data} />
         </div>
       </div>
     </div>

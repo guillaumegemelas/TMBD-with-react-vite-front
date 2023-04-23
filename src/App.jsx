@@ -12,6 +12,7 @@ import Moviesdesc from "./pages/Moviedesc/Moviesdesc";
 import Search from "./pages/Search/Search";
 import Login from "./pages/Login/Login";
 import Signup from "./pages/Signup/Signup";
+import Footer from "./components/Footer/Footer";
 
 //import des font d'icones vectorielles
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -19,8 +20,9 @@ import {
   faHouse,
   faArrowUpWideShort,
   faArrowDownShortWide,
+  faFile,
 } from "@fortawesome/free-solid-svg-icons";
-library.add(faHouse, faArrowUpWideShort, faArrowDownShortWide);
+library.add(faHouse, faArrowUpWideShort, faArrowDownShortWide, faFile);
 
 //import du CSS
 import "./App.css";
@@ -59,6 +61,7 @@ function App() {
             element={<Signup handleToken={handleToken} />}
           />
         </Routes>
+        <Footer />
       </Router>
     </div>
   );

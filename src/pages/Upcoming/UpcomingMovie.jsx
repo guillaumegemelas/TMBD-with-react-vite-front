@@ -4,6 +4,9 @@ import { React, useState, useEffect } from "react";
 import axios from "axios";
 import uuid4 from "uuid4";
 
+//import icones
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 //import des composants
 import MovieCard from "../../components/MovieCard/MovieCard";
 
@@ -41,7 +44,11 @@ export default function UpcomingMovie() {
     <div className="containerUpMovie">
       <div className="mainContainerMinUpColumn">
         Upcoming movie: from {dataUp.dates.minimum} to {dataUp.dates.maximum}
+        <div>
+          <MovieCard data={dataUp} />
+        </div>
         <div className="pagination">
+          <FontAwesomeIcon icon="file" />
           <input
             type="number"
             min="1"
@@ -50,9 +57,6 @@ export default function UpcomingMovie() {
             placeholder="page"
             onChange={(event) => setPage(event.target.value)}
           />
-        </div>
-        <div>
-          <MovieCard data={dataUp} />
         </div>
       </div>
     </div>
