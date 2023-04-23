@@ -57,6 +57,7 @@ export default function MovieCard({ data }) {
                       {Number(even.vote_average * 10)} <span>%</span>{" "}
                     </p>
                   )}
+                  {even.vote_average <= 0 && <p className="vote4">NR</p>}
                 </div>
               </div>
             </Link>
