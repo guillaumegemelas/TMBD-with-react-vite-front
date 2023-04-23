@@ -1,5 +1,5 @@
 import { React, useState, useEffect } from "react";
-import logo from "../../img/logo.png";
+import logo from "../../img/logo1.png";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
@@ -44,19 +44,31 @@ export default function Header() {
       ) : (
         <div className="headerContainerMinColumn">
           <div className="firstHeader">
-            <div className="logo">
-              <img src={logo} alt="logo" />
+            <div className="logoandsearch">
+              {" "}
+              <div className="logo">
+                <img src={logo} alt="logo" />
+              </div>
+              <div className="headerSearchBar">
+                <input
+                  className="search"
+                  value={search}
+                  type="text"
+                  placeholder="🔎   Search"
+                  onChange={(event) => {
+                    setSearch(event.target.value);
+                  }}
+                />
+              </div>
             </div>
-            <div className="headerSearchBar">
-              <input
-                className="search"
-                value={search}
-                type="text"
-                placeholder="🔎   Search"
-                onChange={(event) => {
-                  setSearch(event.target.value);
-                }}
-              />
+
+            <div className="logandsign">
+              <Link to="/user/signup">
+                <p>Sign in</p>
+              </Link>
+              <Link to="/user/login">
+                <p>Login</p>
+              </Link>
             </div>
           </div>
 
@@ -69,7 +81,7 @@ export default function Header() {
             <Link to="/movie/upcoming">
               <p>Upcoming</p>
             </Link>
-            <p>Sort by:</p>
+            <span>Sort by:</span>
             <Link to="/averageasc">
               <p>
                 <FontAwesomeIcon icon="arrow-up-wide-short" />

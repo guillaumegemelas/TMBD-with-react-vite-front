@@ -67,14 +67,7 @@ export default function Home() {
             onChange={(event) => setPage(event.target.value)}
           />
         </div>
-        {/* Test pour voir si pages login et signup fonctionnent */}
-        <Link to="/user/login">
-          <p>vers la page login</p>
-        </Link>
-        <Link to="/user/signup">
-          <p>vers la page signup</p>
-        </Link>
-        {/* --------------------------------------------------- */}
+
         <div>
           <MovieCard data={data} />
         </div>

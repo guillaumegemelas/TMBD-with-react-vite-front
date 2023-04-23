@@ -3,7 +3,7 @@
 .headerContainer {
   display: flex;
   height: 80px;
-  background-color: #fff;
+  background-color: #042541;
   position: fixed;
   border-bottom: 1px solid grey;
   box-shadow: 1px 1px 15px rgb(190, 188, 188);
@@ -16,18 +16,34 @@
   /* align-items: center; */
   width: 85vw;
   margin: 0 auto;
-  background-color: lightskyblue;
+  background-color: #042541;
+  /* background-color: #05b4e1; */
+}
+.logoandsearch {
+  display: flex;
 }
 
 .firstHeader {
   display: flex;
   align-items: center;
-  background-color: lightcoral;
+  justify-content: space-between;
+  background-color: #042541;
   height: 40px;
 }
 
 .logo img {
   width: 150px;
+}
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  margin-top: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
+  /* background-color: #fff; */
+  border-radius: 50px;
 }
 .navBar {
   display: flex;
@@ -36,15 +52,37 @@
   margin: 0 auto;
   gap: 30px;
   width: 50%;
+  color: #05b4e1;
   height: 40px;
   /* background-color: lightgrey; */
 }
+.navBar p {
+  color: #fff;
+}
+.navBar p:hover {
+  color: #5bd7f6;
+}
+
 .headerSearchBar input {
-  width: 15vw;
-  margin-left: 100px;
+  width: 10vw;
+  margin-left: 50px;
+  margin-top: 40px;
   /* background-color: yellow; */
   height: 25px;
   border-radius: 5px;
-  border: 1px solid rgb(204, 203, 203);
-  padding-left: 30px;
+  border: 1px solid #042541;
+  padding-left: 20px;
+  background-color: rgb(219, 217, 217);
+}
+.logandsign {
+  display: flex;
+  /* background-color: #fff; */
+  margin-top: 40px;
+  gap: 30px;
+}
+.logandsign p {
+  color: #05b4e1;
+}
+.logandsign p:hover {
+  color: #5bd7f6;
 }
