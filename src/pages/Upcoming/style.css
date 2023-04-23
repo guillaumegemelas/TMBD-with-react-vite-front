@@ -13,3 +13,26 @@
   margin: 0 auto;
   /* background-color: lightgreen; */
 }
+.mainContainerMinUpColumn span {
+  color: #042541;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.mainContainerMinUpColumn h2 {
+  position: relative;
+  margin-left: 40px;
+}
+
+.mainContainerMinUpColumn h2::before {
+  content: "";
+  position: absolute;
+  left: 5%;
+  bottom: 0px;
+  width: 150px;
+  height: 8px;
+  transform: skew(-12deg) translateX(-45%);
+  background: #5bd7f6;
+  z-index: -1;
+}

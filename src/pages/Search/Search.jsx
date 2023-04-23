@@ -45,7 +45,10 @@ export default function Search() {
   ) : (
     <div className="mainSearchContainer">
       <div className="mainSearchContainerMinColumn">
-        <h1>Search for: {search.replace(regex, " ").slice(1, 35)}</h1>
+        <div className="searchh1">
+          <h2>Search for: {search.replace(regex, " ").slice(1, 35)}</h2>
+        </div>
+
         <div>
           <MovieCard data={data} />
         </div>

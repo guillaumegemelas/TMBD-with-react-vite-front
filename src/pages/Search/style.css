@@ -14,3 +14,19 @@
   margin: 0 auto;
   /* background-color: lightgreen; */
 }
+.searchh1 h2 {
+  position: relative;
+  margin-left: 40px;
+}
+
+.searchh1 h2::before {
+  content: "";
+  position: absolute;
+  left: 5%;
+  bottom: 0px;
+  width: 100px;
+  height: 10px;
+  transform: skew(-12deg) translateX(-70%);
+  background: #5bd7f6;
+  z-index: -1;
+}

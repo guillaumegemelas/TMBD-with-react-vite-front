@@ -43,7 +43,15 @@ export default function UpcomingMovie() {
   ) : (
     <div className="containerUpMovie">
       <div className="mainContainerMinUpColumn">
-        Upcoming movie: from {dataUp.dates.minimum} to {dataUp.dates.maximum}
+        <h2>
+          {" "}
+          Upcoming movie:{" "}
+          <span>
+            from <span>{dataUp.dates.minimum}</span> to{" "}
+            <span>{dataUp.dates.maximum}</span>
+          </span>
+        </h2>
+
         <div>
           <MovieCard data={dataUp} />
         </div>

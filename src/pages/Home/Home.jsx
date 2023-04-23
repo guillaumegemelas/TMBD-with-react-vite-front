@@ -53,10 +53,10 @@ export default function Home() {
   ) : (
     <div className="mainContainer">
       <div className="mainContainerMinColumn">
-        <p>
-          <FontAwesomeIcon icon="house" />
-          you are on the home page
-        </p>
+        <h2>
+          {" "}
+          Top popular movies <span></span>
+        </h2>
 
         <div>
           <MovieCard data={data} />
