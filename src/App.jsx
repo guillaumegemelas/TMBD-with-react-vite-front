@@ -78,7 +78,7 @@ function App() {
             element={<Signup handleToken={handleToken} />}
           />
 
-          <Route path="/favourites" element={<Favourites />} />
+          <Route path="/favourites" element={<Favourites token={token} />} />
         </Routes>
         <Footer />
       </Router>

@@ -46,6 +46,11 @@ export default function MoviebyIdDetails({ token }) {
 
   const navigate = useNavigate();
 
+  //useEffect pour se positionner en haut de la page en venant de charachter page
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -141,12 +146,14 @@ export default function MoviebyIdDetails({ token }) {
                     if (token) {
                       try {
                         const response = await axios.post(
-                          "http://localhost:3000/addfavourites"
-                          // {
-                          //   name: elem.name,
-                          //   image: `${elem.thumbnail.path}.${elem.thumbnail.extension}`,
-                          //   token: token,
-                          // }
+                          "http://localhost:3000/addfavourites",
+                          {
+                            name: dataId.original_title,
+                            image: `${"https://image.tmdb.org/t/p/w500"}${
+                              dataId.poster_path
+                            }`,
+                            token: token,
+                          }
                         );
                         alert("added to favorites");
                         console.log(response.data);

@@ -7,3 +7,52 @@
   background: linear-gradient(45deg, #a0e5f7, #fff);
   min-height: 100vh;
 }
+.favSubContainer {
+  display: flex;
+  flex-direction: column;
+  width: 85vw;
+  margin: 0 auto;
+  /* background-color: lightgreen; */
+}
+.favList {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  /* background-color: #fff; */
+}
+.favSubContainer h2 {
+  position: relative;
+  margin-left: 40px;
+  padding-top: 20px;
+}
+
+.favSubContainer h2::before {
+  content: "";
+  position: absolute;
+  left: 5%;
+  bottom: -5px;
+  width: 150px;
+  height: 8px;
+  transform: skew(-12deg) translateX(-45%);
+  background: linear-gradient(45deg, #77c8af, #5bd7f6);
+  z-index: 1;
+}
+.favCard {
+  background-color: #fff;
+  max-width: 200px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 15px rgb(69, 68, 68);
+  border: 1px solid black;
+  /* background-color: #fff; */
+  font-size: 15px;
+  margin: 20px;
+  text-align: center;
+}
+.favCard img {
+  width: 200px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+.hidden {
+  display: none;
+}
