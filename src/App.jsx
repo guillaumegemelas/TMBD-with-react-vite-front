@@ -21,8 +21,19 @@ import {
   faArrowUpWideShort,
   faArrowDownShortWide,
   faFile,
+  faMessage,
+  faInbox,
+  faUser,
 } from "@fortawesome/free-solid-svg-icons";
-library.add(faHouse, faArrowUpWideShort, faArrowDownShortWide, faFile);
+library.add(
+  faHouse,
+  faArrowUpWideShort,
+  faArrowDownShortWide,
+  faFile,
+  faMessage,
+  faInbox,
+  faUser
+);
 
 //import du CSS
 import "./App.css";

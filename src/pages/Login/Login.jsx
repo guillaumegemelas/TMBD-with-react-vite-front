@@ -10,6 +10,9 @@ import {
 //import style.css
 import "../Login/style.css";
 
+//import icones
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 export default function Login({ handleToken }) {
   //variables
   const [email, setEmail] = useState("");
@@ -50,6 +53,22 @@ export default function Login({ handleToken }) {
 
   return (
     <div className="signupContainer">
+      {/* partie explicative */}
+      <div className="explain">
+        <h1>How does it work</h1>
+        <p>
+          <span>
+            <FontAwesomeIcon icon="user" />{" "}
+          </span>
+          Log to your free account to be able to get all features
+        </p>
+        <p>
+          <span>
+            <FontAwesomeIcon icon="inbox" />{" "}
+          </span>
+          Add a movie to your collection
+        </p>
+      </div>
       <div className="signupForm">
         <div className="1">
           <h1>Log in</h1>

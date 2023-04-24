@@ -10,6 +10,9 @@ import {
 //import style.css
 import "../Signup/style.css";
 
+//import icones
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 export default function Signup({ handleToken }) {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
@@ -56,8 +59,28 @@ export default function Signup({ handleToken }) {
 
   return (
     <div className="signupContainer">
-      <Link to="/"> Got to home</Link>
+      {/* partie explicative */}
+      <div className="explain">
+        <h1>How does it work</h1>
+        <p>
+          {" "}
+          <span>
+            <FontAwesomeIcon icon="user" />{" "}
+          </span>
+          Log to your free account to be able to get all features
+        </p>
+        <p>
+          <span>
+            <FontAwesomeIcon icon="inbox" />{" "}
+          </span>
+          Add a movie to your collection
+        </p>
+        {/* <p>
+          <FontAwesomeIcon icon="message" /> Leave a review for a game
+        </p> */}
+      </div>
 
+      {/* partie formulaire */}
       <div className="signupForm">
         <div>
           <h1>Sign up</h1>
