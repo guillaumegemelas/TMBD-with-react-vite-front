@@ -18,7 +18,12 @@ export default function Favourites({ token }) {
   useEffect(() => {
     const fetchFavourites = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/favourites`);
+        const response = await axios.get(`http://localhost:3000/favourites`, {
+          //ajout bearer token pour authentification avecmiddleware
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
         setMovies(response.data);
         console.log(response.data, "response data favourites ***********");
         setIsloading(false);
@@ -42,6 +47,7 @@ export default function Favourites({ token }) {
             <h2>My favorites movies</h2>
             <div className="favList">
               {movies.favourites.map((even) => {
+                //mettre le if avant le return pour ne retourner QUE les div voulues
                 if (token === even.token) {
                   return (
                     <div key={uuid4()} className="favCard">

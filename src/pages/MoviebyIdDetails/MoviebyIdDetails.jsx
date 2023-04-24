@@ -153,6 +153,12 @@ export default function MoviebyIdDetails({ token }) {
                               dataId.poster_path
                             }`,
                             token: token,
+                          },
+                          {
+                            //ajout bearer token pour authentification avecmiddleware
+                            headers: {
+                              Authorization: `Bearer ${token}`,
+                            },
                           }
                         );
                         alert("added to favorites");
