@@ -41,7 +41,16 @@ export default function Search() {
   }, [search]);
 
   return isLoading ? (
-    <div>chargement</div>
+    <div className="mainSearchContainer1">
+      <div className="lds-ellipsis">
+        {/* test spinner------------- */}
+        {/* <div></div>
+        <div></div>
+        <div></div>
+        <div></div> */}
+        {/* test spinner------------- */}
+      </div>
+    </div>
   ) : (
     <div className="mainSearchContainer">
       <div className="mainSearchContainerMinColumn">

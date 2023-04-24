@@ -29,7 +29,7 @@
   content: "";
   position: absolute;
   left: 5%;
-  bottom: 0px;
+  bottom: -5px;
   width: 150px;
   height: 8px;
   transform: skew(-12deg) translateX(-45%);
