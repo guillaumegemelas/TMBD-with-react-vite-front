@@ -43,11 +43,14 @@ export default function Moviedesc() {
   ) : (
     <div className="mainContainer">
       <div className="mainContainerMinColumn">
-        <p>
-          <FontAwesomeIcon icon="house" />
-          you are on movieascpage
-        </p>
+        <h2>
+          Top popular movies <span></span>
+        </h2>
+        <div>
+          <MovieCard data={data} />
+        </div>
         <div className="pagination">
+          <FontAwesomeIcon icon="file" />
           <input
             type="number"
             min="1"
@@ -56,12 +59,6 @@ export default function Moviedesc() {
             placeholder="page"
             onChange={(event) => setPage(event.target.value)}
           />
-        </div>
-        {/* Test pour voir si pages login et signup fonctionnent */}
-
-        {/* --------------------------------------------------- */}
-        <div>
-          <MovieCard data={data} />
         </div>
       </div>
     </div>

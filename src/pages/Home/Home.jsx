@@ -55,7 +55,7 @@ export default function Home() {
       <div className="mainContainerMinColumn">
         <h2>
           {" "}
-          Top popular movies <span></span>
+          New movies <span></span>
         </h2>
 
         <div>

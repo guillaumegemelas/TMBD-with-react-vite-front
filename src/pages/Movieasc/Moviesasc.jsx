@@ -43,26 +43,23 @@ export default function Moviesasc() {
   ) : (
     <div className="mainContainer">
       <div className="mainContainerMinColumn">
-        <p>
-          <FontAwesomeIcon icon="house" />
-          you are on movieascpage
-        </p>
-        <div className="pagination">
-          <input
-            type="number"
-            min="1"
-            max="100"
-            value={page}
-            placeholder="page"
-            onChange={(event) => setPage(event.target.value)}
-          />
-        </div>
-        {/* Test pour voir si pages login et signup fonctionnent */}
-
-        {/* --------------------------------------------------- */}
+        <h2>
+          Less popular movies <span></span>
+        </h2>
         <div>
           <MovieCard data={data} />
         </div>
+      </div>
+      <div className="pagination">
+        <FontAwesomeIcon icon="file" />
+        <input
+          type="number"
+          min="1"
+          max="100"
+          value={page}
+          placeholder="page"
+          onChange={(event) => setPage(event.target.value)}
+        />
       </div>
     </div>
   );
