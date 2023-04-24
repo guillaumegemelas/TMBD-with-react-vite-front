@@ -19,6 +19,10 @@ export default function MoviebyIdDetails() {
   const [dataIdSimilar, setDataIdSimilar] = useState([]);
   const [isLoading1, setIsLoading1] = useState(true);
 
+  //test pour récuperer les image avec nouvelle requete
+  const [dataImages, setDataImages] = useState([]);
+  const [isLoading2, setIsLoading2] = useState(true);
+
   //Id récupéré par params
   const { id } = useParams();
   console.log(id, "Id d movie-----");
@@ -59,6 +63,25 @@ export default function MoviebyIdDetails() {
     };
 
     fetchDataSimilar();
+  }, []);
+
+  //troisième requete pour les images: voir pour implanter un carroussel d'images
+  useEffect(() => {
+    const fetchDataImages = async () => {
+      try {
+        const response = await axios.get(
+          // `https://api.themoviedb.org/3/movie/${id}?api_key=ec1d52844155d66f88c3111938c459f7`
+          `http://localhost:3000/movie/${id}/images`
+        );
+        setDataImages(response.data);
+        console.log(response.data, "response data images-----------");
+        setIsLoading2(false);
+      } catch (error) {
+        console.log(error.message, "error message 🤒");
+      }
+    };
+
+    fetchDataImages();
   }, []);
 
   return isLoading ? (

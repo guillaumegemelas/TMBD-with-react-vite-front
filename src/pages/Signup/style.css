@@ -7,6 +7,7 @@
   align-items: center;
   height: 100vh;
   width: 100vw;
+  /* background-color: #93e1f5; */
 }
 
 .explain {
@@ -16,13 +17,14 @@
   justify-content: center;
   height: 60vh;
   width: 30%;
-  /* background: linear-gradient(-45deg, #4c4d50, black); */
+  /* background: #93e1f5; */
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
-  border: 1px solid #05b4e1;
+  border: 3px solid #05b4e1;
+  border-right: none;
 }
 .explain h1 {
-  font-size: 27px;
+  font-size: 25px;
   margin-bottom: 45px;
   margin-left: 35px;
 }
@@ -43,11 +45,14 @@
   /* padding-top: 170px; */
   height: 60vh;
   width: 30%;
-  /* background: linear-gradient(45deg, #4c4d50, black); */
+  /* background: #93e1f5; */
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
-  border-left: 2px solid #05b4e1;
-  border: 1px solid #05b4e1;
+  border-left: 0px;
+  border: 3px solid #05b4e1;
+}
+.signupForm h1 {
+  font-size: 25px;
 }
 .formSign {
   display: flex;

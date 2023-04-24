@@ -46,9 +46,9 @@ export default function UpcomingMovie() {
         <h2>
           {" "}
           Upcoming movie:{" "}
-          <span>
-            from <span>{dataUp.dates.minimum}</span> to{" "}
-            <span>{dataUp.dates.maximum}</span>
+          <span className="span">
+            from <span className="span">{dataUp.dates.minimum}</span> to{" "}
+            <span className="span">{dataUp.dates.maximum}</span>
           </span>
         </h2>
 

@@ -14,6 +14,7 @@ export default function Search() {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const regex = /%20/g;
+  const regex1 = /%27/g;
 
   //-----------------------
   const location = useLocation();
@@ -55,7 +56,10 @@ export default function Search() {
     <div className="mainSearchContainer">
       <div className="mainSearchContainerMinColumn">
         <div className="searchh1">
-          <h2>Search for: {search.replace(regex, " ").slice(1, 35)}</h2>
+          <h2>
+            Search for:{" "}
+            {search.replace(regex, " ").replace(regex1, "'").slice(1, 35)}
+          </h2>
         </div>
 
         <div>
@@ -64,7 +68,10 @@ export default function Search() {
         {data.results.length === 0 && (
           <div>
             {" "}
-            <h2>No result for "{search.replace(regex, " ").slice(1, 35)}"</h2>
+            <h2>
+              No result for "
+              {search.replace(regex, " ").replace(regex1, "'").slice(1, 35)}"
+            </h2>
           </div>
         )}
       </div>

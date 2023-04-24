@@ -54,7 +54,7 @@ function App() {
     <div>
       <Router>
         {/* le hader apparaitra sur toutes les pages */}
-        <Header />
+        <Header token={token} handleToken={handleToken} />
         <Routes>
           <Route path="/" element={<Home />} />
           {/* route avec params id--- */}

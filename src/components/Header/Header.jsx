@@ -1,6 +1,6 @@
 import { React, useState, useEffect } from "react";
 import logo from "../../img/logo1.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 //import icones
@@ -9,9 +9,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 //import style.css
 import "../Header/style.css";
 
-export default function Header() {
+export default function Header({ token, handleToken }) {
   //pour la searchbar
   const [search, setSearch] = useState("");
+
+  const navigate = useNavigate();
 
   return (
     //il faut faire un hader avec une navbar avec liens vers pages du site
@@ -41,13 +43,30 @@ export default function Header() {
             </div>
           </div>
 
-          <div className="logandsign">
-            <Link to="/user/signup">
-              <p>Sign in</p>
-            </Link>
-            <Link to="/user/login">
-              <p>Login</p>
-            </Link>
+          <div>
+            {token ? (
+              <div className="logandsign">
+                <p
+                  onClick={() => {
+                    // suppression du token des cookies
+                    handleToken(null);
+                    alert("Vous êtes maintenant déconnecté");
+                    navigate("/");
+                  }}
+                >
+                  Disconnect
+                </p>
+              </div>
+            ) : (
+              <div className="logandsign">
+                <Link to="/user/signup">
+                  <p>Sign in</p>
+                </Link>
+                <Link to="/user/login">
+                  <p>Login</p>
+                </Link>
+              </div>
+            )}
           </div>
         </div>
 

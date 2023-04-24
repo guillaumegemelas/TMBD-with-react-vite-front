@@ -82,6 +82,7 @@
 }
 .logandsign p {
   color: #05b4e1;
+  cursor: pointer;
 }
 .logandsign p:hover {
   color: #5bd7f6;
