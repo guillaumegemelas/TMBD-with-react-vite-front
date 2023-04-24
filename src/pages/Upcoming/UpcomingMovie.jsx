@@ -39,7 +39,7 @@ export default function UpcomingMovie() {
   }, [page]);
 
   return isLoading ? (
-    <div></div>
+    <div className="containerUpMovie"></div>
   ) : (
     <div className="containerUpMovie">
       <div className="mainContainerMinUpColumn">

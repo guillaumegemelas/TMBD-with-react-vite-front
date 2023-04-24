@@ -49,7 +49,7 @@ export default function Home() {
   //penser à page dans le tableau dedépendances pour actualiser la page choisie
 
   return isLoading ? (
-    <div></div>
+    <div className="mainContainer"></div>
   ) : (
     <div className="mainContainer">
       <div className="mainContainerMinColumn">
