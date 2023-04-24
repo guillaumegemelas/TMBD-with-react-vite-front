@@ -4,6 +4,8 @@
   padding-top: 80px;
   flex-direction: column;
   /* background-color: pink; */
+  background-color: #a0e5f7;
+  background: linear-gradient(45deg, #a0e5f7, #fff);
 }
 
 .mainContainerMinUpColumn {
@@ -23,6 +25,7 @@
 .mainContainerMinUpColumn h2 {
   position: relative;
   margin-left: 40px;
+  padding-top: 20px;
 }
 
 .mainContainerMinUpColumn h2::before {
@@ -33,6 +36,6 @@
   width: 150px;
   height: 8px;
   transform: skew(-12deg) translateX(-45%);
-  background: #5bd7f6;
-  z-index: -1;
+  background: linear-gradient(45deg, #77c8af, #5bd7f6);
+  z-index: 1;
 }

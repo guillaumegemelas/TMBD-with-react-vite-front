@@ -3,8 +3,11 @@
   /* padding pour que le container ne soit pas caché par le header */
   padding-top: 80px;
   flex-direction: column;
-  height: 100vw;
+  min-height: 100vw;
+  height: auto;
   /* background-color: yellow; */
+  background-color: #a0e5f7;
+  background: linear-gradient(45deg, #a0e5f7, #fff);
 }
 .mainSearchContainer1 {
   display: flex;
@@ -26,6 +29,7 @@
 .searchh1 h2 {
   position: relative;
   margin-left: 40px;
+  padding-top: 20px;
 }
 
 .searchh1 h2::before {
@@ -36,8 +40,8 @@
   width: 100px;
   height: 10px;
   transform: skew(-12deg) translateX(-70%);
-  background: #5bd7f6;
-  z-index: -1;
+  background: linear-gradient(45deg, #77c8af, #5bd7f6);
+  z-index: 1;
 }
 
 /* test spinner------------------ */
