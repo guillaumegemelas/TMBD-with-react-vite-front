@@ -9,6 +9,11 @@ import uuid4 from "uuid4";
 //pour récupérer l'Id venant de Home
 import { useParams } from "react-router-dom";
 
+//test caroussel react--------------------
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+//----------------------------------------
+
 //import des composants
 import MoviesimilarCard from "../../components/MoviesimilarCard/MoviesimilarCard";
 
@@ -166,6 +171,25 @@ export default function MoviebyIdDetails() {
             alt=""
           />
         </div>
+      </div>
+      <div className="carrouselContainer">
+        {isLoading2 ? (
+          <div></div>
+        ) : (
+          <div className="carousselImg">
+            <Carousel useKeyboardArrows={true}>
+              {dataImages.backdrops.map((URL, index) => (
+                <div className="slide" key={index}>
+                  <img
+                    alt="sample_file"
+                    src={`${"https://image.tmdb.org/t/p/w500"}${URL.file_path}`}
+                    key={index}
+                  />
+                </div>
+              ))}
+            </Carousel>
+          </div>
+        )}
       </div>
       {/* test similar movies------------------- */}
       {/* il faut mettre un isloading sinon les données ne sont pas chargées et map undefined */}

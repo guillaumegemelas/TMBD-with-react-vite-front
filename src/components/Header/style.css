@@ -9,6 +9,7 @@
   box-shadow: 1px 1px 15px rgb(190, 188, 188);
   /* initialement mis 100vw mais cela creait un décalage donc mis 100% */
   width: 100%;
+  z-index: 2;
 }
 .headerContainerMinColumn {
   display: flex;
