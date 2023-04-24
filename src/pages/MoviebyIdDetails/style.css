@@ -16,6 +16,18 @@
   width: 80vw;
   margin: 0 auto;
 }
+.h1andicon {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+.h1andicon button {
+  color: #042541;
+  font-size: 25px;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
 
 .carrouselContainer {
   display: flex;

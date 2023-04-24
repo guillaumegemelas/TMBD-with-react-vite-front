@@ -24,6 +24,7 @@ import {
   faMessage,
   faInbox,
   faUser,
+  faHeartCirclePlus,
 } from "@fortawesome/free-solid-svg-icons";
 library.add(
   faHouse,
@@ -32,11 +33,13 @@ library.add(
   faFile,
   faMessage,
   faInbox,
-  faUser
+  faUser,
+  faHeartCirclePlus
 );
 
 //import du CSS
 import "./App.css";
+import Favourites from "./pages/Favourites/Favourites";
 
 function App() {
   //génération du token et on le garde dans les cookies
@@ -58,7 +61,10 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           {/* route avec params id--- */}
-          <Route path="/movie/:id" element={<MoviebyIdDetails />} />
+          <Route
+            path="/movie/:id"
+            element={<MoviebyIdDetails token={token} />}
+          />
           <Route path="/movie/upcoming" element={<UpcomingMovie />} />
           <Route path="/search" element={<Search />} />
           <Route path="/averageasc" element={<Moviesasc />} />
@@ -71,6 +77,8 @@ function App() {
             path="/user/signup"
             element={<Signup handleToken={handleToken} />}
           />
+
+          <Route path="/favourites" element={<Favourites />} />
         </Routes>
         <Footer />
       </Router>

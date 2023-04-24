@@ -10,6 +10,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../Header/style.css";
 
 export default function Header({ token, handleToken }) {
+  // console.log(token, "log token header");
   //pour la searchbar
   const [search, setSearch] = useState("");
 
@@ -90,6 +91,11 @@ export default function Header({ token, handleToken }) {
               <FontAwesomeIcon icon="arrow-down-short-wide" />
             </p>
           </Link>
+          {token && (
+            <Link to="/favourites">
+              <p>Favourites</p>
+            </Link>
+          )}
         </div>
       </div>
     </div>

@@ -2,7 +2,7 @@
 
 .headerContainer {
   display: flex;
-  height: 80px;
+  height: 100px;
   background-color: #042541;
   position: fixed;
   border-bottom: 1px solid grey;
@@ -54,7 +54,8 @@
   gap: 30px;
   width: 50%;
   color: #05b4e1;
-  height: 40px;
+  height: 60px;
+  padding-top: 10px;
   /* background-color: lightgrey; */
 }
 .navBar p {
@@ -99,6 +100,6 @@
   margin-top: 40px;
   margin-left: 10px;
   color: #042541;
-  background-color: #05b4e1;
+  background: linear-gradient(45deg, #77c8af, #5bd7f6);
   border-radius: 50%;
 }

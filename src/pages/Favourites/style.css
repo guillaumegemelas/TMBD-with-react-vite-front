@@ -1,0 +1,9 @@
+.favoritesContainer {
+  display: flex;
+  /* padding pour que le container ne soit pas caché par le header */
+  padding-top: 80px;
+  flex-direction: column;
+  background-color: #a0e5f7;
+  background: linear-gradient(45deg, #a0e5f7, #fff);
+  min-height: 100vh;
+}

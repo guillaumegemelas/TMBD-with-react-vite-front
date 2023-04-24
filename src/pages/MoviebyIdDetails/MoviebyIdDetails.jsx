@@ -1,4 +1,5 @@
 import { React, useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 //import style.css
 import "../MoviebyIdDetails/style.css";
@@ -11,6 +12,9 @@ import uuid4 from "uuid4";
 //pour récupérer l'Id venant de Home
 import { useParams } from "react-router-dom";
 
+//import icones
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 //test caroussel react--------------------
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
@@ -19,7 +23,9 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 //import des composants
 import MoviesimilarCard from "../../components/MoviesimilarCard/MoviesimilarCard";
 
-export default function MoviebyIdDetails() {
+export default function MoviebyIdDetails({ token }) {
+  console.log(token, "log de token+++++++++");
+
   const [dataId, setDataId] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -37,6 +43,8 @@ export default function MoviebyIdDetails() {
   //Id récupéré par params
   const { id } = useParams();
   console.log(id, "Id d movie-----");
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -122,8 +130,43 @@ export default function MoviebyIdDetails() {
       <div className="mainContainerIdMinColumn">
         <div className="test">
           <div className="firstColumn">
-            <div>
+            <div className="h1andicon">
               <h1>{dataId.original_title}</h1>
+
+              {/* bouton pour ajouter un favoris en BDD----------------- */}
+              <div>
+                <button
+                  className="favouritesButton"
+                  onClick={async () => {
+                    if (token) {
+                      try {
+                        const response = await axios.post(
+                          "http://localhost:3000/addfavourites"
+                          // {
+                          //   name: elem.name,
+                          //   image: `${elem.thumbnail.path}.${elem.thumbnail.extension}`,
+                          //   token: token,
+                          // }
+                        );
+                        alert("added to favorites");
+                        console.log(response.data);
+                      } catch (error) {
+                        console.log(error.message);
+                        if (
+                          error.message ===
+                          "Request failed with status code 409"
+                        ) {
+                          alert("Already added to Favourites!");
+                        }
+                      }
+                    } else {
+                      navigate("/user/login");
+                    }
+                  }}
+                >
+                  <FontAwesomeIcon icon="heart-circle-plus" />
+                </button>
+              </div>
             </div>
 
             <div className="release">
