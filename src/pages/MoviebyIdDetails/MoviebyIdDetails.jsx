@@ -1,5 +1,5 @@
 import { React, useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 //import style.css
 import "../MoviebyIdDetails/style.css";
@@ -267,26 +267,28 @@ export default function MoviebyIdDetails({ token }) {
           {dataCast.cast.map((even) => {
             return (
               <div className="CastingCard" key={uuid4()}>
-                <div className="castImg">
-                  {even.profile_path !== null ? (
-                    <img
-                      //   il faut concaténer l'adresse des images avec la taille
-                      src={`${"https://image.tmdb.org/t/p/w500"}${
-                        even.profile_path
-                      }`}
-                      alt="imgsimilar"
-                    />
-                  ) : (
-                    <img
-                      //   il faut concaténer l'adresse des images avec la taille
-                      src={image}
-                      alt="imgsimilarbis"
-                    />
-                  )}
-                </div>{" "}
-                <div>
-                  <p>{even.name}</p>
-                </div>
+                <Link to={`/cast/${even.id}`}>
+                  <div className="castImg">
+                    {even.profile_path !== null ? (
+                      <img
+                        //   il faut concaténer l'adresse des images avec la taille
+                        src={`${"https://image.tmdb.org/t/p/w500"}${
+                          even.profile_path
+                        }`}
+                        alt="imgsimilar"
+                      />
+                    ) : (
+                      <img
+                        //   il faut concaténer l'adresse des images avec la taille
+                        src={image}
+                        alt="imgsimilarbis"
+                      />
+                    )}
+                  </div>{" "}
+                  <div>
+                    <p>{even.name}</p>
+                  </div>
+                </Link>
               </div>
             );
           })}

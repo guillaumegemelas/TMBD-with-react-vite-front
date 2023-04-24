@@ -9,6 +9,7 @@ import MoviebyIdDetails from "./pages/MoviebyIdDetails/MoviebyIdDetails";
 import UpcomingMovie from "./pages/Upcoming/UpcomingMovie";
 import Moviesasc from "./pages/Movieasc/Moviesasc";
 import Moviesdesc from "./pages/Moviedesc/Moviesdesc";
+import CastByIdDetails from "./pages/CastByIdDetails/CastByIdDetails";
 import Search from "./pages/Search/Search";
 import Login from "./pages/Login/Login";
 import Signup from "./pages/Signup/Signup";
@@ -81,6 +82,7 @@ function App() {
           />
 
           <Route path="/favourites" element={<Favourites token={token} />} />
+          <Route path="/cast/:id" element={<CastByIdDetails />} />
         </Routes>
         <Footer />
       </Router>
