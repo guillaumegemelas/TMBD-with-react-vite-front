@@ -386,11 +386,13 @@ export default function MoviebyIdDetails({ token }) {
                 {dataVideos.results.length > 0 &&
                 dataVideos.results[1] !== undefined
                   ? dataVideos.results[1].name
-                  : dataVideos.results[0].name}
+                  : "About movie"}
               </h2>
             )}
           </div>
-          {!isLoading4 && (
+          {isLoading4 ? (
+            <div></div>
+          ) : (
             <div className="reactplayer1">
               <ReactPlayer
                 playing
@@ -398,14 +400,17 @@ export default function MoviebyIdDetails({ token }) {
                 loop={true}
                 volume={1}
                 light
-                width="45vw"
-                // height="35vh"
+                width="100%"
                 //results[1] n'existe pas forcément, il faut donc une condtition pour que map ne soit pas undefined
                 url={`https://www.youtube.com/watch?v=${
                   dataVideos.results.length > 0 &&
                   dataVideos.results[1] !== undefined
-                    ? dataVideos.results[1].key
-                    : dataVideos.results[0].key
+                    ? // && dataVideos.results[0] !== undefined
+                      dataVideos.results[1].key
+                    : dataVideos.results.length > 0 &&
+                      dataVideos.results[1] === undefined
+                    ? dataVideos.results[0].key
+                    : ""
                 }`}
               />
             </div>

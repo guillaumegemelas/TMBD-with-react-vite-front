@@ -288,14 +288,17 @@
 .player {
   /* align-items: center; */
   background-color: transparent;
-  max-width: 45vw;
+  width: 45vw;
   margin-right: 8vw;
+  /* border: 1px solid red; */
   /* box-shadow: 1px 1px 15px rgb(190, 188, 188); */
 }
-/* .reactplayer1 {
-  width: 35vw;
-  border: 5px solid yellow;
-} */
+.reactplayer1 {
+  background: blue;
+  /* border: 5px solid green; */
+  width: 45vw;
+}
+
 .titleplayerElipsis {
   text-overflow: ellipsis;
 }
@@ -324,4 +327,33 @@
   transform: skew(-12deg) translateX(-45%);
   background: linear-gradient(45deg, #77c8af, #5bd7f6);
   z-index: 1;
+}
+
+/* =====media queries=========1150px==============================================================*/
+@media (max-width: 650px) {
+  /* partie video et images */
+  .globContainerVideoandPicture {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 100vw;
+    background: linear-gradient(0deg, #a0e5f7, white);
+  }
+  .player {
+    background-color: transparent;
+    width: 85vw;
+    margin: 0;
+  }
+  .reactplayer1 {
+    background: blue;
+    /* border: 5px solid green; */
+    width: 85vw;
+  }
+  .carousselImg {
+    /* background-color: #5bd7f6; */
+    width: 85vw;
+    z-index: 0;
+  }
 }
