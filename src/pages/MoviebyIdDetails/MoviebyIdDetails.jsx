@@ -12,6 +12,9 @@ import image from "../../img/movieimg.jpg";
 import ModalVideo from "react-modal-video";
 //----------------------------------------
 
+//import test de react player
+import ReactPlayer from "react-player";
+
 //pour récupérer l'Id venant de Home
 import { useParams } from "react-router-dom";
 
@@ -349,27 +352,68 @@ export default function MoviebyIdDetails({ token }) {
         </div>
       )}
       {/* test casting------------------ */}
-      <div className="carrouselContainer">
-        {isLoading2 ? (
-          <div></div>
-        ) : (
-          <div className="carousselImg">
-            <Carousel useKeyboardArrows={true}>
-              {dataImages.backdrops.map((URL, index) => (
-                <div className="slide" key={index}>
-                  <img
-                    alt="sample_file"
-                    src={`${"https://image.tmdb.org/t/p/original"}${
-                      URL.file_path
-                    }`}
-                    key={index}
-                  />
-                </div>
-              ))}
-            </Carousel>
+      <div className="globContainerVideoandPicture">
+        <div className="carrouselContainer">
+          {isLoading2 ? (
+            <div></div>
+          ) : (
+            <div className="carousselImg">
+              <div>
+                <h2>Wallpapers</h2>
+              </div>
+              <Carousel useKeyboardArrows={true}>
+                {dataImages.backdrops.map((URL, index) => (
+                  <div className="slide" key={index}>
+                    <img
+                      alt="sample_file"
+                      src={`${"https://image.tmdb.org/t/p/original"}${
+                        URL.file_path
+                      }`}
+                      key={index}
+                    />
+                  </div>
+                ))}
+              </Carousel>
+            </div>
+          )}
+        </div>
+
+        {/* test react player---------------------------------- */}
+        <div className="player">
+          <div className="ltr">
+            {!isLoading4 && (
+              <h2 className="titleplayerElipsis">
+                {dataVideos.results.length > 0 &&
+                dataVideos.results[1] !== undefined
+                  ? dataVideos.results[1].name
+                  : dataVideos.results[0].name}
+              </h2>
+            )}
           </div>
-        )}
+          {!isLoading4 && (
+            <div className="reactplayer1">
+              <ReactPlayer
+                playing
+                muted={false}
+                loop={true}
+                volume={1}
+                light
+                width="45vw"
+                // height="35vh"
+                //results[1] n'existe pas forcément, il faut donc une condtition pour que map ne soit pas undefined
+                url={`https://www.youtube.com/watch?v=${
+                  dataVideos.results.length > 0 &&
+                  dataVideos.results[1] !== undefined
+                    ? dataVideos.results[1].key
+                    : dataVideos.results[0].key
+                }`}
+              />
+            </div>
+          )}
+        </div>
       </div>
+
+      {/* ------------------------------ */}
 
       {/* il faut mettre un isloading sinon les données ne sont pas chargées et map undefined */}
       <div className="similarGlobContainer">
