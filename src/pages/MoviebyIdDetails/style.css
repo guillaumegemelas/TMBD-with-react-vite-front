@@ -294,7 +294,7 @@
   /* box-shadow: 1px 1px 15px rgb(190, 188, 188); */
 }
 .reactplayer1 {
-  background: blue;
+  /* background: blue; */
   /* border: 5px solid green; */
   width: 45vw;
 }
@@ -329,7 +329,7 @@
   z-index: 1;
 }
 
-/* =====media queries=========1150px==============================================================*/
+/* =====media queries=========650px==============================================================*/
 @media (max-width: 650px) {
   /* partie video et images */
   .globContainerVideoandPicture {
@@ -347,7 +347,7 @@
     margin: 0;
   }
   .reactplayer1 {
-    background: blue;
+    /* background: blue; */
     /* border: 5px solid green; */
     width: 85vw;
   }
