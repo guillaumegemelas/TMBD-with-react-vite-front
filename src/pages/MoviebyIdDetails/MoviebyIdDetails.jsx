@@ -106,7 +106,7 @@ export default function MoviebyIdDetails({ token }) {
           `http://localhost:3000/movie/${id}/images`
         );
         setDataImages(response.data);
-        // console.log(response.data, "response data images-----------");
+        console.log(response.data, "response data images-----------");
         setIsLoading2(false);
       } catch (error) {
         console.log(error.message, "error message 🤒");
@@ -169,7 +169,7 @@ export default function MoviebyIdDetails({ token }) {
             <div className="h1andicon">
               <h1>{dataId.original_title}</h1>
               {!isLoading4 && (
-                <div>
+                <div className="playButtonModal">
                   <ModalVideo
                     channel="youtube"
                     autoplay
@@ -178,8 +178,8 @@ export default function MoviebyIdDetails({ token }) {
                     // videoId=""
                     onClose={() => setOpen(false)}
                   />
-                  <button className="" onClick={() => setOpen(true)}>
-                    Bande-annonce
+                  <button className="playButton" onClick={() => setOpen(true)}>
+                    <FontAwesomeIcon icon="play" /> Bande-annonce
                   </button>
                 </div>
               )}
@@ -295,7 +295,11 @@ export default function MoviebyIdDetails({ token }) {
           <div className="movieIdImg">
             <img
               //   il faut concaténer l'adresse des images avec la taille
-              src={`${"https://image.tmdb.org/t/p/w500"}${dataId.poster_path}`}
+              //on peut mettre la taille originale ou w500 si cela rame trop
+              // src={`${"https://image.tmdb.org/t/p/w500"}${
+              src={`${"https://image.tmdb.org/t/p/original"}${
+                dataId.poster_path
+              }`}
               alt=""
             />
           </div>
@@ -351,7 +355,9 @@ export default function MoviebyIdDetails({ token }) {
                 <div className="slide" key={index}>
                   <img
                     alt="sample_file"
-                    src={`${"https://image.tmdb.org/t/p/w500"}${URL.file_path}`}
+                    src={`${"https://image.tmdb.org/t/p/original"}${
+                      URL.file_path
+                    }`}
                     key={index}
                   />
                 </div>

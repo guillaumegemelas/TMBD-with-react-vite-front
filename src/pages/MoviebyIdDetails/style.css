@@ -258,3 +258,9 @@
   width: 80vw;
   margin: 0 auto;
 }
+.playButtonModal button {
+  font-size: 15px;
+}
+.playButtonModal button span {
+  gap: 20px;
+}
