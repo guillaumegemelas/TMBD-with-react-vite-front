@@ -10,6 +10,7 @@ import UpcomingMovie from "./pages/Upcoming/UpcomingMovie";
 import Moviesasc from "./pages/Movieasc/Moviesasc";
 import Moviesdesc from "./pages/Moviedesc/Moviesdesc";
 import CastByIdDetails from "./pages/CastByIdDetails/CastByIdDetails";
+import Popular from "./pages/Popular/Popular";
 import Search from "./pages/Search/Search";
 import Login from "./pages/Login/Login";
 import Signup from "./pages/Signup/Signup";
@@ -72,6 +73,7 @@ function App() {
           />
           <Route path="/movie/upcoming" element={<UpcomingMovie />} />
           <Route path="/search" element={<Search />} />
+          <Route path="/person/popular" element={<Popular />} />
           <Route path="/averageasc" element={<Moviesasc />} />
           <Route path="/averagedesc" element={<Moviesdesc />} />
           <Route

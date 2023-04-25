@@ -54,10 +54,7 @@ export default function Home() {
     <div className="mainContainer">
       {/* test react player---------------------------------- */}
       <div className="mainContainerMinColumn">
-        <h2>
-          {" "}
-          New movies <span></span>
-        </h2>
+        <h2> New movies</h2>
 
         <div>
           <MovieCard data={data} />
