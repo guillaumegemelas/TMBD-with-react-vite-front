@@ -1,30 +1,32 @@
 import { React, useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import axios from "axios";
+import uuid4 from "uuid4";
 
 //import style.css
 import "../MoviebyIdDetails/style.css";
 
 import image from "../../img/movieimg.jpg";
 
-// import { Link } from "react-router-dom";
-import axios from "axios";
-import uuid4 from "uuid4";
+//import de la modale vidéo--------------
+import ModalVideo from "react-modal-video";
+//----------------------------------------
+
 //pour récupérer l'Id venant de Home
 import { useParams } from "react-router-dom";
 
 //import icones
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-//test caroussel react--------------------
+//caroussel react
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-//----------------------------------------
 
 //import des composants
 import MoviesimilarCard from "../../components/MoviesimilarCard/MoviesimilarCard";
 
 export default function MoviebyIdDetails({ token }) {
-  console.log(token, "log de token+++++++++");
+  // console.log(token, "log de token+++++++++");
 
   const [dataId, setDataId] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -39,6 +41,12 @@ export default function MoviebyIdDetails({ token }) {
   //test pour récuperer les perso avec nouvelle requete
   const [dataCast, setDataCast] = useState([]);
   const [isLoading3, setIsLoading3] = useState(true);
+
+  //pour la modale vidéo-------------------------------
+  const [dataVideos, setDataVideos] = useState([]);
+  const [isLoading4, setIsLoading4] = useState(true);
+  const [isOpen, setOpen] = useState(false);
+  //---------------------------------------------------
 
   //Id récupéré par params
   const { id } = useParams();
@@ -117,7 +125,7 @@ export default function MoviebyIdDetails({ token }) {
           `http://localhost:3000/movie/${id}/credits`
         );
         setDataCast(response.data);
-        console.log(response.data, "response data cast-----------");
+        // console.log(response.data, "response data cast-----------");
         setIsLoading3(false);
       } catch (error) {
         console.log(error.message, "error message 🤒");
@@ -127,16 +135,54 @@ export default function MoviebyIdDetails({ token }) {
     fetchDataCast();
   }, []);
 
+  //cinquième requete pour les perso: voir pour implanter un carroussel d'images
+  useEffect(() => {
+    const fetchDataVideos = async () => {
+      try {
+        const response = await axios.get(
+          // `https://api.themoviedb.org/3/movie/${id}?api_key=ec1d52844155d66f88c3111938c459f7`
+          `http://localhost:3000/movie/${id}/videos`
+        );
+        setDataVideos(response.data);
+        console.log(response.data, "response data videos-----------");
+        // console.log(dataVideos.results[0].key, "key videos");
+        setIsLoading4(false);
+      } catch (error) {
+        console.log(error.message, "error message 🤒");
+      }
+    };
+
+    fetchDataVideos();
+  }, []);
+
   return isLoading ? (
     <div>chargement</div>
   ) : (
     <div className="containerIdMovie">
-      {/* il faut essayer de mettre en background l'image ci dessous avec opacity ou couleur dominate */}
+      {/* test modal video   --------------------------- */}
+
+      {/*fin test modal video   --------------------------- */}
+
       <div className="mainContainerIdMinColumn">
         <div className="test">
           <div className="firstColumn">
             <div className="h1andicon">
               <h1>{dataId.original_title}</h1>
+              {!isLoading4 && (
+                <div>
+                  <ModalVideo
+                    channel="youtube"
+                    autoplay
+                    isOpen={isOpen}
+                    videoId={dataVideos.results[0].key}
+                    // videoId=""
+                    onClose={() => setOpen(false)}
+                  />
+                  <button className="" onClick={() => setOpen(true)}>
+                    Bande-annonce
+                  </button>
+                </div>
+              )}
 
               {/* bouton pour ajouter un favoris en BDD----------------- */}
               <div>

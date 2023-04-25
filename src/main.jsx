@@ -3,6 +3,9 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import "./index.css";
 
+// import du package pour la modale
+import "react-modal-video/scss/modal-video.scss";
+
 //import du package bootstrap
 // import "bootstrap/dist/css/bootstrap.min.css";
 //si on ne veut pas de bootstrap, il faut commenter la ligne
