@@ -356,4 +356,59 @@
     width: 85vw;
     z-index: 0;
   }
+  .test {
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+    margin: 0 auto;
+  }
+
+  .firstColumn {
+    margin-top: 50px;
+    height: 100%;
+    /* background-color: #d2d532; */
+  }
+  .h1andicon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .h1andicon button {
+    color: #042541;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+  }
+
+  .movieIdImg img {
+    max-width: 80vw;
+    height: auto;
+    border-radius: 10px;
+  }
+  .release {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 80vw;
+
+    /* background-color: #fff; */
+    align-items: center;
+    gap: 15px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+  .maprelease {
+    display: flex;
+    gap: 10px;
+    /* background-color: yellow; */
+  }
+  .divers {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    /* background-color: #fff; */
+    align-items: baseline;
+  }
 }
