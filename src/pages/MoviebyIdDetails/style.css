@@ -261,6 +261,17 @@
 .playButtonModal button {
   font-size: 15px;
 }
+.playButtonModal button:hover {
+  color: #1369b5;
+}
 .playButtonModal button span {
   gap: 20px;
+}
+.favAddButton button:hover {
+  color: #1369b5;
+}
+
+.castImg img {
+  min-height: 200px;
+  background-color: #1369b5;
 }

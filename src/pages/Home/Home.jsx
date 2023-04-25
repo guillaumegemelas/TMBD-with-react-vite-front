@@ -9,6 +9,9 @@
 
 import { React, useState, useEffect } from "react";
 
+//import test de react player
+// import ReactPlayer from "react-player";
+
 //import style.css
 import "../Home/style.css";
 
@@ -52,6 +55,16 @@ export default function Home() {
     <div className="mainContainer"></div>
   ) : (
     <div className="mainContainer">
+      {/* test react player---------------------------------- */}
+      <div className="player">
+        {/* <ReactPlayer
+          playing
+          muted
+          url="https://www.youtube.com/watch?v=ysz5S6PUM-U"
+        /> */}
+      </div>
+
+      {/* test react player---------------------------------- */}
       <div className="mainContainerMinColumn">
         <h2>
           {" "}

@@ -174,8 +174,12 @@ export default function MoviebyIdDetails({ token }) {
                     channel="youtube"
                     autoplay
                     isOpen={isOpen}
-                    videoId={dataVideos.results[0].key}
-                    // videoId=""
+                    videoId={
+                      dataVideos.results.length > 0
+                        ? dataVideos.results[0].key
+                        : ""
+                    }
+                    // videoId: key undefined donc condition avec longueur tableau resluts
                     onClose={() => setOpen(false)}
                   />
                   <button className="playButton" onClick={() => setOpen(true)}>
@@ -185,7 +189,7 @@ export default function MoviebyIdDetails({ token }) {
               )}
 
               {/* bouton pour ajouter un favoris en BDD----------------- */}
-              <div>
+              <div className="favAddButton">
                 <button
                   className="favouritesButton"
                   onClick={async () => {
