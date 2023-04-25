@@ -15,7 +15,7 @@ import "../Home/style.css";
 //import icones
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import axios from "axios";
 // import uuid4 from "uuid4";
 

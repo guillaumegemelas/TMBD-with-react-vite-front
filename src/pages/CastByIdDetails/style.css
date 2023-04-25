@@ -28,3 +28,73 @@
 .secondCastColumn {
   margin-left: 50px;
 }
+
+.movie1Card {
+  display: flex;
+  /* border: 1px solid grey; */
+  background-color: #fff;
+  margin: 15px;
+  max-width: 200px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 15px rgb(69, 68, 68);
+}
+
+.movie1Card:hover {
+  /* box-shadow: 1px 1px 15px rgb(190, 188, 188); */
+  box-shadow: 1px 1px 15px #21a1b3;
+  opacity: 0.85;
+}
+
+.movie1CardImg img {
+  max-width: 200px;
+  min-height: 300px;
+  border-top-right-radius: 9px;
+  border-top-left-radius: 9px;
+}
+.movie1Title h1 {
+  font-size: 16px;
+  margin: 10px 5px 0 10px;
+  color: black;
+}
+.movie1CardDesc {
+  /* background-color: pink; */
+  display: flex;
+  flex-direction: column;
+}
+.movie1Title {
+  /* background-color: yellow; */
+  height: 55px;
+}
+.movie1CarouselImg {
+  display: flex;
+  flex-direction: row;
+  width: 80vw;
+  height: auto;
+  margin: 0 auto;
+  /* background-color: #d2d532; */
+  overflow-x: scroll;
+  gap: 20px;
+  margin-bottom: 70px;
+}
+
+.movieIdCastContainer h2 {
+  position: relative;
+  margin-left: 40px;
+  padding-top: 20px;
+}
+
+.movieIdCastContainer h2::before {
+  content: "";
+  position: absolute;
+  left: 5%;
+  bottom: -5px;
+  width: 150px;
+  height: 8px;
+  transform: skew(-12deg) translateX(-45%);
+  background: linear-gradient(45deg, #77c8af, #5bd7f6);
+  z-index: 1;
+}
+.movieIdCastContainer {
+  width: 85vw;
+  margin: 0 auto;
+}
