@@ -116,7 +116,7 @@ export default function Header({ token, handleToken }) {
                           // suppression du token des cookies
                           handleToken(null);
                           alert("Vous êtes maintenant déconnecté");
-                          navigate("/");
+                          navigate("/home");
                         }}
                       >
                         Se déconnecter

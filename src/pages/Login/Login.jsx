@@ -40,7 +40,7 @@ export default function Login({ handleToken }) {
         console.log(response.data.token);
 
         alert("Vous êtes maintenant connecté");
-        navigate("/");
+        navigate("/home");
       }
     } catch (error) {
       //si email n'est pas en BDD

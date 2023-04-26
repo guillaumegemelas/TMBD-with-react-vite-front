@@ -47,7 +47,7 @@ export default function Signup({ handleToken }) {
       if (response.data.token) {
         handleToken(response.data.token);
         alert("Votre compte a été créé");
-        navigate("/");
+        navigate("/home");
       }
     } catch (error) {
       console.log(error.response.data, "erreur signup");
