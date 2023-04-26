@@ -98,3 +98,36 @@
   width: 85vw;
   margin: 0 auto;
 }
+/* =====media queries=========650px==============================================================*/
+@media (max-width: 650px) {
+  .castContainerbyId {
+    display: flex;
+    /* padding pour que le container ne soit pas caché par le header */
+    padding-top: 80px;
+    flex-direction: column;
+    background: linear-gradient(#a0e5f7, #fff);
+    min-height: 100vh;
+  }
+  .firstColumn1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 85vw;
+    margin: 0 auto;
+    margin-top: 50px;
+    /* background-color: #d2d532; */
+  }
+  .secondCastColumn {
+    /* display: flex; */
+    /* background-color: #5bd7f6; */
+    width: 85vw;
+    margin: 0px;
+  }
+  .nameandbirth {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0px;
+  }
+}
