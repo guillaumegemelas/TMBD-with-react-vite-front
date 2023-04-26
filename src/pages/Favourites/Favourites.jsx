@@ -46,7 +46,7 @@ export default function Favourites({ token }) {
   ) : (
     <div className="favoritesContainer">
       <div className="favSubContainer">
-        <h2>My favorites movies</h2>
+        <h2>Mes films préférés</h2>
         <div className="favList">
           {movies.favourites.map((even) => {
             //mettre le if avant le return pour ne retourner QUE les div voulues

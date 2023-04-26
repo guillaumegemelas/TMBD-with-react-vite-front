@@ -30,6 +30,10 @@ import {
   faTrashCan,
   faPlay,
   faUserPlus,
+  faRightToBracket,
+  faRightFromBracket,
+  faClapperboard,
+  faUserAstronaut,
 } from "@fortawesome/free-solid-svg-icons";
 library.add(
   faHouse,
@@ -42,7 +46,11 @@ library.add(
   faHeartCirclePlus,
   faTrashCan,
   faPlay,
-  faUserPlus
+  faUserPlus,
+  faRightToBracket,
+  faRightFromBracket,
+  faClapperboard,
+  faUserAstronaut
 );
 
 //import du CSS

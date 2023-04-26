@@ -75,3 +75,17 @@
 .favCard button :hover {
   color: darkcyan;
 }
+/* =====media queries=========650px==============================================================*/
+@media (max-width: 650px) {
+  .favSubContainer h2::before {
+    content: "";
+    position: absolute;
+    left: 15%;
+    bottom: -5px;
+    width: 150px;
+    height: 8px;
+    transform: skew(-12deg) translateX(-45%);
+    background: linear-gradient(45deg, #77c8af, #5bd7f6);
+    z-index: 1;
+  }
+}

@@ -57,7 +57,7 @@ export default function Search() {
       <div className="mainSearchContainerMinColumn">
         <div className="searchh1">
           <h2>
-            Search for:{" "}
+            Résultats pour:{" "}
             {search.replace(regex, " ").replace(regex1, "'").slice(1, 35)}
           </h2>
         </div>
@@ -69,7 +69,7 @@ export default function Search() {
           <div>
             {" "}
             <h2>
-              No result for "
+              Aucun résultat pour "
               {search.replace(regex, " ").replace(regex1, "'").slice(1, 35)}"
             </h2>
           </div>
