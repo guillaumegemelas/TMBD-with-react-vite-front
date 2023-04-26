@@ -92,8 +92,9 @@ export default function Header({ token, handleToken }) {
               <FontAwesomeIcon icon="arrow-down-short-wide" />
             </p>
           </Link>
+          <span>Artistes</span>
           <Link to="/person/popular">
-            <p>Artistes</p>
+            <p>Populaires</p>
           </Link>
           {token && (
             <Link to="/favourites">
