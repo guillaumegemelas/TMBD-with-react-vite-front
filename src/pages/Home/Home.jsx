@@ -34,7 +34,7 @@ export default function Home() {
         const response = await axios.get(
           //   "https://api.themoviedb.org/3/discover/movie?api_key=ec1d52844155d66f88c3111938c459f7"
           //test avec backend ok!
-          `http://localhost:3000/?page=${page}`
+          `http://localhost:3000/home?page=${page}`
         );
         setData(response.data);
         console.log(response.data, "data page home ++++++++++++");

@@ -158,7 +158,7 @@ export default function Header({ token, handleToken }) {
                 <FontAwesomeIcon icon="clapperboard" />
               </span>
               <span className="spanavBar">Films</span>
-              <Link to="/">
+              <Link to="/home">
                 <p>Du moment</p>
               </Link>
               {/* il faudra link vers la page cinéma, séries... */}

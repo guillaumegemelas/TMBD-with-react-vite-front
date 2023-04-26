@@ -4,6 +4,7 @@ import Cookies from "js-cookie";
 
 //import des pages
 import Home from "./pages/Home/Home";
+import Homefirst from "./pages/Homefirst/Homefirst";
 import Header from "./components/Header/Header";
 import MoviebyIdDetails from "./pages/MoviebyIdDetails/MoviebyIdDetails";
 import UpcomingMovie from "./pages/Upcoming/UpcomingMovie";
@@ -75,7 +76,8 @@ function App() {
         {/* le hader apparaitra sur toutes les pages */}
         <Header token={token} handleToken={handleToken} />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Homefirst />} />
+          <Route path="/home" element={<Home />} />
           {/* route avec params id--- */}
           <Route
             path="/movie/:id"
