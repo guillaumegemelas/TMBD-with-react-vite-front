@@ -29,6 +29,7 @@ import {
   faHeartCirclePlus,
   faTrashCan,
   faPlay,
+  faUserPlus,
 } from "@fortawesome/free-solid-svg-icons";
 library.add(
   faHouse,
@@ -40,7 +41,8 @@ library.add(
   faUser,
   faHeartCirclePlus,
   faTrashCan,
-  faPlay
+  faPlay,
+  faUserPlus
 );
 
 //import du CSS

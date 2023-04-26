@@ -44,7 +44,7 @@ export default function Moviesasc() {
     <div className="mainContainer">
       <div className="mainContainerMinColumn">
         <h2>
-          Less popular movies <span></span>
+          Films les moins bien notés <span></span>
         </h2>
         <div>
           <MovieCard data={data} />

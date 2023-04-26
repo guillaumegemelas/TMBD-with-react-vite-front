@@ -44,7 +44,7 @@ export default function Moviedesc() {
     <div className="mainContainer">
       <div className="mainContainerMinColumn">
         <h2>
-          Top popular movies <span></span>
+          Films les mieux notés<span></span>
         </h2>
         <div>
           <MovieCard data={data} />

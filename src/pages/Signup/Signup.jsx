@@ -22,15 +22,28 @@ export default function Signup({ handleToken }) {
 
   const navigate = useNavigate();
 
+  // formdata pour cloudinary---------------------------------------------
+  const [picture, setPicture] = useState();
+  //--------------------------------------------------------------------------
+
   const handleSignup = async () => {
+    setErrorMessage("");
     try {
+      //formdata pour cloudinary---------------------------------------------
+
+      const formData = new FormData();
+      formData.append("username", username);
+      formData.append("email", email);
+      formData.append("password", password);
+      formData.append("passwordConf", passwordConf);
+      formData.append("picture", picture);
+
+      //------------------------------------------------------------------
       //vers locahost3000
-      const response = await axios.post("http://localhost:3000/user/signup", {
-        username: username,
-        email: email,
-        password: password,
-        passwordConf: passwordConf,
-      });
+      const response = await axios.post(
+        "http://localhost:3000/user/signup",
+        formData
+      );
       if (response.data.token) {
         handleToken(response.data.token);
         alert("Votre compte a été créé");
@@ -54,6 +67,12 @@ export default function Signup({ handleToken }) {
       if (error.response.data.message === "Passwords are different") {
         setErrorMessage("Veuillez renseigner deux mots de passe identiques");
       }
+      if (
+        error.response.data.message ===
+        "Cannot read properties of null (reading 'picture')"
+      ) {
+        setErrorMessage("Veuillez choisir une image de profil");
+      }
     }
   };
 
@@ -61,19 +80,19 @@ export default function Signup({ handleToken }) {
     <div className="signupContainer">
       {/* partie explicative */}
       <div className="explain">
-        <h1>How does it work</h1>
+        <h1>Comment ça marche?</h1>
         <p>
           {" "}
           <span>
             <FontAwesomeIcon icon="user" />{" "}
           </span>
-          Log to your free account to be able to get all features
+          Connectez vous pour avoir accès à toutes les fonctionnalités du site
         </p>
         <p>
           <span>
             <FontAwesomeIcon icon="inbox" />{" "}
           </span>
-          Add a movie to your collection
+          Ajouter un film à votre collection
         </p>
         {/* <p>
           <FontAwesomeIcon icon="message" /> Leave a review for a game
@@ -83,7 +102,7 @@ export default function Signup({ handleToken }) {
       {/* partie formulaire */}
       <div className="signupForm">
         <div>
-          <h1>Sign up</h1>
+          <h1>S'enregistrer</h1>
         </div>
 
         <form
@@ -97,7 +116,7 @@ export default function Signup({ handleToken }) {
             id="username"
             value={username}
             type="text"
-            placeholder="Username"
+            placeholder="Nom d'utilisateur"
             onChange={(event) => setUsername(event.target.value)}
           />
           <input
@@ -111,22 +130,40 @@ export default function Signup({ handleToken }) {
             id="password"
             value={password}
             type="password"
-            placeholder="Password"
+            placeholder="Mot de passe"
             onChange={(event) => setPassword(event.target.value)}
           />
           <input
             id="passwordConf"
             value={passwordConf}
             type="password"
-            placeholder="Confirm Password"
+            placeholder="Confirmer le mot de passe"
             onChange={(event) => setPasswordConf(event.target.value)}
           />
+          {/* ------------------------------------------------------------------------- */}
+          <label htmlFor="file" className="label-file">
+            <span>
+              {" "}
+              <FontAwesomeIcon icon="user-plus" />
+            </span>
+            <span> Choisir un avatar</span>
+          </label>
+          <input
+            id="file"
+            className="pickUpImg"
+            type="file"
+            onChange={(event) => {
+              console.log(event.target.files[0]);
+              setPicture(event.target.files[0]);
+            }}
+          />
+          {/* ------------------------------------------------------------------------- */}
 
           <button className="inscriptionButton" type="submit">
-            Sign up
+            Créer mon compte
           </button>
           <Link to={"/user/login"}>
-            <p>Already have an account, please log in</p>
+            <p>Déjà un compte? Connectez-vous</p>
           </Link>
           {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
         </form>

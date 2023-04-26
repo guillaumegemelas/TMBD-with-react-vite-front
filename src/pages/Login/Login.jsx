@@ -55,23 +55,23 @@ export default function Login({ handleToken }) {
     <div className="signupContainer">
       {/* partie explicative */}
       <div className="explain">
-        <h1>How does it work</h1>
+        <h1>Comment ça marche?</h1>
         <p>
           <span>
             <FontAwesomeIcon icon="user" />{" "}
           </span>
-          Log to your free account to be able to get all features
+          Connectez vous pour avoir accès à toutes les fonctionnalités du site
         </p>
         <p>
           <span>
             <FontAwesomeIcon icon="inbox" />{" "}
           </span>
-          Add a movie to your collection
+          Ajouter un film à votre collection
         </p>
       </div>
       <div className="signupForm">
         <div className="1">
-          <h1>Log in</h1>
+          <h1>Se connecter</h1>
         </div>
 
         <form
@@ -96,11 +96,11 @@ export default function Login({ handleToken }) {
             onChange={(event) => setPassword(event.target.value)}
           />
           <button className="2" type="submit">
-            Login
+            Se connecter
           </button>
 
           <Link to={"/user/signup"}>
-            <p>No account, please sign up</p>
+            <p>Pas encore de compte? Merci de vous enregistrer</p>
           </Link>
           {/* génération du message d'erreur */}
           {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
