@@ -17,6 +17,9 @@ export default function CastByIdDetails() {
   const [dataCastId, setDataCastId] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
+  const [dataCastIdEn, setDataCastIdEn] = useState([]);
+  const [isLoading2, setIsLoading2] = useState(true);
+
   //pour les films associés au personnage
   const [dataCastIdMovie, setDataCastIdMovie] = useState([]);
   const [isLoading1, setIsLoading1] = useState(true);
@@ -49,6 +52,26 @@ export default function CastByIdDetails() {
     };
 
     fetchDataCastId();
+  }, []);
+
+  //pour requete en anglais
+  useEffect(() => {
+    const fetchDataCastIdEn = async () => {
+      try {
+        //à voir pour filtrer les films par pafge, date de sortie, notes...
+        const response = await axios.get(
+          // `https://api.themoviedb.org/3/movie/${id}?api_key=ec1d52844155d66f88c3111938c459f7`
+          `http://localhost:3000/cast/en/${id}`
+        );
+        setDataCastIdEn(response.data);
+        console.log(response.data, "response cast id en***");
+        setIsLoading2(false);
+      } catch (error) {
+        console.log(error.message, "error message 🤒");
+      }
+    };
+
+    fetchDataCastIdEn();
   }, []);
 
   useEffect(() => {
@@ -125,12 +148,13 @@ export default function CastByIdDetails() {
             </div>
             <div className="biography">
               <p>{dataCastId.biography}</p>
+              {!isLoading2 && <p>{dataCastIdEn.biography}</p>}
             </div>
           </div>
         </div>
       </div>
       <div className="movieIdCastContainer">
-        <h2>Related Movies</h2>
+        <h2>Films associés</h2>
         {isLoading1 ? (
           <div></div>
         ) : (

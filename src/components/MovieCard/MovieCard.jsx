@@ -33,7 +33,7 @@ export default function MovieCard({ data }) {
               </div>
               <div className="movieCardDesc">
                 <div className="movieTitle">
-                  <h1>{even.original_title}</h1>
+                  <h1>{even.title}</h1>
                 </div>
                 <div className="movieP">
                   <p>{even.release_date}</p>

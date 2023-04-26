@@ -31,7 +31,7 @@ export default function Header({ token, handleToken }) {
                 className="search"
                 value={search}
                 type="text"
-                placeholder="🔎   Search"
+                placeholder="🔎   Rechercher..."
                 onChange={(event) => {
                   setSearch(event.target.value);
                 }}
@@ -55,16 +55,16 @@ export default function Header({ token, handleToken }) {
                     navigate("/");
                   }}
                 >
-                  Disconnect
+                  Se déconnecter
                 </p>
               </div>
             ) : (
               <div className="logandsign">
                 <Link to="/user/signup">
-                  <p>Sign in</p>
+                  <p className="signinbutt">S'enregister</p>
                 </Link>
                 <Link to="/user/login">
-                  <p>Login</p>
+                  <p>Se connecter</p>
                 </Link>
               </div>
             )}
@@ -73,14 +73,15 @@ export default function Header({ token, handleToken }) {
 
         <div className="navBar">
           {/* on va mettre dans cette div la navbar */}
+          <span>Films</span>
           <Link to="/">
-            <p>News</p>
+            <p>Du moment</p>
           </Link>
           {/* il faudra link vers la page cinéma, séries... */}
           <Link to="/movie/upcoming">
-            <p>Upcoming</p>
+            <p>A venir</p>
           </Link>
-          <span>Sort by:</span>
+          {/* <span>Sort by:</span> */}
           <Link to="/averageasc">
             <p>
               <FontAwesomeIcon icon="arrow-up-wide-short" />
@@ -92,7 +93,7 @@ export default function Header({ token, handleToken }) {
             </p>
           </Link>
           <Link to="/person/popular">
-            <p>Popular</p>
+            <p>Artistes</p>
           </Link>
           {token && (
             <Link to="/favourites">

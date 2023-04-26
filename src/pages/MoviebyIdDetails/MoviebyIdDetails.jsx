@@ -170,7 +170,7 @@ export default function MoviebyIdDetails({ token }) {
         <div className="test">
           <div className="firstColumn">
             <div className="h1andicon">
-              <h1>{dataId.original_title}</h1>
+              <h1>{dataId.title}</h1>
               {!isLoading4 && (
                 <div className="playButtonModal">
                   <ModalVideo
@@ -280,20 +280,20 @@ export default function MoviebyIdDetails({ token }) {
 
             <div className="divers">
               <div className="langage">
-                <span>Production companies</span>
+                <span>Sociétés de production</span>
                 {dataId.production_companies.map((even) => {
                   return <div key={uuid4()}>{even.name}</div>;
                 })}
               </div>
               <div className="langage">
-                <span>Languages:</span>
+                <span>Langues:</span>
                 {dataId.spoken_languages.map((even) => {
                   //ne mettre que le premier language d'origine--
                   return <div key={uuid4()}> {even.name}</div>;
                 })}
               </div>
               <div className="langage">
-                <span>Popularity:</span>
+                <span>Popularité:</span>
                 <div>{dataId.popularity}</div>
               </div>
             </div>
@@ -313,7 +313,7 @@ export default function MoviebyIdDetails({ token }) {
         </div>
       </div>
       <div className="casth2">
-        <h2>Casting</h2>
+        <h2>Distribution</h2>
       </div>
       {/* test casting------------------ */}
       <div className="castContainer"></div>
@@ -359,7 +359,7 @@ export default function MoviebyIdDetails({ token }) {
           ) : (
             <div className="carousselImg">
               <div>
-                <h2>Wallpapers</h2>
+                <h2>Images du film</h2>
               </div>
               <Carousel useKeyboardArrows={true}>
                 {dataImages.backdrops.map((URL, index) => (
@@ -427,7 +427,7 @@ export default function MoviebyIdDetails({ token }) {
           <div>chargement</div>
         ) : (
           <div className="similarMovieContainer">
-            <h1>Similar movies</h1>
+            <h1>Films similaires</h1>
             <div className="similarCarousel">
               <MoviesimilarCard data={dataIdSimilar} />
             </div>

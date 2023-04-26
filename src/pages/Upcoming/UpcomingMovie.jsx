@@ -45,9 +45,9 @@ export default function UpcomingMovie() {
       <div className="mainContainerMinUpColumn">
         <h2>
           {" "}
-          Upcoming movie:{" "}
+          Films à venir:{" "}
           <span className="span">
-            from <span className="span">{dataUp.dates.minimum}</span> to{" "}
+            du <span className="span">{dataUp.dates.minimum}</span> au{" "}
             <span className="span">{dataUp.dates.maximum}</span>
           </span>
         </h2>
