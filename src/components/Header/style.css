@@ -142,9 +142,6 @@
 
 /* =====media queries=========650px==============================================================*/
 @media (max-width: 650px) {
-  .headerContainer {
-    background-color: lightsalmon;
-  }
   .search {
     display: none;
   }
