@@ -80,7 +80,7 @@ export default function CastByIdDetails() {
         //à voir pour filtrer les films par pafge, date de sortie, notes...
         const response = await axios.get(
           // `https://api.themoviedb.org/3/movie/${id}?api_key=ec1d52844155d66f88c3111938c459f7`
-          `http://localhost:3000/cast/${id}/movie`
+          `https://site--tmdb-back--zqfvjrr4byql.code.run/cast/${id}/movie`
         );
         setDataCastIdMovie(response.data);
         console.log(response.data, "response cast id movie---");
