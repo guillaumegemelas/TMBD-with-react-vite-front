@@ -24,7 +24,7 @@ export default function Moviedesc() {
         //à voir pour filtrer les films par pafge, date de sortie, notes...
         const response = await axios.get(
           //test avec backend ok!
-          `http://localhost:3000/averagedesc?page=${page}`
+          `https://site--tmdb-back--zqfvjrr4byql.code.run/averagedesc?page=${page}`
         );
         setData(response.data);
         console.log(response.data, "data page movieasc ++++++++++++");

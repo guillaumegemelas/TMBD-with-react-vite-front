@@ -24,7 +24,7 @@ export default function Popular() {
         const response = await axios.get(
           //   "https://api.themoviedb.org/3/discover/movie?api_key=ec1d52844155d66f88c3111938c459f7"
           //test avec backend ok!
-          `http://localhost:3000/person/popular?page=${page}`
+          `https://site--tmdb-back--zqfvjrr4byql.code.run/person/popular?page=${page}`
         );
         setDataPop(response.data);
         console.log(response.data, "data person popular ++++++++++++");

@@ -24,12 +24,15 @@ export default function Favourites({ token }) {
   useEffect(() => {
     const fetchFavourites = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/favourites`, {
-          //ajout bearer token pour authentification avecmiddleware
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        });
+        const response = await axios.get(
+          `https://site--tmdb-back--zqfvjrr4byql.code.run/favourites`,
+          {
+            //ajout bearer token pour authentification avecmiddleware
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
         setMovies(response.data);
         console.log(response.data, "response data favourites ***********");
         setIsloading(false);
@@ -63,7 +66,7 @@ export default function Favourites({ token }) {
                         const response = await axios.delete(
                           // `http://localhost:3000/favourites/delete/${event._id}`,
                           //déploiement Northflanck
-                          `http://localhost:3000/favourites/delete/${even._id}`,
+                          `https://site--tmdb-back--zqfvjrr4byql.code.run/favourites/delete/${even._id}`,
                           {
                             headers: {
                               Authorization: `Bearer ${token}`,

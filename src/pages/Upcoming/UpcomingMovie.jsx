@@ -25,7 +25,7 @@ export default function UpcomingMovie() {
       try {
         //à voir pour filtrer les films par pafge, date de sortie, notes...
         const response = await axios.get(
-          `http://localhost:3000/upcoming?page=${page}`
+          `https://site--tmdb-back--zqfvjrr4byql.code.run/upcoming?page=${page}`
         );
         setDataUp(response.data);
         console.log(response.data, "response initiale upcoming++++");

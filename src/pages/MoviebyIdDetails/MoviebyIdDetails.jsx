@@ -68,7 +68,7 @@ export default function MoviebyIdDetails({ token }) {
         //à voir pour filtrer les films par pafge, date de sortie, notes...
         const response = await axios.get(
           // `https://api.themoviedb.org/3/movie/${id}?api_key=ec1d52844155d66f88c3111938c459f7`
-          `http://localhost:3000/movie/${id}`
+          `https://site--tmdb-back--zqfvjrr4byql.code.run/movie/${id}`
         );
         setDataId(response.data);
         console.log(response.data, "response initiale++++");
@@ -87,7 +87,7 @@ export default function MoviebyIdDetails({ token }) {
         //à voir pour filtrer les films par pafge, date de sortie, notes...
         const response = await axios.get(
           // `https://api.themoviedb.org/3/movie/${id}?api_key=ec1d52844155d66f88c3111938c459f7`
-          `http://localhost:3000/movie/${id}/similar`
+          `https://site--tmdb-back--zqfvjrr4byql.code.run/movie/${id}/similar`
         );
         setDataIdSimilar(response.data);
         // console.log(response.data, "response data similar-----------");
@@ -106,7 +106,7 @@ export default function MoviebyIdDetails({ token }) {
       try {
         const response = await axios.get(
           // `https://api.themoviedb.org/3/movie/${id}?api_key=ec1d52844155d66f88c3111938c459f7`
-          `http://localhost:3000/movie/${id}/images`
+          `https://site--tmdb-back--zqfvjrr4byql.code.run/movie/${id}/images`
         );
         setDataImages(response.data);
         console.log(response.data, "response data images-----------");
@@ -125,7 +125,7 @@ export default function MoviebyIdDetails({ token }) {
       try {
         const response = await axios.get(
           // `https://api.themoviedb.org/3/movie/${id}?api_key=ec1d52844155d66f88c3111938c459f7`
-          `http://localhost:3000/movie/${id}/credits`
+          `https://site--tmdb-back--zqfvjrr4byql.code.run/movie/${id}/credits`
         );
         setDataCast(response.data);
         // console.log(response.data, "response data cast-----------");
@@ -144,7 +144,7 @@ export default function MoviebyIdDetails({ token }) {
       try {
         const response = await axios.get(
           // `https://api.themoviedb.org/3/movie/${id}?api_key=ec1d52844155d66f88c3111938c459f7`
-          `http://localhost:3000/movie/${id}/videos`
+          `https://site--tmdb-back--zqfvjrr4byql.code.run/movie/${id}/videos`
         );
         setDataVideos(response.data);
         console.log(response.data, "response data videos-----------");
@@ -199,7 +199,7 @@ export default function MoviebyIdDetails({ token }) {
                     if (token) {
                       try {
                         const response = await axios.post(
-                          "http://localhost:3000/addfavourites",
+                          "https://site--tmdb-back--zqfvjrr4byql.code.run/addfavourites",
                           {
                             name: dataId.original_title,
                             image: `${"https://image.tmdb.org/t/p/w500"}${

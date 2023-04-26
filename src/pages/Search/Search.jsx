@@ -28,7 +28,7 @@ export default function Search() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3000/search?query=${search}`
+          `https://site--tmdb-back--zqfvjrr4byql.code.run/search?query=${search}`
         );
 
         setData(response.data);

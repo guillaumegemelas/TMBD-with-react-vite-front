@@ -41,7 +41,7 @@ export default function Signup({ handleToken }) {
       //------------------------------------------------------------------
       //vers locahost3000
       const response = await axios.post(
-        "http://localhost:3000/user/signup",
+        "https://site--tmdb-back--zqfvjrr4byql.code.run/user/signup",
         formData
       );
       if (response.data.token) {
