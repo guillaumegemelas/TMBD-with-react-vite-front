@@ -19,6 +19,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
 // import uuid4 from "uuid4";
 
+//test infinite scroll------------------------
+// import InfiniteScroll from "react-infinite-scroller";
+//--------------------------------------------
+
 import MovieCard from "../../components/MovieCard/MovieCard";
 
 export default function Home() {
@@ -42,15 +46,16 @@ export default function Home() {
           `https://site--tmdb-back--zqfvjrr4byql.code.run/home?page=${page}`
         );
         setData(response.data);
+        // setPage(page + 1);
         console.log(response.data, "data page home ++++++++++++");
         setIsLoading(false);
       } catch (error) {
         console.log(error.message, "error message 🤒");
       }
     };
-
     fetchData();
   }, [page]);
+
   //penser à page dans le tableau dedépendances pour actualiser la page choisie
 
   return isLoading ? (
@@ -62,7 +67,18 @@ export default function Home() {
         <h2>Films du moment</h2>
 
         <div>
-          <MovieCard data={data} />
+          {/* <InfiniteScroll
+            pageStart={0}
+            loadMore={fetchData}
+            hasMore={true}
+            loader={
+              <div className="loader" key={0}>
+                Loading ...
+              </div>
+            }
+          > */}
+          <MovieCard data={data} fetchData={fetchData} />
+          {/* </InfiniteScroll> */}
         </div>
         <div className="pagination">
           <FontAwesomeIcon icon="file" />

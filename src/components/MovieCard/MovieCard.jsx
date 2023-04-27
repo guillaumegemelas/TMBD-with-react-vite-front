@@ -25,7 +25,7 @@ export default function MovieCard({ data }) {
                   />
                 ) : (
                   <img
-                    //   il faut concaténer l'adresse des images avec la taille
+                    //   il faut concaténer l'adresse des images avec la taille--
                     src={image}
                     alt="imgsimilarbis"
                   />
