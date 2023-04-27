@@ -39,7 +39,7 @@
 .firstColumn {
   margin-top: 50px;
   height: 100%;
-  width: 55vw;
+  min-width: 55vw;
   /* background-color: #d2d532; */
 }
 
