@@ -21,6 +21,11 @@ export default function Favourites({ token }) {
   //     window.scrollTo(0, 0);
   //   }, []);
 
+  //useEffect pour se positionner en haut de la page en venant de charachter page
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   useEffect(() => {
     const fetchFavourites = async () => {
       try {

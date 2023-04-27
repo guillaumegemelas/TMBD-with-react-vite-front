@@ -20,6 +20,11 @@ export default function UpcomingMovie() {
   //le système de pagination
   const [page, setPage] = useState(1);
 
+  //useEffect pour se positionner en haut de la page en venant de charachter page
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   useEffect(() => {
     const fetchData = async () => {
       try {
