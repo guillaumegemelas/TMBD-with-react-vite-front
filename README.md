@@ -20,7 +20,7 @@ This project (Front-End) is deployed with Netlify. You can find it: https://tmdb
 
 You arrive directly on the home page and you are not yet logged
 
-<img width="1000" alt="accueil" src="https://user-images.githubusercontent.com/121306549/234822413-6a0567ae-1bb0-4b58-9b6c-97c2d6053786.jpg">
+<img width="1000" alt="accueil" src="https://user-images.githubusercontent.com/121306549/234829988-d563594d-e0a3-41c1-8631-6b65854c3f66.jpg">
 
 You can click on "react" logo to be redirected to the main page(even if you click on the navbar, "Du moment"). A pagination system has been put in place to allow you to navigate through the long list of movies.
 
