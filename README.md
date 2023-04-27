@@ -69,16 +69,6 @@ Once you've done it, you can find your username and your avatar on right of the 
 
 You can now add a movie to favorites. On the favorite page, you can also remove a favorite from the list by clicking on the "trash can" icon.
 
-<img width="1000" alt="collection" src="https://user-images.githubusercontent.com/121306549/229080688-77c41816-94ef-4664-b36d-b68da47684de.png">
-
-<img width="1000" alt="reviews" src="https://user-images.githubusercontent.com/121306549/229080926-73c510a9-48b7-4552-9171-e461f449e441.png">
-
-On the specific game page, you can see rating for the game
-
-<img width="1708" alt="notes" src="https://user-images.githubusercontent.com/121306549/229081123-11e1c401-ebf3-4fe5-8b12-bbfb43b0d086.png">
-
-Ratings are ranked from the highest-rated to the lowest-rated. It is in this section that you can increase or decrease a review by one point.
-
-<img width="1708" alt="notes" src="https://user-images.githubusercontent.com/121306549/229081123-11e1c401-ebf3-4fe5-8b12-bbfb43b0d086.png">
+<img width="1000" alt="collection" src="https://user-images.githubusercontent.com/121306549/234831030-5605eb5d-bafd-48e6-b7ea-08afaf02101b.jpg">
 
 If you want to log out, just click on `Disconnect`
