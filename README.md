@@ -1,6 +1,6 @@
 # Gamepad web
 
-This project was bootstrapped with [Vite]
+This project was bootstrapped with Vite
 
 ## Let start!
 
@@ -39,22 +39,24 @@ On "Du moment", "A venir", "most and less popular" pages, you can pick up a movi
 
 ### First part of the page
 
-<img width="1000" alt="search" src="https://user-images.githubusercontent.com/121306549/234827076-33db66f6-b563-4651-8e91-3528bf408c9f.jpg">
-
 A lot of information such as the title, the release date, the languages, the production companies, the average rating of critics, an overview of the movie, and more.
 
 Near the title, you can click on "Bande-annonce" to get the official trailer of the movie.
 You even have an heart icon. You can add a movie on your favourites by clicking on it.
+<img width="1000" alt="search" src="https://user-images.githubusercontent.com/121306549/234827076-33db66f6-b563-4651-8e91-3528bf408c9f.jpg">
 
 ### Second part of the page
 
 You have the casting of the movie. You can click on a cast card to get more information on the character (on a special page where you can fin the biography - english and french - and the movie in which the charcter played. By cloicking on a movie, you will be redirectly to the specific page of the movie)
 
+<img width="1000" alt="search" src="https://user-images.githubusercontent.com/121306549/234828238-f9eda1cf-fcb4-45e6-a36e-e496d63db772.jpg">
+
 ### Third part of the page
 
-You have
+You have wallpapers of the movie, and a new trailer (different from the official)
+You also have similar movies
 
-<img width="1000" alt="gamepage" src="https://user-images.githubusercontent.com/121306549/229079933-8f117b40-9a8c-4755-9465-769664e0a0b2.png">
+<img width="1000" alt="gamepage" src="https://user-images.githubusercontent.com/121306549/234829012-2d626d38-ac40-46f8-a438-ad1d8d63ebc4.jpg">
 
 If you want to log or create an account, please click on the top right of the page on login or connect button `Login` or `Sign up`
 
