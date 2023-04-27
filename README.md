@@ -1,6 +1,6 @@
 # Gamepad web
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Vite]
 
 ## Let start!
 
@@ -10,17 +10,17 @@ to reinstall node_modules, please run:
 
 In the project directory, you can run:
 
-### `yarn start`
+### `yarn dev`
 
 ## Deployment
 
-This project (Front-End) is deployed with Netlify. You can find it: https://gamepad-gems.netlify.app
+This project (Front-End) is deployed with Netlify. You can find it: https://tmdb-gui-gems.netlify.app
 
 ## How does it works
 
 You arrive directly on the home page and you are not yet logged
 
-<img width="1000" alt="accueil" src="https://user-images.githubusercontent.com/121306549/229076868-faa211c8-4605-4e2d-9b95-449b48399420.png">
+<img width="1000" alt="accueil" src="https://user-images.githubusercontent.com/121306549/234822413-6a0567ae-1bb0-4b58-9b6c-97c2d6053786.jpg">
 
 You can click on the left icon near "Kratos 🙂" and you will then be redirected to the main page where a search bar is located. A pagination system has been put in place to allow you to navigate through the long list of games.
 
