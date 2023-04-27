@@ -127,7 +127,7 @@
   .movieCard {
     display: flex;
     /* border: 9px solid grey; */
-    background-color: #fff;
+    /* background-color: red; */
     margin: 15px;
     width: 30vw;
     height: 350px;
@@ -135,9 +135,15 @@
     box-shadow: 1px 1px 15px rgb(69, 68, 68);
   }
   .movieCardImg img {
-    width: 100%;
+    max-width: 100%;
+    /* object-fit: cover; */
     height: 200px;
     border-top-right-radius: 9px;
     border-top-left-radius: 9px;
+  }
+  .movieTitle {
+    /* background-color: yellow; */
+    height: 55px;
+    overflow-y: hidden;
   }
 }
