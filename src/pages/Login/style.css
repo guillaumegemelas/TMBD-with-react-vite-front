@@ -50,6 +50,36 @@
   color: #5bd7f6;
 }
 /* =====media queries=========650px==============================================================*/
+
+@media (max-width: 1150px) {
+  .formSign1 input {
+    width: 80%;
+    height: 40px;
+    border: none;
+    /* border-radius: 5px; */
+    font-family: "Georama", sans-serif;
+    color: black;
+    font-size: 15px;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    background-color: transparent;
+    border-bottom: 1px solid #05b4e1;
+  }
+  .formSign1 button {
+    height: 40px;
+    width: 80%;
+    font-size: 16px;
+    padding-left: 15px;
+    border: none;
+    color: #042541;
+    font-family: "Georama", sans-serif;
+    background: linear-gradient(45deg, #77c8af, #5bd7f6);
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+}
+
 @media (max-width: 650px) {
   .signupContainer {
     display: flex;
