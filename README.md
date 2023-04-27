@@ -22,23 +22,37 @@ You arrive directly on the home page and you are not yet logged
 
 <img width="1000" alt="accueil" src="https://user-images.githubusercontent.com/121306549/234822413-6a0567ae-1bb0-4b58-9b6c-97c2d6053786.jpg">
 
-You can click on the left icon near "Kratos 🙂" and you will then be redirected to the main page where a search bar is located. A pagination system has been put in place to allow you to navigate through the long list of games.
+You can click on "react" logo to be redirected to the main page(even if you click on the navbar, "Du moment"). A pagination system has been put in place to allow you to navigate through the long list of movies.
 
-<img width="1000" alt="search" src="https://user-images.githubusercontent.com/121306549/229077434-a947cfa0-417f-4215-8e35-db8288248603.png">
+<img width="1000" alt="search" src="https://user-images.githubusercontent.com/121306549/234827668-a7d7f677-91f1-42cd-9f9f-88ee067edad0.jpg">
 
-You can pick up a game, for instance Tomb raider (2013) (click on the picture on the main page) and you will go the the specific game page on which you can find
+On the Header, you have a searchbar to find a movie (you can type as many characters as you want)
+You even have a navbar where you can find
+
+- New movies ("Du moment")
+- Upcoming movies ("A venir")
+- Most popular movie (bottom arrow icon)
+- less popular movie (top arrow icon)
+- Most popular Actors ("Populaires")
+
+On "Du moment", "A venir", "most and less popular" pages, you can pick up a movie, for instance Super Mario Bros (click on the picture on the main page) and you will go the the specific movie page on which you can find
 
 ### First part of the page
 
-A lot of information such as the platform on which the game was released, the type of game, the average rating of critics, a summary of the game, and more.
+<img width="1000" alt="search" src="https://user-images.githubusercontent.com/121306549/234827076-33db66f6-b563-4651-8e91-3528bf408c9f.jpg">
+
+A lot of information such as the title, the release date, the languages, the production companies, the average rating of critics, an overview of the movie, and more.
+
+Near the title, you can click on "Bande-annonce" to get the official trailer of the movie.
+You even have an heart icon. You can add a movie on your favourites by clicking on it.
 
 ### Second part of the page
 
-You have 5 games similar to the chosen game. You can click on them to get more details.
+You have the casting of the movie. You can click on a cast card to get more information on the character (on a special page where you can fin the biography - english and french - and the movie in which the charcter played. By cloicking on a movie, you will be redirectly to the specific page of the movie)
 
 ### Third part of the page
 
-You have reviews of the game left by connected people, but you cannot see the ratings if you are not connected. You will also need to log in or create an account if you don't have one to leave a comment or rating on a game. The same goes if you want to add a game to your favorites.
+You have
 
 <img width="1000" alt="gamepage" src="https://user-images.githubusercontent.com/121306549/229079933-8f117b40-9a8c-4755-9465-769664e0a0b2.png">
 
