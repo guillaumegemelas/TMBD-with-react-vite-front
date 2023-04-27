@@ -39,14 +39,10 @@ export default function Home() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        //à voir pour filtrer les films par pafge, date de sortie, notes...
         const response = await axios.get(
-          //   "https://api.themoviedb.org/3/discover/movie?api_key=ec1d52844155d66f88c3111938c459f7"
-          //test avec backend ok!
           `https://site--tmdb-back--zqfvjrr4byql.code.run/home?page=${page}`
         );
         setData(response.data);
-        // setPage(page + 1);
         console.log(response.data, "data page home ++++++++++++");
         setIsLoading(false);
       } catch (error) {
@@ -55,6 +51,27 @@ export default function Home() {
     };
     fetchData();
   }, [page]);
+
+  // Testscrollinfinite---------------------------------------
+  // const fetchData = async () => {
+  //   try {
+  //     const response = await axios.get(
+  //       `https://site--tmdb-back--zqfvjrr4byql.code.run/home?page=${page}`
+  //     );
+  //     setData(response.data);
+  //     // setPage(page + 1);
+  //     console.log(response.data, "data page home ++++++++++++");
+  //     setIsLoading(false);
+  //   } catch (error) {
+  //     console.log(error.message, "error message 🤒");
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   fetchData();
+  // }, []);
+
+  // Testscrollinfinite---------------------------------------
 
   //penser à page dans le tableau dedépendances pour actualiser la page choisie
 
@@ -66,7 +83,7 @@ export default function Home() {
       <div className="mainContainerMinColumn">
         <h2>Films du moment</h2>
 
-        <div>
+        <div className="containerToOverflow">
           {/* <InfiniteScroll
             pageStart={0}
             loadMore={fetchData}

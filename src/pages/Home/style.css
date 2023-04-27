@@ -7,6 +7,7 @@
   background-color: #a0e5f7;
   background: linear-gradient(45deg, #a0e5f7, #fff);
   min-height: 100vh;
+  overflow: auto;
 }
 
 .mainContainerMinColumn {
@@ -16,6 +17,14 @@
   margin: 0 auto;
   /* background-color: lightgreen; */
 }
+
+/*---------------------------------*/
+/* .containerToOverflow {
+  background-color: #fff;
+  overflow: auto;
+  height: auto;
+} */
+/*---------------------------------*/
 
 .secondContainer {
   /* background-color: lightsalmon; */

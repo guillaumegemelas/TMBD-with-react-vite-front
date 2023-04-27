@@ -39,7 +39,8 @@
 .firstColumn {
   margin-top: 50px;
   height: 100%;
-  /* background-color: #d2d532; */
+  width: 55vw;
+  background-color: #d2d532;
 }
 
 .firstColumn span {
@@ -366,6 +367,7 @@
   .firstColumn {
     margin-top: 50px;
     height: 100%;
+    width: 80vw;
     /* background-color: #d2d532; */
   }
   .h1andicon {
