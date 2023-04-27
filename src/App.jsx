@@ -70,10 +70,14 @@ function App() {
       Cookies.remove("token");
     }
   };
+
   return (
     <div>
       <Router>
         {/* le hader apparaitra sur toutes les pages */}
+        {/* {window.location.pathname !== "/" && (
+          <Header token={token} handleToken={handleToken} />
+        )} */}
         <Header token={token} handleToken={handleToken} />
         <Routes>
           <Route path="/" element={<Homefirst />} />
@@ -100,6 +104,7 @@ function App() {
           <Route path="/favourites" element={<Favourites token={token} />} />
           <Route path="/cast/:id" element={<CastByIdDetails />} />
         </Routes>
+        {/* {window.location.pathname !== "/" && <Footer />} */}
         <Footer />
       </Router>
     </div>

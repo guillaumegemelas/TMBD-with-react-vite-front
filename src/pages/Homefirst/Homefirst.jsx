@@ -1,4 +1,8 @@
 import { React } from "react";
+import { Link } from "react-router-dom";
+
+//test import logo film
+import logomovie from "../../assets/react.svg";
 
 //import style.css
 import "../Homefirst/style.css";
@@ -17,8 +21,14 @@ export default function Homefirst() {
   return (
     <div className="mainContainerMainPage">
       {/* test react player---------------------------------- */}
-
-      <img src={picture} alt="mainImg" />
+      {/* <div className="background">
+        <img src={picture} alt="mainImg" />
+      </div> */}
+      <Link to="/home">
+        <div className="logomovie">
+          <img src={logomovie} alt="logoImgfirst" />
+        </div>
+      </Link>
     </div>
   );
 }

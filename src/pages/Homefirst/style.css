@@ -1,13 +1,59 @@
 /*HomePage----------------------------*/
 .mainContainerMainPage {
   display: flex;
+  justify-content: center;
+  align-items: center;
   /* padding pour que le container ne soit pas caché par le header */
-  padding-top: 80px;
+  /* padding-top: 80px; */
   flex-direction: column;
   height: 100vh;
+  background-image: url("../../img/mosaic.jpg");
+  background-position: center;
+  background-size: cover;
 }
 .mainContainerMainPage img {
   width: 100%;
   object-fit: cover;
   height: 100vh;
+}
+
+.logomovie img {
+  height: 150px;
+  width: 150px;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+  object-fit: contain;
+}
+.logomovie:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logomovie.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .logomovie {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+/* =====media queries=========650px==============================================================*/
+@media (max-width: 650px) {
+  .logomovie img {
+    height: 80px;
+    width: 80px;
+    padding: 1.5em;
+    will-change: filter;
+    transition: filter 300ms;
+    object-fit: contain;
+  }
 }
