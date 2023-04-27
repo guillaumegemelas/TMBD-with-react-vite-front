@@ -77,7 +77,7 @@ export default function Home() {
               </div>
             }
           > */}
-          <MovieCard data={data} fetchData={fetchData} />
+          <MovieCard data={data} />
           {/* </InfiniteScroll> */}
         </div>
         <div className="pagination">
