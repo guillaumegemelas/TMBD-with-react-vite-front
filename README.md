@@ -63,7 +63,11 @@ If you want to log or create an account, please click on the top right of the pa
 
 <img width="1000" alt="login" src="https://user-images.githubusercontent.com/121306549/234829668-6cd25d01-a034-476d-bf11-655698a7fd25.jpg">
 
-Once you've done it, you can add a game to favorites or leave a review. On the favorite page, you can also remove a favorite from the list by clicking on the "trash can" icon.
+Once you've done it, you can find your username and your avatar on right of the header
+
+<img width="1000" alt="collection" src="https://user-images.githubusercontent.com/121306549/234830460-3a541edc-8965-47b8-b68d-1368bd149f18.jpg">
+
+You can now add a movie to favorites. On the favorite page, you can also remove a favorite from the list by clicking on the "trash can" icon.
 
 <img width="1000" alt="collection" src="https://user-images.githubusercontent.com/121306549/229080688-77c41816-94ef-4664-b36d-b68da47684de.png">
 
