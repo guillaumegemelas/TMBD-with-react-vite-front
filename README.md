@@ -1,4 +1,4 @@
-# Gamepad web
+# TMDB web
 
 This project was bootstrapped with Vite
 
@@ -43,6 +43,7 @@ A lot of information such as the title, the release date, the languages, the pro
 
 Near the title, you can click on "Bande-annonce" to get the official trailer of the movie.
 You even have an heart icon. You can add a movie on your favourites by clicking on it.
+
 <img width="1000" alt="search" src="https://user-images.githubusercontent.com/121306549/234827076-33db66f6-b563-4651-8e91-3528bf408c9f.jpg">
 
 ### Second part of the page
@@ -58,9 +59,9 @@ You also have similar movies
 
 <img width="1000" alt="gamepage" src="https://user-images.githubusercontent.com/121306549/234829012-2d626d38-ac40-46f8-a438-ad1d8d63ebc4.jpg">
 
-If you want to log or create an account, please click on the top right of the page on login or connect button `Login` or `Sign up`
+If you want to log or create an account, please click on the top right of the page on login or connect button `Se connecter` or `S'enregistrer`
 
-<img width="1000" alt="login" src="https://user-images.githubusercontent.com/121306549/229080157-7b1c186d-928f-4fe4-b4d2-cbe9446e4fe7.png">
+<img width="1000" alt="login" src="https://user-images.githubusercontent.com/121306549/234829668-6cd25d01-a034-476d-bf11-655698a7fd25.jpg">
 
 Once you've done it, you can add a game to favorites or leave a review. On the favorite page, you can also remove a favorite from the list by clicking on the "trash can" icon.
 
