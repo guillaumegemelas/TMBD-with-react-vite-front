@@ -159,13 +159,9 @@ export default function MoviebyIdDetails({ token }) {
   }, []);
 
   return isLoading ? (
-    <div>chargement</div>
+    <div className="mainContainer">chargement</div>
   ) : (
     <div className="containerIdMovie">
-      {/* test modal video   --------------------------- */}
-
-      {/*fin test modal video   --------------------------- */}
-
       <div className="mainContainerIdMinColumn">
         <div className="test">
           <div className="firstColumn">
