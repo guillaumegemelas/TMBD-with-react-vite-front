@@ -206,6 +206,9 @@
 
 .castCarouselImg {
   display: flex;
+  /*test position sticky: la div reste sur l'ecran meme lors du scroll*/
+  /* position: sticky;
+  top: 100px; */
   flex-direction: row;
   width: 80vw;
   height: auto;

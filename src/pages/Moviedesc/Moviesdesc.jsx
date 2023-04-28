@@ -44,7 +44,7 @@ export default function Moviedesc() {
   //penser à page dans le tableau dedépendances pour actualiser la page choisie
 
   return isLoading ? (
-    <div>chargement</div>
+    <div className="mainContainer">chargement</div>
   ) : (
     <div className="mainContainer">
       <div className="mainContainerMinColumn">
