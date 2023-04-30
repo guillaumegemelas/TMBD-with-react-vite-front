@@ -140,7 +140,7 @@ export default function Signup({ handleToken }) {
             placeholder="Confirmer le mot de passe"
             onChange={(event) => setPasswordConf(event.target.value)}
           />
-          {/* ------------------------------------------------------------------------- */}
+          {/* ---------------------------------------------------------------------------- */}
           <label htmlFor="file" className="label-file">
             <span>
               {" "}
