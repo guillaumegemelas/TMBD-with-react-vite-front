@@ -46,6 +46,10 @@ export default function Header({ token, handleToken }) {
     fetchUser();
   }, []);
 
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
+  //   navigate("/movie/upcoming");
+  // };
   return (
     <div>
       {isLoading ? (
@@ -61,6 +65,7 @@ export default function Header({ token, handleToken }) {
                   <img src={logo} alt="logo" />
                 </div>
                 <div className="headerSearchBar">
+                  {/* <form onSubmit={handleSubmit}> */}
                   <input
                     className="search"
                     value={search}
@@ -79,6 +84,7 @@ export default function Header({ token, handleToken }) {
                       setSearch(event.target.value);
                     }}
                   />
+                  {/* </form> */}
                 </div>
                 <div className="buttonGo">
                   <Link to={`/search?${search}`}>
