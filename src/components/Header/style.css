@@ -35,6 +35,9 @@
 .logo img {
   width: 150px;
 }
+.form button {
+  display: none;
+}
 .logo {
   display: flex;
   justify-content: center;

@@ -46,10 +46,10 @@ export default function Header({ token, handleToken }) {
     fetchUser();
   }, []);
 
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
-  //   navigate("/movie/upcoming");
-  // };
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    navigate(`/search?${search}`);
+  };
   return (
     <div>
       {isLoading ? (
@@ -63,29 +63,30 @@ export default function Header({ token, handleToken }) {
                 {" "}
                 <div className="logo">
                   <img src={logo} alt="logo" />
-                </div>
-                <div className="headerSearchBar">
-                  {/* <form onSubmit={handleSubmit}> */}
-                  <input
-                    className="search"
-                    value={search}
-                    type="text"
-                    placeholder="🔎   Rechercher..."
-                    onChange={(event) => {
-                      setSearch(event.target.value);
-                    }}
-                  />
-                  <input
-                    className="searchsmallscreen"
-                    value={search}
-                    type="text"
-                    placeholder="🔎 ..."
-                    onChange={(event) => {
-                      setSearch(event.target.value);
-                    }}
-                  />
-                  {/* </form> */}
-                </div>
+                </div>{" "}
+                <form className="form" onSubmit={handleSubmit}>
+                  <div className="headerSearchBar">
+                    <input
+                      className="search"
+                      value={search}
+                      type="text"
+                      placeholder="🔎   Rechercher..."
+                      onChange={(event) => {
+                        setSearch(event.target.value);
+                      }}
+                    />
+                    <input
+                      className="searchsmallscreen"
+                      value={search}
+                      type="text"
+                      placeholder="🔎 ..."
+                      onChange={(event) => {
+                        setSearch(event.target.value);
+                      }}
+                    />
+                  </div>{" "}
+                  <button type="onsubmit"></button>
+                </form>
                 <div className="buttonGo">
                   <Link to={`/search?${search}`}>
                     <p>GO</p>
