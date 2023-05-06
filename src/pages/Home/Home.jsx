@@ -52,7 +52,7 @@ export default function Home() {
     fetchData();
   }, [page]);
 
-  // Testscrollinfinite-------------------------------------------------
+  // Testscrollinfinite----------------------------------------------------
   // const fetchData = async () => {
   //   try {
   //     const response = await axios.get(
