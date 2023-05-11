@@ -91,6 +91,9 @@ export default function Login({ handleToken }) {
             placeholder="Email"
             onChange={(event) => setEmail(event.target.value)}
           />
+          {/* si on veut rajouter un input de type date pour enregistrer la date de naissance par exemple
+          on pourrait étendre l'idée à laisser entrer sur le site que les personnes qui ont 18 ans par exemple */}
+          {/* <input type="date" /> */}
           <input
             id="password"
             value={password}
