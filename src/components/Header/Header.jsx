@@ -26,7 +26,6 @@ export default function Header({ token, handleToken }) {
     const fetchUser = async () => {
       try {
         // const response = await axios.get("http://localhost:3000/user");
-
         //requete Northflanck au lieu de localhost
         const response = await axios.get(
           "https://site--tmdb-back--zqfvjrr4byql.code.run/user"
