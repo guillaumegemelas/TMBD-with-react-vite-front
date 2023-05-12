@@ -79,7 +79,7 @@ export default function Home() {
     <div className="mainContainer"></div>
   ) : (
     <div className="mainContainer">
-      {/* test react player---------------------------------- */}
+      {/* test react player------------------------------------- */}
       <div className="mainContainerMinColumn">
         <h2>Films du moment</h2>
 
