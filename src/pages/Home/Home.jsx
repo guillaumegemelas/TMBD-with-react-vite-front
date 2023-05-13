@@ -36,6 +36,11 @@ export default function Home() {
     window.scrollTo(0, 0);
   }, []);
 
+  //test changement titre page navigateur
+  useEffect(() => {
+    document.title = `TMDB New movies`;
+  }, []);
+
   useEffect(() => {
     const fetchData = async () => {
       try {

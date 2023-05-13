@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import {
   useNavigate,
@@ -21,6 +21,11 @@ export default function Login({ handleToken }) {
 
   //pour naviguer vers la page Home--
   const navigate = useNavigate();
+
+  //test changement titre page navigateur
+  useEffect(() => {
+    document.title = `TMDB Login`;
+  }, []);
 
   //décalaration de fonction pour requete vers Backend
   const handleLogin = async () => {

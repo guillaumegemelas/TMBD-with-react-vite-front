@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import {
   useNavigate,
@@ -21,6 +21,11 @@ export default function Signup({ handleToken }) {
   const [errorMessage, setErrorMessage] = useState("");
 
   const navigate = useNavigate();
+
+  //test changement titre page navigateur
+  useEffect(() => {
+    document.title = `TMDB Sign up`;
+  }, []);
 
   // formdata pour cloudinary---------------------------------------------
   const [picture, setPicture] = useState();

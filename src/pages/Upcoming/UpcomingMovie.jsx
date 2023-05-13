@@ -24,6 +24,10 @@ export default function UpcomingMovie() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+  //test changement titre page navigateur
+  useEffect(() => {
+    document.title = `TMDB Upcoming movies`;
+  }, []);
 
   useEffect(() => {
     const fetchData = async () => {

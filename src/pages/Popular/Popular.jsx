@@ -22,6 +22,11 @@ export default function Popular() {
     window.scrollTo(0, 0);
   }, []);
 
+  //test changement titre page navigateur
+  useEffect(() => {
+    document.title = `TMDB Popular`;
+  }, []);
+
   useEffect(() => {
     const fetchData = async () => {
       try {

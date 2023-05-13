@@ -72,6 +72,11 @@ export default function MoviebyIdDetails({ token }) {
         );
         setDataId(response.data);
         console.log(response.data, "response initiale++++");
+
+        //test changement titre page navigateur-----------
+        document.title = `TMDB ▷ ${response.data.title}`;
+        //------------------------------------------------
+
         setIsLoading(false);
       } catch (error) {
         console.log(error.message, "error message 🤒");

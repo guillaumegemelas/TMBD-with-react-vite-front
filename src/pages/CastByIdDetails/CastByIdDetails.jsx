@@ -8,7 +8,7 @@ import image from "../../img/movieimg.jpg";
 
 import axios from "axios";
 import uuid4 from "uuid4";
-import MovieCard from "../../components/MovieCard/MovieCard";
+// import MovieCard from "../../components/MovieCard/MovieCard";
 
 //pour récupérer l'Id venant de Home
 import { useParams } from "react-router-dom";
@@ -44,6 +44,9 @@ export default function CastByIdDetails() {
         );
         setDataCastId(response.data);
         console.log(response.data, "response cast id***");
+        //test changement titre page navigateur-----------
+        document.title = `TMDB ▷ ${response.data.name}`;
+        //------------------------------------------------
         setIsLoading(false);
       } catch (error) {
         console.log(error.message, "error message 🤒");
