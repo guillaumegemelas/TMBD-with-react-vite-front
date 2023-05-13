@@ -26,6 +26,11 @@ export default function Favourites({ token }) {
     window.scrollTo(0, 0);
   }, []);
 
+  //test changement titre page navigateur
+  useEffect(() => {
+    document.title = `TMDB Favourites movies`;
+  }, []);
+
   useEffect(() => {
     const fetchFavourites = async () => {
       try {
