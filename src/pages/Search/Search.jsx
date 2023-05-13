@@ -29,6 +29,14 @@ export default function Search() {
     window.scrollTo(0, 0);
   }, []);
 
+  //test changement titre page navigateur-----------
+  useEffect(() => {
+    document.title = `TMDB ▷ ${search
+      .replace(regex, " ")
+      .replace(regex1, "'")
+      .slice(1, 35)}`;
+  }, []); //------------------------------------------------
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -38,6 +46,7 @@ export default function Search() {
 
         setData(response.data);
         console.log(response.data, "response.data search-🚸--------------");
+
         setIsLoading(false);
       } catch (error) {
         console.log(error.message);
