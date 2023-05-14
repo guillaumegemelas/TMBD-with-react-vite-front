@@ -38,7 +38,7 @@ export default function Home() {
 
   //test changement titre page navigateur
   useEffect(() => {
-    document.title = `TMDB New movies`;
+    document.title = "TMDB New movies";
   }, []);
 
   useEffect(() => {
