@@ -9,6 +9,9 @@ import MovieCard from "../../components/MovieCard/MovieCard";
 //import style.css
 import "../Search/style.css";
 
+//import du Loader
+import Loader from "../../components/Loader/Loader";
+
 export default function Search() {
   //pour la searchbar
   const [data, setData] = useState();
@@ -56,7 +59,9 @@ export default function Search() {
   }, [search]);
 
   return isLoading ? (
-    <div className="mainContainer"></div>
+    <div className="mainContainerLoader">
+      <Loader />
+    </div>
   ) : (
     <div className="mainSearchContainer">
       <div className="mainSearchContainerMinColumn">

@@ -7,6 +7,9 @@ import "../Popular/style.css";
 //import icones
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+//import du Loader
+import Loader from "../../components/Loader/Loader";
+
 // import { Link } from "react-router-dom";
 import axios from "axios";
 import uuid4 from "uuid4";
@@ -48,7 +51,9 @@ export default function Popular() {
   }, [page]);
 
   return isLoading ? (
-    <div className="mainContainer"></div>
+    <div className="mainContainerLoader">
+      <Loader />
+    </div>
   ) : (
     <div className="mainContainer">
       <div className="mainContainerMinColumn">

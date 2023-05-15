@@ -12,6 +12,9 @@ import image from "../../img/movieimg.jpg";
 import ModalVideo from "react-modal-video";
 //----------------------------------------
 
+//import du Loader
+import Loader from "../../components/Loader/Loader";
+
 //import test de react player
 import ReactPlayer from "react-player";
 
@@ -164,7 +167,9 @@ export default function MoviebyIdDetails({ token }) {
   }, []);
 
   return isLoading ? (
-    <div className="mainContainer">chargement</div>
+    <div className="mainContainerLoader">
+      <Loader />
+    </div>
   ) : (
     <div className="containerIdMovie">
       <div className="mainContainerIdMinColumn">

@@ -10,6 +10,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 //import des composants
 import MovieCard from "../../components/MovieCard/MovieCard";
 
+//import du Loader
+import Loader from "../../components/Loader/Loader";
+
 //import style.css
 import "../Upcoming/style.css";
 
@@ -48,7 +51,9 @@ export default function UpcomingMovie() {
   }, [page]);
 
   return isLoading ? (
-    <div className="containerUpMovie"></div>
+    <div className="mainContainerLoader">
+      <Loader />
+    </div>
   ) : (
     <div className="containerUpMovie">
       <div className="mainContainerMinUpColumn">

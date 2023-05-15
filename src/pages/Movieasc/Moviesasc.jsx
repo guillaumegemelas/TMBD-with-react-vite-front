@@ -10,6 +10,9 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 // import uuid4 from "uuid4";
 
+//import du Loader
+import Loader from "../../components/Loader/Loader";
+
 import MovieCard from "../../components/MovieCard/MovieCard";
 
 export default function Moviesasc() {
@@ -49,7 +52,9 @@ export default function Moviesasc() {
   //penser à page dans le tableau dedépendances pour actualiser la page choisie
 
   return isLoading ? (
-    <div className="mainContainer">chargement</div>
+    <div className="mainContainerLoader">
+      <Loader />
+    </div>
   ) : (
     <div className="mainContainer">
       <div className="mainContainerMinColumn">

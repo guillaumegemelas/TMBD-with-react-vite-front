@@ -10,6 +10,9 @@ import axios from "axios";
 import uuid4 from "uuid4";
 // import MovieCard from "../../components/MovieCard/MovieCard";
 
+//import loader
+import Loader from "../../components/Loader/Loader";
+
 //pour récupérer l'Id venant de Home
 import { useParams } from "react-router-dom";
 
@@ -94,7 +97,9 @@ export default function CastByIdDetails() {
   }, []);
 
   return isLoading ? (
-    <div className="castContainerbyId"></div>
+    <div className="mainContainerLoader">
+      <Loader />
+    </div>
   ) : (
     <div className="castContainerbyId">
       <div className="test1">

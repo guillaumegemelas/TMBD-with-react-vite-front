@@ -11,6 +11,7 @@ import { React, useState, useEffect } from "react";
 
 //import style.css
 import "../Home/style.css";
+import Loader from "../../components/Loader/Loader";
 
 //import icones
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -81,7 +82,9 @@ export default function Home() {
   //penser à page dans le tableau dedépendances pour actualiser la page choisie
 
   return isLoading ? (
-    <div className="mainContainer"></div>
+    <div className="mainContainerLoader">
+      <Loader />
+    </div>
   ) : (
     <div className="mainContainer">
       {/* test react player------------------------------------- */}
