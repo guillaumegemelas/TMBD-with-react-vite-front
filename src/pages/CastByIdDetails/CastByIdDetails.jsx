@@ -4,6 +4,7 @@ import { useNavigate, Link } from "react-router-dom";
 //import style.css
 import "../CastByIdDetails/style.css";
 
+//import de l'image pour afficher si url === null
 import image from "../../img/movieimg.jpg";
 
 import axios from "axios";
