@@ -74,7 +74,7 @@ function App() {
   return (
     <div>
       <Router>
-        {/* le header apparaitra sur toutes les pages */}
+        {/* le header apparaitra sur toutes les pages! */}
         {/* {window.location.pathname !== "/" && (
           <Header token={token} handleToken={handleToken} />
         )} */}
