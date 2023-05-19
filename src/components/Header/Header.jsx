@@ -109,11 +109,17 @@ export default function Header({ token, handleToken }) {
                             <div className="usernameHeader">
                               <p>{even.username}</p>
                             </div>
-                            <div className="usernameHeader">
+                            <div className="profilHeader">
                               <Link to={`/user/${even._id}`}>
-                                <p>Mon compte</p>
+                                <p className="signinbutt">Mon compte</p>
                               </Link>
-                              {/* <p>{even._id}</p> */}
+                            </div>
+                            <div className="profilHeader">
+                              <Link to={`/user/${even._id}`}>
+                                <p className="iconConn">
+                                  <FontAwesomeIcon icon="user" />
+                                </p>
+                              </Link>
                             </div>
                           </div>
                         );
