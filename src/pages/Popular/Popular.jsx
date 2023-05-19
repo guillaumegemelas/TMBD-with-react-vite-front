@@ -4,6 +4,9 @@ import { Link } from "react-router-dom";
 //import style.css
 import "../Popular/style.css";
 
+//import de l'image pour afficher si url === null
+import image from "../../img/movieimg.jpg";
+
 //import icones
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
