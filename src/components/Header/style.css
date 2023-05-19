@@ -224,4 +224,8 @@
     border-radius: 50%;
     background-color: lightskyblue;
   }
+  .profilHeader p {
+    color: #05b4e1;
+    margin-left: 0px;
+  }
 }
