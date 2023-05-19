@@ -13,6 +13,7 @@ import Moviesdesc from "./pages/Moviedesc/Moviesdesc";
 import CastByIdDetails from "./pages/CastByIdDetails/CastByIdDetails";
 import Popular from "./pages/Popular/Popular";
 import Search from "./pages/Search/Search";
+import Profil from "./pages/Profil/Profil";
 import Login from "./pages/Login/Login";
 import Signup from "./pages/Signup/Signup";
 import Footer from "./components/Footer/Footer";
@@ -100,6 +101,7 @@ function App() {
             path="/user/signup"
             element={<Signup handleToken={handleToken} />}
           />
+          <Route path="/user/:id" element={<Profil />} />
 
           <Route path="/favourites" element={<Favourites token={token} />} />
           <Route path="/cast/:id" element={<CastByIdDetails />} />

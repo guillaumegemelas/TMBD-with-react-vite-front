@@ -2,7 +2,7 @@
 
 .headerContainer {
   display: flex;
-  height: 100px;
+  height: 120px;
   background-color: #042541;
   position: fixed;
   border-bottom: 1px solid grey;
@@ -29,7 +29,7 @@
   align-items: center;
   justify-content: space-between;
   background-color: #042541;
-  height: 40px;
+  height: 60px;
 }
 
 .logo img {
