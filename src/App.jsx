@@ -104,6 +104,12 @@ function App() {
           <Route path="/user/:id" element={<Profil />} />
 
           <Route path="/favourites" element={<Favourites token={token} />} />
+          {/* Route test favorites avec userId ------------------------------------*/}
+          {/* <Route
+            path="/favourites/:id"
+            element={<Favourites token={token} />}
+          /> */}
+          {/* Route test favorites avec userId ------------------------------------*/}
           <Route path="/cast/:id" element={<CastByIdDetails />} />
         </Routes>
         {/* {window.location.pathname !== "/" && <Footer />} */}

@@ -204,6 +204,23 @@ export default function Header({ token, handleToken }) {
               <Link to="/person/popular">
                 <p>Populaires</p>
               </Link>
+              {/* modification test pour envoyer l'id dans la page favoris----------------------- */}
+              {/* {token &&
+                dataUsers.map((even) => {
+                  //mettre le if avant le return pour éviter d'avoir les autres return
+                  if (token === even.token) {
+                    return (
+                      <div key={uuid4()}>
+                        <Link to={`/favourites/${even._id}`}>
+                          <p>Favoris</p>
+                        </Link>
+                      </div>
+                    );
+                  }
+                })} */}
+              {/* modification test pour envoyer l'id dans la page favoris----------------------- */}
+              {/* par contre il va falloir modifier le chemin en back */}
+
               {token && (
                 <Link to="/favourites">
                   <p>Favoris</p>
