@@ -102,13 +102,13 @@ function App() {
             element={<Signup handleToken={handleToken} />}
           />
           <Route path="/user/:id" element={<Profil />} />
-
-          <Route path="/favourites" element={<Favourites token={token} />} />
+          {/* Route plus nécessaire car on récupère les user avec l'Id du user et non pas avec le Token */}
+          {/* <Route path="/favourites" element={<Favourites token={token} />} /> */}
           {/* Route test favorites avec userId ------------------------------------*/}
-          {/* <Route
+          <Route
             path="/favourites/:id"
             element={<Favourites token={token} />}
-          /> */}
+          />
           {/* Route test favorites avec userId ------------------------------------*/}
           <Route path="/cast/:id" element={<CastByIdDetails />} />
         </Routes>

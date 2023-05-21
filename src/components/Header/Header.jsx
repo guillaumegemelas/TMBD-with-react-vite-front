@@ -205,7 +205,7 @@ export default function Header({ token, handleToken }) {
                 <p>Populaires</p>
               </Link>
               {/* modification test pour envoyer l'id dans la page favoris----------------------- */}
-              {/* {token &&
+              {token &&
                 dataUsers.map((even) => {
                   //mettre le if avant le return pour éviter d'avoir les autres return
                   if (token === even.token) {
@@ -217,15 +217,15 @@ export default function Header({ token, handleToken }) {
                       </div>
                     );
                   }
-                })} */}
+                })}
               {/* modification test pour envoyer l'id dans la page favoris----------------------- */}
               {/* par contre il va falloir modifier le chemin en back */}
 
-              {token && (
+              {/* {token && (
                 <Link to="/favourites">
                   <p>Favoris</p>
                 </Link>
-              )}
+              )} */}
             </div>
           </div>
         </div>
