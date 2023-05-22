@@ -1,7 +1,7 @@
 .mainSearchContainer {
   display: flex;
   /* padding pour que le container ne soit pas caché par le header */
-  padding-top: 80px;
+  padding-top: 100px;
   flex-direction: column;
   min-height: 100vh;
   /* background-color: yellow; */

@@ -1,7 +1,7 @@
 .containerUpMovie {
   display: flex;
   /* padding pour que le container ne soit pas caché par le header */
-  padding-top: 80px;
+  padding-top: 100px;
   flex-direction: column;
   /* background-color: pink; */
   background-color: #a0e5f7;

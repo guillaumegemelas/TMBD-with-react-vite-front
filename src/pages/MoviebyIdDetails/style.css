@@ -1,7 +1,7 @@
 .containerIdMovie {
   display: flex;
   /* padding pour que le container ne soit pas caché par le header */
-  padding-top: 80px;
+  padding-top: 110px;
   flex-direction: column;
   /* background-color: pink; */
 }

@@ -212,11 +212,15 @@ export default function Profil({ handleToken, token }) {
           </div>
 
           {/* ------------------------------------------------------------------------- */}
+
           <div className="profilButton">
             {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
             <button className="inscriptionButton" type="submit">
               Enregistrer mes informations
             </button>
+          </div>
+          <div className="profilButtonRemove">
+            <p type="submit">Supprimer mon compte</p>
           </div>
         </form>
       </div>
