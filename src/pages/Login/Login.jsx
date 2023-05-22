@@ -18,6 +18,9 @@ export default function Login({ handleToken }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  //test dataUsername-------------------------------------
+  const [usernameFetch, setUsernameFetch] = useState("");
+  //------------------------------------------------------
 
   //pour naviguer vers la page Home--
   const navigate = useNavigate();
@@ -42,6 +45,7 @@ export default function Login({ handleToken }) {
         }
       );
       console.log(response.data);
+      setUsernameFetch(response.data.username);
 
       //si le token existe (donc si le user est déjà en BDD)
       if (response.data.token) {
@@ -132,7 +136,10 @@ export default function Login({ handleToken }) {
           {visible && (
             <div className="mainModal">
               <div className="mainModalChoiceBox">
-                <div>
+                <div className="textModal">
+                  <span style={{ color: "black" }}>
+                    Content de vous revoir <span>{usernameFetch}</span> !
+                  </span>
                   <p style={{ color: "black" }}>
                     Vous êtes maintenant connecté
                   </p>

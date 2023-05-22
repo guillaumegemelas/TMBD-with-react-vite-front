@@ -49,6 +49,15 @@
 .formSign1 p:hover {
   color: #5bd7f6;
 }
+.textModal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.textModal span {
+  font-weight: 700;
+}
 /* =====media queries=========650px==============================================================*/
 
 @media (max-width: 1150px) {
