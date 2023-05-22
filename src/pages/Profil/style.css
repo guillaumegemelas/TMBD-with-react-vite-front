@@ -193,4 +193,8 @@
     background-color: #fff;
     box-shadow: 1px 1px 15px rgb(69, 68, 68);
   }
+  .formSign2 button {
+    height: 40px;
+    width: 250px;
+  }
 }
