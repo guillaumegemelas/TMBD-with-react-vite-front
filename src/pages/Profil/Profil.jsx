@@ -64,8 +64,8 @@ export default function Profil({ handleToken, token }) {
           "response get userId-------------------"
         );
       } catch (error) {
-        console.log(error.message);
-        console.log(error.response);
+        console.log(error.message, "error message");
+        console.log(error.response, "error response");
       }
     };
     fetchUserId();
@@ -110,7 +110,7 @@ export default function Profil({ handleToken, token }) {
         navigate("/home");
       }
     } catch (error) {
-      console.log(error.response.data, "erreur signup");
+      console.log(error.response, "erreur signup");
       setIsLoadingLoader(false);
       if (error.response.data.message === "This username is already used") {
         setErrorMessage(
@@ -122,7 +122,7 @@ export default function Profil({ handleToken, token }) {
         setErrorMessage("Veuillez renseigner deux mots de passe identiques");
       }
       if (
-        error.response.data.message ===
+        error.response.data ===
         "Cannot read properties of null (reading 'picture')"
       ) {
         setErrorMessage("Veuillez choisir une image de profil");
@@ -164,7 +164,6 @@ export default function Profil({ handleToken, token }) {
   ) : (
     <div className="signupContainerProfil">
       <div className="profilPicture">
-        {/* <h1>Photo de Profil</h1> */}
         <img src={dataUserId.picture.secure_url} alt="profilPicture" />
       </div>
 
@@ -223,7 +222,6 @@ export default function Profil({ handleToken, token }) {
             />
           </div>
 
-          {/* ---------------------------------------------------------------------------- */}
           <div className="profilButtonAvatar">
             <label htmlFor="file" className="label-file">
               <span>
@@ -242,8 +240,6 @@ export default function Profil({ handleToken, token }) {
               }}
             />
           </div>
-
-          {/* ------------------------------------------------------------------------- */}
 
           <div className="profilButton">
             {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
