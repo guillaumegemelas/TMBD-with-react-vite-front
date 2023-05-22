@@ -78,9 +78,9 @@
   margin-top: 20px;
   margin-bottom: 10px;
 }
-.formSign2 button:hover {
+.profilButton button:hover {
   background-color: #5bd7f6;
-  color: #3f414a;
+  color: #5f616c;
   cursor: pointer;
 }
 .profilPicture {
@@ -94,7 +94,47 @@
   height: 50%;
 }
 .profilPicture img {
-  width: 60%;
-  height: 60%;
+  max-width: 60%;
+  max-height: 60%;
   border-radius: 10px;
+  box-shadow: 1px 1px 15px rgb(69, 68, 68);
+}
+
+@media (max-width: 650px) {
+  .signupFormProfil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* padding-top: 170px; */
+    height: 65vh;
+    width: 80vw;
+    /* background: yellow; */
+    border-left: 0px;
+    border: 3px solid #05b4e1;
+  }
+  .signupContainerProfil {
+    display: flex;
+    flex-direction: column-reverse;
+    padding-top: 180px;
+    height: 100vh;
+    width: 100vw;
+    background-color: #a0e5f7;
+    background: linear-gradient(45deg, #a0e5f7, #fff);
+  }
+  .profilPicture {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background-color: #05b4e1; */
+    width: 80%;
+    height: 80%;
+  }
+  .profilPicture img {
+    max-width: 60%;
+    max-height: 60%;
+    border-radius: 10px;
+    box-shadow: 1px 1px 15px rgb(69, 68, 68);
+  }
 }
