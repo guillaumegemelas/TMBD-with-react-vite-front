@@ -3,6 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 import uuid4 from "uuid4";
+import Loader from "../../components/Loader/Loader";
 
 //------pour récup Id de header------------
 import { useParams } from "react-router-dom";
@@ -85,7 +86,9 @@ export default function Favourites({ token }) {
   // }, []);
 
   return isLoading ? (
-    <div className="favoritesContainer"></div>
+    <div className="mainContainerLoader">
+      <Loader />
+    </div>
   ) : (
     <div className="favoritesContainer">
       <div className="favSubContainer">

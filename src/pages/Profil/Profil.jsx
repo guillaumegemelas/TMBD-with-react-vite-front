@@ -7,6 +7,8 @@ import { useNavigate } from "react-router-dom";
 //import style.css
 import "../Profil/style.css";
 
+import Loader from "../../components/Loader/Loader";
+
 export default function Profil({ handleToken, token }) {
   //Id récupéré par params: on focus sur l'user qui s'est log sur le site
   const { id } = useParams();
@@ -15,6 +17,10 @@ export default function Profil({ handleToken, token }) {
   //partie data user Id---------------
   const [dataUserId, setDataUserId] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+
+  //-----------test loader pendant requet au back-----------
+  const [isLoadingLoader, setIsLoadingLoader] = useState(false);
+  //--------------------------------------------------------
 
   //partie form modif infos user---------------
   const [usernameToModify, setUsernameToModify] = useState("");
@@ -62,6 +68,8 @@ export default function Profil({ handleToken, token }) {
 
   const handleProfilModify = async () => {
     setErrorMessage("");
+    setIsLoadingLoader(true);
+
     try {
       //formdata pour cloudinary---------------------------------------------
       const formData = new FormData();
@@ -84,8 +92,10 @@ export default function Profil({ handleToken, token }) {
           },
         }
       );
+
       if (response.data.token) {
         handleToken(response.data.token);
+        setIsLoadingLoader(false);
         alert("Votre compte a été modifié avec succès");
         navigate("/home");
       } else {
@@ -116,6 +126,12 @@ export default function Profil({ handleToken, token }) {
 
   return isLoading ? (
     <div className="favoritesContainer"></div>
+  ) : isLoadingLoader ? (
+    <div className="signupContainerProfil">
+      <div className="loaderProfil">
+        <Loader />
+      </div>
+    </div>
   ) : (
     <div className="signupContainerProfil">
       <div className="profilPicture">
@@ -197,12 +213,11 @@ export default function Profil({ handleToken, token }) {
 
           {/* ------------------------------------------------------------------------- */}
           <div className="profilButton">
+            {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
             <button className="inscriptionButton" type="submit">
               Enregistrer mes informations
             </button>
           </div>
-
-          {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
         </form>
       </div>
     </div>
