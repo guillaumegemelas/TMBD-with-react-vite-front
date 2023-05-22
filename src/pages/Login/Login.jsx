@@ -22,6 +22,10 @@ export default function Login({ handleToken }) {
   //pour naviguer vers la page Home--
   const navigate = useNavigate();
 
+  //visibilité modale-------------------------------------
+  const [visible, setVisible] = useState(false);
+  //------------------------------------------------------
+
   //test changement titre page navigateur
   useEffect(() => {
     document.title = `TMDB Login`;
@@ -43,9 +47,16 @@ export default function Login({ handleToken }) {
       if (response.data.token) {
         handleToken(response.data.token);
         console.log(response.data.token);
-
-        alert("Vous êtes maintenant connecté");
-        navigate("/home");
+        // alert("Vous êtes maintenant connecté");
+        // navigate("/home");
+        //-----------------------
+        setVisible(true);
+        // la fonction seTimeout pour fermer la modal après 3 secondes
+        setTimeout(() => {
+          setVisible(false);
+          navigate("/home");
+        }, 3000);
+        //-----------------------
       }
     } catch (error) {
       //si email n'est pas en BDD
@@ -116,6 +127,21 @@ export default function Login({ handleToken }) {
           {/* génération du message d'erreur */}
           {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
         </form>
+        {/* partie modal pour confirmation-------------------------- */}
+        <div>
+          {visible && (
+            <div className="mainModal">
+              <div className="mainModalChoiceBox">
+                <div>
+                  <p style={{ color: "black" }}>
+                    Vous êtes maintenant connecté
+                  </p>
+                </div>
+              </div>
+            </div>
+          )}{" "}
+        </div>
+        {/* partie modal pour confirmation-------------------------- */}
       </div>
     </div>
   );

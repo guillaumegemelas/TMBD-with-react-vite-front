@@ -25,8 +25,10 @@ export default function Profil({ handleToken, token }) {
   const [isLoadingLoader, setIsLoadingLoader] = useState(false);
   //--------------------------------------------------------
 
-  //visibilité modale-------------------------------------
+  //visibilité modale: 3 states pour 3 modales------------------
   const [visible, setVisible] = useState(false);
+  const [visible2, setVisible2] = useState(false);
+  const [visible3, setVisible3] = useState(false);
   //------------------------------------------------------
 
   //partie form modif infos user---------------
@@ -103,8 +105,16 @@ export default function Profil({ handleToken, token }) {
       if (response.data.token) {
         handleToken(response.data.token);
         setIsLoadingLoader(false);
-        alert("Votre compte a été modifié avec succès");
-        navigate("/home");
+        // alert("Votre compte a été modifié avec succès");
+        // navigate("/home");
+        //-----------------------
+        setVisible2(true);
+        // la fonction seTimeout pour fermer la modal après 3 secondes
+        setTimeout(() => {
+          setVisible2(false);
+          navigate("/home");
+        }, 3000);
+        //-----------------------
       } else {
         alert("Votre compte a été modifié avec succès sans token");
         navigate("/home");
@@ -144,8 +154,16 @@ export default function Profil({ handleToken, token }) {
         }
       );
       handleToken(null);
-      alert("Profil supprimé");
-      navigate("/home");
+      // alert("Profil supprimé");
+      // navigate("/home");
+      //-----------------------
+      setVisible3(true);
+      // la fonction seTimeout pour fermer la modal après 3 secondes
+      setTimeout(() => {
+        setVisible3(false);
+        navigate("/home");
+      }, 3000);
+      //-----------------------
     } catch (error) {
       console.log(error.message);
     }
@@ -260,6 +278,7 @@ export default function Profil({ handleToken, token }) {
             </p>
           </div>
         </form>
+        {/* modal pour le choix avant suppression------------------------ */}
         <div>
           {visible && (
             <div className="mainModal">
@@ -281,6 +300,37 @@ export default function Profil({ handleToken, token }) {
             </div>
           )}{" "}
         </div>
+        {/* modal pour le choix avant suppression------------------------ */}
+        {/* modal pour la confirm de la mise à jour des infos------------------------ */}
+        <div>
+          {visible2 && (
+            <div className="mainModal">
+              <div className="mainModalChoiceBox">
+                <div>
+                  <p style={{ color: "black" }}>
+                    Votre compte a bien été mis à jour
+                  </p>
+                </div>
+              </div>
+            </div>
+          )}{" "}
+        </div>
+        {/* modal pour la confirm de la mise à jour des infos------------------------ */}
+        {/* modal pour la confirm de la suppression des infos------------------------ */}
+        <div>
+          {visible3 && (
+            <div className="mainModal">
+              <div className="mainModalChoiceBox">
+                <div>
+                  <p style={{ color: "black" }}>
+                    Votre compte a bien été supprimé
+                  </p>
+                </div>
+              </div>
+            </div>
+          )}{" "}
+        </div>
+        {/* modal pour la confirm de la mise à jour des infos------------------------ */}
       </div>
     </div>
   );

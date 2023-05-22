@@ -22,6 +22,10 @@ export default function Signup({ handleToken }) {
 
   const navigate = useNavigate();
 
+  //visibilité modale-------------------------------------
+  const [visible, setVisible] = useState(false);
+  //------------------------------------------------------
+
   //test changement titre page navigateur
   useEffect(() => {
     document.title = `TMDB Sign up`;
@@ -51,8 +55,16 @@ export default function Signup({ handleToken }) {
       );
       if (response.data.token) {
         handleToken(response.data.token);
-        alert("Votre compte a été créé");
-        navigate("/home");
+        // alert("Votre compte a été créé");
+        // navigate("/home");
+        //-----------------------
+        setVisible(true);
+        // la fonction seTimeout pour fermer la modal après 3 secondes
+        setTimeout(() => {
+          setVisible(false);
+          navigate("/home");
+        }, 3000);
+        //-----------------------
       }
     } catch (error) {
       console.log(error.response.data, "erreur signup");
@@ -172,6 +184,19 @@ export default function Signup({ handleToken }) {
           </Link>
           {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
         </form>
+        {/* partie modal pour confirmation-------------------------- */}
+        <div>
+          {visible && (
+            <div className="mainModal">
+              <div className="mainModalChoiceBox">
+                <div>
+                  <p style={{ color: "black" }}>Votre compte a bien été créé</p>
+                </div>
+              </div>
+            </div>
+          )}{" "}
+        </div>
+        {/* partie modal pour confirmation-------------------------- */}
       </div>
     </div>
   );

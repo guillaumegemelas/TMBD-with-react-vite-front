@@ -19,6 +19,10 @@ export default function Header({ token, handleToken }) {
   const [dataUsers, setDataUsers] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
+  //visibilité modale-------------------------------------
+  // const [visible, setVisible] = useState(false);
+  //------------------------------------------------------
+
   const navigate = useNavigate();
 
   //useffect pour fetch user etl'afficher sur le header
@@ -228,7 +232,22 @@ export default function Header({ token, handleToken }) {
                 </Link>
               )} */}
             </div>
-          </div>
+          </div>{" "}
+          {/* partie modal pour confirmation-------------------------- */}
+          {/* <div>
+            {!visible && (
+              <div className="mainModal">
+                <div className="mainModalChoiceBox">
+                  <div>
+                    <p style={{ color: "black" }}>
+                      Votre compte a bien été créé
+                    </p>
+                  </div>
+                </div>
+              </div>
+            )}{" "}
+          </div> */}
+          {/* partie modal pour confirmation-------------------------- */}
         </div>
       )}
     </div>
