@@ -43,7 +43,8 @@ export default function Header({ token, handleToken }) {
       }
     };
     fetchUser();
-  }, []);
+  }, [token]);
+  //j'ai mis token dans le tableau de dépendance pour qu'il s'actualise lorsqu'onrecoit un token: au sign up ou changement de mot de passe sur page Profil
 
   const handleSubmit = (event) => {
     event.preventDefault();

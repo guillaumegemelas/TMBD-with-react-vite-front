@@ -104,7 +104,7 @@ export default function Profil({ handleToken, token }) {
       }
     } catch (error) {
       console.log(error.response.data, "erreur signup");
-
+      setIsLoadingLoader(false);
       if (error.response.data.message === "This username is already used") {
         setErrorMessage(
           "Ce nom d'utilisateur est déjà utilisé, veuillez créer un compte avec un nom d'utilisateur valide"
