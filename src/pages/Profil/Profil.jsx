@@ -7,6 +7,10 @@ import { useNavigate } from "react-router-dom";
 //import style.css
 import "../Profil/style.css";
 
+//test confirm alert--------------
+import { confirmAlert } from "react-confirm-alert";
+//-------------------------------
+
 //import icones
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -128,12 +132,12 @@ export default function Profil({ handleToken, token }) {
   //-------------------------------------------------------------------------------------
   //fonction pour suppression du compte
 
-  const DeleteProfil = async () => {
+  const submitDelete = async () => {
     try {
       const response = await axios.delete(
         `https://site--tmdb-back--zqfvjrr4byql.code.run/user/delete/${id}`,
         {
-          //ajout bearer token pour authentification avecmiddleware
+          //ajout bearer token pour authentification avec middleware
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -158,7 +162,7 @@ export default function Profil({ handleToken, token }) {
   //     buttons: [
   //       {
   //         label: "Yes",
-  //         onClick: () => Delete(),
+  //         onClick: () => DeleteProfil(),
   //       },
   //       {
   //         label: "No",
@@ -167,6 +171,7 @@ export default function Profil({ handleToken, token }) {
   //     ],
   //   });
   // };
+  //---------------------------------------
 
   return isLoading ? (
     <div className="favoritesContainer"></div>
@@ -267,31 +272,11 @@ export default function Profil({ handleToken, token }) {
             </button>
           </div>
           <div className="profilButtonRemove">
-            {/* <p onClick={DeleteProfil()}> </p>*/}
-            <p
-              onClick={async () => {
-                try {
-                  const response = await axios.delete(
-                    `https://site--tmdb-back--zqfvjrr4byql.code.run/user/delete/${id}`,
-                    {
-                      //ajout bearer token pour authentification avecmiddleware
-                      headers: {
-                        Authorization: `Bearer ${token}`,
-                      },
-                    }
-                  );
-                  handleToken(null);
-                  alert("Profil supprimé");
-                  navigate("/home");
-                } catch (error) {
-                  console.log(error.message);
-                }
-              }}
-            >
+            <p onClick={submitDelete}>
               <span>
                 <FontAwesomeIcon icon="user-slash" />{" "}
               </span>
-              Supprimer mon compte
+              Supprimer mon compte{" "}
             </p>
           </div>
         </form>
