@@ -36,6 +36,7 @@ import {
   faRightFromBracket,
   faClapperboard,
   faUserAstronaut,
+  faUserSlash,
 } from "@fortawesome/free-solid-svg-icons";
 library.add(
   faHouse,
@@ -52,7 +53,8 @@ library.add(
   faRightToBracket,
   faRightFromBracket,
   faClapperboard,
-  faUserAstronaut
+  faUserAstronaut,
+  faUserSlash
 );
 
 //import du CSS

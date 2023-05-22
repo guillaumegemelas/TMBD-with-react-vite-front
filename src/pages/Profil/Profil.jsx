@@ -7,6 +7,9 @@ import { useNavigate } from "react-router-dom";
 //import style.css
 import "../Profil/style.css";
 
+//import icones
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import Loader from "../../components/Loader/Loader";
 
 export default function Profil({ handleToken, token }) {
@@ -123,6 +126,47 @@ export default function Profil({ handleToken, token }) {
     }
   };
   //-------------------------------------------------------------------------------------
+  //fonction pour suppression du compte
+
+  const DeleteProfil = async () => {
+    try {
+      const response = await axios.delete(
+        `https://site--tmdb-back--zqfvjrr4byql.code.run/user/delete/${id}`,
+        {
+          //ajout bearer token pour authentification avecmiddleware
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      handleToken(null);
+      alert("Profil supprimé");
+      navigate("/home");
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
+  //------------------------------------
+
+  //pour message de confiramtion avant suppression du compte
+
+  // const submitDelete = () => {
+  //   confirmAlert({
+  //     title: "Confirm to submit",
+  //     message: "Are you sure to do this.",
+  //     buttons: [
+  //       {
+  //         label: "Yes",
+  //         onClick: () => Delete(),
+  //       },
+  //       {
+  //         label: "No",
+  //         //onClick: () => alert('Click No')
+  //       },
+  //     ],
+  //   });
+  // };
 
   return isLoading ? (
     <div className="favoritesContainer"></div>
@@ -197,6 +241,9 @@ export default function Profil({ handleToken, token }) {
           {/* ---------------------------------------------------------------------------- */}
           <div className="profilButtonAvatar">
             <label htmlFor="file" className="label-file">
+              <span>
+                <FontAwesomeIcon icon="user-plus" />{" "}
+              </span>
               <span> Modifier mon avatar</span>
             </label>
 
@@ -220,7 +267,32 @@ export default function Profil({ handleToken, token }) {
             </button>
           </div>
           <div className="profilButtonRemove">
-            <p type="submit">Supprimer mon compte</p>
+            {/* <p onClick={DeleteProfil()}> </p>*/}
+            <p
+              onClick={async () => {
+                try {
+                  const response = await axios.delete(
+                    `https://site--tmdb-back--zqfvjrr4byql.code.run/user/delete/${id}`,
+                    {
+                      //ajout bearer token pour authentification avecmiddleware
+                      headers: {
+                        Authorization: `Bearer ${token}`,
+                      },
+                    }
+                  );
+                  handleToken(null);
+                  alert("Profil supprimé");
+                  navigate("/home");
+                } catch (error) {
+                  console.log(error.message);
+                }
+              }}
+            >
+              <span>
+                <FontAwesomeIcon icon="user-slash" />{" "}
+              </span>
+              Supprimer mon compte
+            </p>
           </div>
         </form>
       </div>
