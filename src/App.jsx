@@ -103,7 +103,7 @@ function App() {
           />
           <Route
             path="/user/:id"
-            element={<Profil handleToken={handleToken} />}
+            element={<Profil handleToken={handleToken} token={token} />}
           />
           {/* Route plus nécessaire car on récupère les user avec l'Id du user et non pas avec le Token */}
           {/* <Route path="/favourites" element={<Favourites token={token} />} /> */}

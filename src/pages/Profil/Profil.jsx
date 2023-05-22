@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 //import style.css
 import "../Profil/style.css";
 
-export default function Profil({ handleToken }) {
+export default function Profil({ handleToken, token }) {
   //Id récupéré par params: on focus sur l'user qui s'est log sur le site
   const { id } = useParams();
   console.log(id, "Id user page Profil-----");
@@ -76,7 +76,13 @@ export default function Profil({ handleToken }) {
       const response = await axios.put(
         `https://site--tmdb-back--zqfvjrr4byql.code.run/user/update/${id}`,
 
-        formData
+        formData,
+        {
+          //ajout bearer token pour authentification avecmiddleware
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
       );
       if (response.data.token) {
         handleToken(response.data.token);
