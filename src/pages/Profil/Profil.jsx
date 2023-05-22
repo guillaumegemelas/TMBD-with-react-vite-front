@@ -7,10 +7,6 @@ import { useNavigate } from "react-router-dom";
 //import style.css
 import "../Profil/style.css";
 
-//test confirm alert--------------
-import { confirmAlert } from "react-confirm-alert";
-//-------------------------------
-
 //import icones
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -28,6 +24,10 @@ export default function Profil({ handleToken, token }) {
   //-----------test loader pendant requet au back-----------
   const [isLoadingLoader, setIsLoadingLoader] = useState(false);
   //--------------------------------------------------------
+
+  //visibilité modale-------------------------------------
+  const [visible, setVisible] = useState(false);
+  //------------------------------------------------------
 
   //partie form modif infos user---------------
   const [usernameToModify, setUsernameToModify] = useState("");
@@ -153,26 +153,6 @@ export default function Profil({ handleToken, token }) {
 
   //------------------------------------
 
-  //pour message de confiramtion avant suppression du compte
-
-  // const submitDelete = () => {
-  //   confirmAlert({
-  //     title: "Confirm to submit",
-  //     message: "Are you sure to do this.",
-  //     buttons: [
-  //       {
-  //         label: "Yes",
-  //         onClick: () => DeleteProfil(),
-  //       },
-  //       {
-  //         label: "No",
-  //         //onClick: () => alert('Click No')
-  //       },
-  //     ],
-  //   });
-  // };
-  //---------------------------------------
-
   return isLoading ? (
     <div className="favoritesContainer"></div>
   ) : isLoadingLoader ? (
@@ -272,7 +252,11 @@ export default function Profil({ handleToken, token }) {
             </button>
           </div>
           <div className="profilButtonRemove">
-            <p onClick={submitDelete}>
+            <p
+              onClick={() => {
+                setVisible(true);
+              }}
+            >
               <span>
                 <FontAwesomeIcon icon="user-slash" />{" "}
               </span>
@@ -280,6 +264,27 @@ export default function Profil({ handleToken, token }) {
             </p>
           </div>
         </form>
+        <div>
+          {visible && (
+            <div className="mainModal">
+              <div className="mainModalChoiceBox">
+                <div>
+                  <p>Etes vous sûre de vouloir supprimer votre compte?</p>
+                </div>
+                <div className="buttonChoice">
+                  <p onClick={submitDelete}>Oui</p>
+                  <p
+                    onClick={() => {
+                      setVisible(false);
+                    }}
+                  >
+                    Non
+                  </p>
+                </div>
+              </div>
+            </div>
+          )}{" "}
+        </div>
       </div>
     </div>
   );
