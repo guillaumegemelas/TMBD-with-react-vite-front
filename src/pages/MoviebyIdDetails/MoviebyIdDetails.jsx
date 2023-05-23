@@ -230,7 +230,7 @@ export default function MoviebyIdDetails({ token }) {
                         // la fonction seTimeout pour fermer la modal après 3 secondes
                         setTimeout(() => {
                           setVisible(false);
-                        }, 3000);
+                        }, 2500);
                         console.log(response.data);
                       } catch (error) {
                         console.log(error.message);
@@ -243,7 +243,7 @@ export default function MoviebyIdDetails({ token }) {
                           // la fonction seTimeout pour fermer la modal après 3 secondes
                           setTimeout(() => {
                             setVisible2(false);
-                          }, 3000);
+                          }, 2500);
                         }
                       }
                     } else {

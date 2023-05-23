@@ -24,6 +24,10 @@ export default function Favourites({ token }) {
   console.log(id, "Id user-----");
   //----------------------------------------------
 
+  //visibilité modale-------------------------------------
+  const [visible, setVisible] = useState(false);
+  //------------------------------------------------------
+
   const navigate = useNavigate();
 
   //useEffect pour se positionner en haut de la page en venant de charachter page
@@ -118,12 +122,17 @@ export default function Favourites({ token }) {
                       );
                       //pour recharger le state avec les favoris actualisés après le delete
 
-                      setMovies(response.data);
                       console.log(
                         response.data,
                         "response.data favourites delete++++++++++++++++"
                       );
-                      alert("favourite deleted");
+                      // alert("favourite deleted");
+                      setVisible(true);
+                      // la fonction seTimeout pour fermer la modal après 3 secondes
+                      setTimeout(() => {
+                        setVisible(false);
+                        setMovies(response.data);
+                      }, 2500);
                     } catch (error) {
                       console.log(
                         error.response,
@@ -142,6 +151,21 @@ export default function Favourites({ token }) {
       </div>
 
       {/* Si pas de favoris, message pas de favoris pour le moment! */}
+      {/* partie modal pour confirmation-------------------------- */}
+      <div>
+        {visible && (
+          <div className="mainModal">
+            <div className="mainModalChoiceBox">
+              <div>
+                <p style={{ color: "black" }}>
+                  Votre favoris a bien été supprimé{" "}
+                </p>
+              </div>
+            </div>
+          </div>
+        )}{" "}
+      </div>
+      {/* partie modal pour confirmation-------------------------- */}
     </div>
   );
 }
