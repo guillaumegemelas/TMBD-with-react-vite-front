@@ -90,4 +90,4 @@ You will have a modal to confirm your choice
 
 <img width="1000" alt="collection" src="https://github.com/lereacteur/ANDROMEDA23-ISSUES/assets/121306549/fe6bdb04-0074-4196-8c02-3e4c2218cc04">
 
-If you want to log out, just click on `Disconnect`
+If you want to log out, just click on `Disconnect` in the Header
