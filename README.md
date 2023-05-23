@@ -71,4 +71,23 @@ You can now add a movie to favorites. On the favorite page, you can also remove 
 
 <img width="1000" alt="collection" src="https://github.com/lereacteur/ANDROMEDA23-ISSUES/assets/121306549/8d0e3453-dbc2-4719-b4a6-e48c936404c4">
 
+If you want to update your Profile informations, just click on `Mon compte`
+you will be redirected on the Profile page
+
+<img width="1000" alt="collection" src="https://github.com/lereacteur/ANDROMEDA23-ISSUES/assets/121306549/89098de0-b265-48ec-b637-2b7ab62c32c8">
+
+You can update:
+
+- Your username
+- Your email
+- Your password
+- Your avatar
+
+To save your changes, just click on `Modifier mes informations`
+
+You can delete your account by clicking on `Supprimer mon compte`
+You will have a modal to confirm your choice
+
+<img width="1000" alt="collection" src="https://github.com/lereacteur/ANDROMEDA23-ISSUES/assets/121306549/fe6bdb04-0074-4196-8c02-3e4c2218cc04">
+
 If you want to log out, just click on `Disconnect`
