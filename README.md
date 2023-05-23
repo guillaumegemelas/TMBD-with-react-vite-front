@@ -66,6 +66,7 @@ If you want to log or create an account, please click on the top right of the pa
 Once you've done it, you can find your username and your avatar on right of the header
 
 <img width="1000" alt="collection" src="https://user-images.githubusercontent.com/121306549/234830460-3a541edc-8965-47b8-b68d-1368bd149f18.jpg">
+<img width="1000" alt="collection" src="https://github.com/lereacteur/ANDROMEDA23-ISSUES/assets/121306549/5ec2287f-31d1-4f19-b846-0739ee06fab9">
 
 You can now add a movie to favorites. On the favorite page, you can also remove a favorite from the list by clicking on the "trash can" icon.
 
