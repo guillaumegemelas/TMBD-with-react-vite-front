@@ -109,7 +109,7 @@ export default function Favourites({ token }) {
                       const response = await axios.delete(
                         // `http://localhost:3000/favourites/delete/${event._id}`,
                         //déploiement Northflanck
-                        `https://site--tmdb-back--zqfvjrr4byql.code.run/favourites/delete/${even._id}`,
+                        `https://site--tmdb-back--zqfvjrr4byql.code.run/favourites/delete/${even._id}/${id}`,
                         {
                           headers: {
                             Authorization: `Bearer ${token}`,
@@ -117,8 +117,12 @@ export default function Favourites({ token }) {
                         }
                       );
                       //pour recharger le state avec les favoris actualisés après le delete
+
                       setMovies(response.data);
-                      console.log(response.data);
+                      console.log(
+                        response.data,
+                        "response.data favourites delete++++++++++++++++"
+                      );
                       alert("favourite deleted");
                     } catch (error) {
                       console.log(

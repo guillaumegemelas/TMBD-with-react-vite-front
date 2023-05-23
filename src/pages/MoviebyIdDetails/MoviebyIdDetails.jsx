@@ -54,6 +54,11 @@ export default function MoviebyIdDetails({ token }) {
   const [isOpen, setOpen] = useState(false);
   //---------------------------------------------------
 
+  //visibilité modale-------------------------------------
+  const [visible, setVisible] = useState(false);
+  const [visible2, setVisible2] = useState(false);
+  //------------------------------------------------------
+
   //Id récupéré par params
   const { id } = useParams();
   console.log(id, "Id d movie-----");
@@ -220,7 +225,12 @@ export default function MoviebyIdDetails({ token }) {
                             },
                           }
                         );
-                        alert("added to favorites");
+                        // alert("added to favorites");
+                        setVisible(true);
+                        // la fonction seTimeout pour fermer la modal après 3 secondes
+                        setTimeout(() => {
+                          setVisible(false);
+                        }, 3000);
                         console.log(response.data);
                       } catch (error) {
                         console.log(error.message);
@@ -228,7 +238,12 @@ export default function MoviebyIdDetails({ token }) {
                           error.message ===
                           "Request failed with status code 409"
                         ) {
-                          alert("Already added to Favourites!");
+                          // alert("Already added to Favourites!");
+                          setVisible2(true);
+                          // la fonction seTimeout pour fermer la modal après 3 secondes
+                          setTimeout(() => {
+                            setVisible2(false);
+                          }, 3000);
                         }
                       }
                     } else {
@@ -440,6 +455,36 @@ export default function MoviebyIdDetails({ token }) {
           </div>
         )}
       </div>
+      {/* partie modal pour confirmation-------------------------- */}
+      <div>
+        {visible && (
+          <div className="mainModal">
+            <div className="mainModalChoiceBox">
+              <div>
+                <p style={{ color: "black" }}>
+                  Votre film a été ajouté à vos favoris!
+                </p>
+              </div>
+            </div>
+          </div>
+        )}{" "}
+      </div>
+      {/* partie modal pour confirmation-------------------------- */}
+      {/* partie modal pour confirmation-------------------------- */}
+      <div>
+        {visible2 && (
+          <div className="mainModal">
+            <div className="mainModalChoiceBox">
+              <div>
+                <p style={{ color: "red" }}>
+                  Ce film a déjà été ajouté à vos favoris!
+                </p>
+              </div>
+            </div>
+          </div>
+        )}{" "}
+      </div>
+      {/* partie modal pour confirmation-------------------------- */}
     </div>
   );
 }
