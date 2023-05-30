@@ -27,7 +27,7 @@ export default function Login({ handleToken }) {
 
   //visibilité modale-------------------------------------
   const [visible, setVisible] = useState(false);
-  //------------------------------------------------------
+  //-------------------------------------------------------
 
   //test changement titre page navigateur
   useEffect(() => {
