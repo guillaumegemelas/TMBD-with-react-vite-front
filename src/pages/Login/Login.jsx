@@ -25,7 +25,7 @@ export default function Login({ handleToken }) {
   //pour naviguer vers la page Home--
   const navigate = useNavigate();
 
-  //visibilité modale-------------------------------------
+  //visibilité modale--------------------------------------
   const [visible, setVisible] = useState(false);
   //-------------------------------------------------------
 
