@@ -77,7 +77,7 @@ export default function Home() {
   //   fetchData();
   // }, []);
 
-  // Testscrollinfinite-----------------------------------------------------
+  // Testscrollinfinite-------------------------------------------------------
 
   //penser à page dans le tableau dedépendances pour actualiser la page choisie
 
