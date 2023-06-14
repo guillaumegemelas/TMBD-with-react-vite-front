@@ -87,9 +87,10 @@ export default function Home() {
     </div>
   ) : (
     <div className="mainContainer">
-      {/* test react player------------------------------------- */}
+      {/* test react player--------------------------------------- */}
       <div className="mainContainerMinColumn">
         <h2>Films du moment</h2>
+        
 
         <div className="containerToOverflow">
           {/* <InfiniteScroll
