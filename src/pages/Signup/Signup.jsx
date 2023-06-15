@@ -31,7 +31,7 @@ export default function Signup({ handleToken }) {
     document.title = `TMDB Sign up`;
   }, []);
 
-  // formdata pour cloudinary---------------------------------------------
+  // formdata pour cloudinary------------------------------------------------
   const [picture, setPicture] = useState();
   //--------------------------------------------------------------------------
 
