@@ -33,7 +33,7 @@ export default function Moviedesc() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        //à voir pour filtrer les films par pafge, date de sortie, notes...
+        //à voir pour filtrer les films par pafge, date de sortie, notes..
         const response = await axios.get(
           //test avec backend ok!
           `https://site--tmdb-back--zqfvjrr4byql.code.run/averagedesc?page=${page}`
