@@ -33,23 +33,23 @@ export default function Popular() {
     document.title = `TMDB Popular`;
   }, []);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        //à voir pour filtrer les films par pafge, date de sortie, notes...
-        const response = await axios.get(
-          //   "https://api.themoviedb.org/3/discover/movie?api_key=ec1d52844155d66f88c3111938c459f7"
-          //test avec backend ok!
-          `https://site--tmdb-back--zqfvjrr4byql.code.run/person/popular?page=${page}`
-        );
-        setDataPop(response.data);
-        console.log(response.data, "data person popular ++++++++++++");
-        setIsLoading(false);
-      } catch (error) {
-        console.log(error.message, "error message 🤒");
-      }
-    };
+  const fetchData = async () => {
+    try {
+      fetch(
+        `https://site--tmdb-back--zqfvjrr4byql.code.run/person/popular?page=${page}`
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          setDataPop(data);
+          setIsLoading(false);
+          console.log(data);
+        });
+    } catch (error) {
+      console.log(error.message, "error message 🤒");
+    }
+  };
 
+  useEffect(() => {
     fetchData();
   }, [page]);
 

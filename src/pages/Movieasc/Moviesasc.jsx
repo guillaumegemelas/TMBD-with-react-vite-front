@@ -31,25 +31,27 @@ export default function Moviesasc() {
     document.title = `TMDB`;
   }, []);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        //à voir pour filtrer les films par pafge, date de sortie, notes...
-        const response = await axios.get(
-          //test avec backend ok!
-          `https://site--tmdb-back--zqfvjrr4byql.code.run/averageasc?page=${page}`
-        );
-        setData(response.data);
-        console.log(response.data, "data page movieasc ++++++++++++");
-        setIsLoading(false);
-      } catch (error) {
-        console.log(error.message, "error message 🤒");
-      }
-    };
+  const fetchData = () => {
+    return new Promise((resolve, reject) => {
+      fetch(
+        `https://site--tmdb-back--zqfvjrr4byql.code.run/averageasc?page=${page}`
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          resolve(data);
+          setData(data);
+          setIsLoading(false);
+          console.log(data);
+        })
+        .catch((error) => {
+          reject(error);
+        });
+    });
+  };
 
+  useEffect(() => {
     fetchData();
   }, [page]);
-  //penser à page dans le tableau dedépendances pour actualiser la page choisie
 
   return isLoading ? (
     <div className="mainContainerLoader">

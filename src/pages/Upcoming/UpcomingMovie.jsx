@@ -16,11 +16,9 @@ import Loader from "../../components/Loader/Loader";
 //import style.css
 import "../Upcoming/style.css";
 
-export default function UpcomingMovie() {
-  const [dataUp, setDataUp] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+import { useQuery, useQueryClient } from "react-query";
 
-  //le système de pagination
+export default function UpcomingMovie() {
   const [page, setPage] = useState(1);
 
   //useEffect pour se positionner en haut de la page en venant de charachter page
@@ -32,42 +30,39 @@ export default function UpcomingMovie() {
     document.title = `TMDB Upcoming movies`;
   }, []);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        //à voir pour filtrer les films par pafge, date de sortie, notes...
-        const response = await axios.get(
-          `https://site--tmdb-back--zqfvjrr4byql.code.run/upcoming?page=${page}`
-        );
-        setDataUp(response.data);
-        console.log(response.data, "response initiale upcoming++++");
-        setIsLoading(false);
-      } catch (error) {
-        console.log(error.message, "error message 🤒");
-      }
-    };
+  //pas besoin de try catch car REact Query gère le système d'erreur
 
-    fetchData();
-  }, [page]);
+  const { data, isLoading, error } = useQuery(["data", page], async () => {
+    const response = await axios.get(
+      `https://site--tmdb-back--zqfvjrr4byql.code.run/upcoming?page=${page}`
+    );
+    return response.data;
+  });
+  if (isLoading)
+    return (
+      <div className="mainContainerLoader">
+        <Loader />
+      </div>
+    );
 
-  return isLoading ? (
-    <div className="mainContainerLoader">
-      <Loader />
-    </div>
-  ) : (
+  if (error) {
+    return <div>Une erreur s'est produite : {error.message}</div>;
+  }
+
+  return (
     <div className="containerUpMovie">
       <div className="mainContainerMinUpColumn">
         <h2>
           {" "}
           Films à venir:{" "}
-          <span className="span">
-            du <span className="span">{dataUp.dates.minimum}</span> au{" "}
-            <span className="span">{dataUp.dates.maximum}</span>
-          </span>
+          {/* <span className="span">
+            du <span className="span">{data.dates.minimum}</span> au{" "}
+            <span className="span">{data.dates.maximum}</span>
+          </span> */}
         </h2>
 
         <div>
-          <MovieCard data={dataUp} />
+          <MovieCard data={data} />
         </div>
         <div className="pagination">
           <FontAwesomeIcon icon="file" />

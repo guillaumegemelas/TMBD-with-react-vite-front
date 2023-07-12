@@ -24,12 +24,13 @@ import axios from "axios";
 // import InfiniteScroll from "react-infinite-scroller";
 //--------------------------------------------
 
+//test import react query-----------
+import { useQuery, useQueryClient } from "react-query";
+//----------------------------------
+
 import MovieCard from "../../components/MovieCard/MovieCard";
 
 export default function Home() {
-  //test requete vers API TMDB
-  const [data, setData] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
   const [page, setPage] = useState(1);
 
   //useEffect pour se positionner en haut de la page en venant de charachter page
@@ -42,21 +43,22 @@ export default function Home() {
     document.title = "TMDB New movies";
   }, []);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(
-          `https://site--tmdb-back--zqfvjrr4byql.code.run/home?page=${page}`
-        );
-        setData(response.data);
-        console.log(response.data, "data page home ++++++++++++");
-        setIsLoading(false);
-      } catch (error) {
-        console.log(error.message, "error message 🤒");
-      }
-    };
-    fetchData();
-  }, [page]);
+  const { data, isLoading, error } = useQuery(["data", page], async () => {
+    const response = await fetch(
+      `https://site--tmdb-back--zqfvjrr4byql.code.run/home?page=${page}`
+    );
+    return response.json();
+  });
+
+  if (isLoading)
+    return (
+      <div className="mainContainerLoader">
+        <Loader />
+      </div>
+    );
+  if (error) {
+    return <div>Une erreur s'est produite : {error.message}</div>;
+  }
 
   // Testscrollinfinite-------------------------------------------------------
   // const fetchData = async () => {
@@ -81,16 +83,11 @@ export default function Home() {
 
   //penser à page dans le tableau dedépendances pour actualiser la page choisie
 
-  return isLoading ? (
-    <div className="mainContainerLoader">
-      <Loader />
-    </div>
-  ) : (
+  return (
     <div className="mainContainer">
       {/* test react player--------------------------------------- */}
       <div className="mainContainerMinColumn">
         <h2>Films du moment</h2>
-        
 
         <div className="containerToOverflow">
           {/* <InfiniteScroll
