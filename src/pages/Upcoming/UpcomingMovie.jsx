@@ -44,7 +44,7 @@ export default function UpcomingMovie() {
         <Loader />
       </div>
     );
-
+  console.log(data);
   if (error) {
     return <div>Une erreur s'est produite : {error.message}</div>;
   }
@@ -55,10 +55,11 @@ export default function UpcomingMovie() {
         <h2>
           {" "}
           Films à venir:{" "}
-          {/* <span className="span">
-            du <span className="span">{data.dates.minimum}</span> au{" "}
-            <span className="span">{data.dates.maximum}</span>
-          </span> */}
+          <span className="span">
+            du <span className="span">{data.dates?.minimum}</span> au{" "}
+            <span className="span">{data.dates?.maximum}</span>
+            {/* ? optional chaining car erreur console */}
+          </span>
         </h2>
 
         <div>
