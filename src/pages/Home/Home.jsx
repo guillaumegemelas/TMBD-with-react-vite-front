@@ -1,12 +1,3 @@
-//A faire:
-//créer des pages et des liens pour naiviguer vers films, realisateurs... (Cf gamepad)
-//carroussel de photos puis
-//installer pour chargement icones tournante
-//voir sites similaires pour trouver features sympas
-
-//ou style site d'actualités avec header et navbar bootstrap qui link vers des
-//pages avec requetes axios vers API TMDB
-
 import { React, useState, useEffect } from "react";
 
 //import style.css
@@ -16,7 +7,6 @@ import Loader from "../../components/Loader/Loader";
 //import icones
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-// import { Link } from "react-router-dom";
 import axios from "axios";
 // import uuid4 from "uuid4";
 
@@ -80,8 +70,6 @@ export default function Home() {
   // }, []);
 
   // Testscrollinfinite----------------------------------------------------------
-
-  //penser à page dans le tableau dedépendances pour actualiser la page choisie
 
   return (
     <div className="mainContainer">
