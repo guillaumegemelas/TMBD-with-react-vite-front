@@ -17,9 +17,6 @@ import MovieCard from "../../components/MovieCard/MovieCard";
 
 export default function Moviedesc() {
   const [page, setPage] = useState(1);
-  //******************
-  const [movies, setMovies] = useState([]);
-  //******************
 
   //useEffect pour se positionner en haut de la page en venant de charachter page
   useEffect(() => {
