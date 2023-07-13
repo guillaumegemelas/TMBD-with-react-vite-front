@@ -14,9 +14,9 @@ import axios from "axios";
 // import InfiniteScroll from "react-infinite-scroller";
 //--------------------------------------------
 
-//test import react query-----------
+//test import react query------------
 import { useQuery, useQueryClient } from "react-query";
-//----------------------------------
+//-----------------------------------
 
 import MovieCard from "../../components/MovieCard/MovieCard";
 
