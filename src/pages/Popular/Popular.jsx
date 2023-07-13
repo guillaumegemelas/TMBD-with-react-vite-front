@@ -20,8 +20,8 @@ import uuid4 from "uuid4";
 
 export default function Popular() {
   //test requete vers API TMDB
-  // const [dataPop, setDataPop] = useState([]);
-  // const [isLoading, setIsLoading] = useState(true);
+  const [dataPop, setDataPop] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
   const [page, setPage] = useState(1);
 
   //useEffect pour se positionner en haut de la page en venant de charachter page
@@ -34,49 +34,53 @@ export default function Popular() {
     document.title = `TMDB Popular`;
   }, []);
 
-  const { data, isLoading, error } = useQuery(["data", page], async () => {
-    const response = await axios.get(
-      `https://site--tmdb-back--zqfvjrr4byql.code.run/person/popular?page=${page}`
-    );
-    return response.data;
-  });
+  // const { data, isLoading, error } = useQuery(["data", page], async () => {
+  //   const response = await axios.get(
+  //     `https://site--tmdb-back--zqfvjrr4byql.code.run/person/popular?page=${page}`
+  //   );
+  //   return response.data;
+  // });
 
-  if (isLoading)
-    return (
-      <div className="mainContainerLoader">
-        <Loader />
-      </div>
-    );
-  if (error) {
-    return <div>Une erreur s'est produite : {error.message}</div>;
-  }
+  // if (isLoading)
+  //   return (
+  //     <div className="mainContainerLoader">
+  //       <Loader />
+  //     </div>
+  //   );
+  // if (error) {
+  //   return <div>Une erreur s'est produite : {error.message}</div>;
+  // }
 
-  // const fetchData = async () => {
-  //   try {
-  //     fetch(
-  //       `https://site--tmdb-back--zqfvjrr4byql.code.run/person/popular?page=${page}`
-  //     )
-  //       .then((response) => response.json())
-  //       .then((data) => {
-  //         setDataPop(data);
-  //         setIsLoading(false);
-  //         console.log(data);
-  //       });
-  //   } catch (error) {
-  //     console.log(error.message, "error message 🤒");
-  //   }
-  // };
+  const fetchData = async () => {
+    try {
+      fetch(
+        `https://site--tmdb-back--zqfvjrr4byql.code.run/person/popular?page=${page}`
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          setDataPop(data);
+          setIsLoading(false);
+          console.log(data);
+        });
+    } catch (error) {
+      console.log(error.message, "error message 🤒");
+    }
+  };
 
-  // useEffect(() => {
-  //   fetchData();
-  // }, [page]);
+  useEffect(() => {
+    fetchData();
+  }, [page]);
 
-  return (
+  return isLoading ? (
+    <div className="mainContainerLoader">
+      <Loader />
+    </div>
+  ) : (
     <div className="mainContainer">
       <div className="mainContainerMinColumn">
         <h2> Popular on TMDB</h2>
         <div className="secondContainer">
-          {data.results.map((even) => {
+          {dataPop.results.map((even) => {
             return (
               <div key={uuid4()} className="movieCard12">
                 <Link to={`/cast/${even.id}`}>
