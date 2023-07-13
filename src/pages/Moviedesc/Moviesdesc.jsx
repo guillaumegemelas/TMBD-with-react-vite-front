@@ -1,4 +1,5 @@
 import { React, useState, useEffect } from "react";
+import { useQuery } from "react-query";
 
 //import style.css
 import "../Moviedesc/style.css";
@@ -6,7 +7,6 @@ import "../Moviedesc/style.css";
 //import icones
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import { Link } from "react-router-dom";
 import axios from "axios";
 // import uuid4 from "uuid4";
 
@@ -16,9 +16,6 @@ import Loader from "../../components/Loader/Loader";
 import MovieCard from "../../components/MovieCard/MovieCard";
 
 export default function Moviedesc() {
-  //test requete vers API TMDB
-  const [data, setData] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
   const [page, setPage] = useState(1);
 
   //useEffect pour se positionner en haut de la page en venant de charachter page
@@ -30,31 +27,24 @@ export default function Moviedesc() {
     document.title = `TMDB`;
   }, []);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        //à voir pour filtrer les films par pafge, date de sortie, notes..
-        const response = await axios.get(
-          //test avec backend ok!!!
-          `https://site--tmdb-back--zqfvjrr4byql.code.run/averagedesc?page=${page}`
-        );
-        setData(response.data);
-        console.log(response.data, "data page movieasc ++++++++++++");
-        setIsLoading(false);
-      } catch (error) {
-        console.log(error.message, "error message 🤒");
-      }
-    };
+  const { data, isLoading, error } = useQuery(["data", page], async () => {
+    const response = await fetch(
+      `https://site--tmdb-back--zqfvjrr4byql.code.run/averagedesc?page=${page}`
+    );
+    return response.json();
+  });
 
-    fetchData();
-  }, [page]);
-  //penser à page dans le tableau dedépendances pour actualiser la page choisie
+  if (isLoading)
+    return (
+      <div className="mainContainerLoader">
+        <Loader />
+      </div>
+    );
+  if (error) {
+    return <div>Une erreur s'est produite : {error.message}</div>;
+  }
 
-  return isLoading ? (
-    <div className="mainContainerLoader">
-      <Loader />
-    </div>
-  ) : (
+  return (
     <div className="mainContainer">
       <div className="mainContainerMinColumn">
         <h2>

@@ -1,4 +1,5 @@
 import { React, useState, useEffect } from "react";
+import { useQuery } from "react-query";
 
 //import style.css
 import "../Movieasc/style.css";
@@ -17,8 +18,8 @@ import MovieCard from "../../components/MovieCard/MovieCard";
 
 export default function Moviesasc() {
   //test requete vers API TMDB
-  const [data, setData] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+  // const [data, setData] = useState([]);
+  // const [isLoading, setIsLoading] = useState(true);
   const [page, setPage] = useState(1);
 
   //useEffect pour se positionner en haut de la page en venant de charachter page
@@ -31,33 +32,47 @@ export default function Moviesasc() {
     document.title = `TMDB`;
   }, []);
 
-  const fetchData = () => {
-    return new Promise((resolve, reject) => {
-      fetch(
-        `https://site--tmdb-back--zqfvjrr4byql.code.run/averageasc?page=${page}`
-      )
-        .then((response) => response.json())
-        .then((data) => {
-          resolve(data);
-          setData(data);
-          setIsLoading(false);
-          console.log(data);
-        })
-        .catch((error) => {
-          reject(error);
-        });
-    });
-  };
+  const { data, isLoading, error } = useQuery(["data", page], async () => {
+    const response = await fetch(
+      `https://site--tmdb-back--zqfvjrr4byql.code.run/averageasc?page=${page}`
+    );
+    return response.json();
+  });
 
-  useEffect(() => {
-    fetchData();
-  }, [page]);
+  if (isLoading)
+    return (
+      <div className="mainContainerLoader">
+        <Loader />
+      </div>
+    );
+  if (error) {
+    return <div>Une erreur s'est produite : {error.message}</div>;
+  }
 
-  return isLoading ? (
-    <div className="mainContainerLoader">
-      <Loader />
-    </div>
-  ) : (
+  //test avec Promise
+  // const fetchData = () => {
+  //   return new Promise((resolve, reject) => {
+  //     fetch(
+  //       `https://site--tmdb-back--zqfvjrr4byql.code.run/averageasc?page=${page}`
+  //     )
+  //       .then((response) => response.json())
+  //       .then((data) => {
+  //         resolve(data);
+  //         setData(data);
+  //         setIsLoading(false);
+  //         console.log(data);
+  //       })
+  //       .catch((error) => {
+  //         reject(error);
+  //       });
+  //   });
+  // };
+
+  // useEffect(() => {
+  //   fetchData();
+  // }, [page]);
+
+  return (
     <div className="mainContainer">
       <div className="mainContainerMinColumn">
         <h2>
