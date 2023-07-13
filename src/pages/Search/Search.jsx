@@ -1,21 +1,16 @@
 import { React, useState, useEffect } from "react";
-//---------------------
 import { useLocation } from "react-router-dom";
-//---------------------
+import { useQuery } from "react-query";
 
 import axios from "axios";
-import MovieCard from "../../components/MovieCard/MovieCard";
 
 //import style.css
 import "../Search/style.css";
 
-//import du Loader
 import Loader from "../../components/Loader/Loader";
+import MovieCard from "../../components/MovieCard/MovieCard";
 
 export default function Search() {
-  //pour la searchbar
-  const [data, setData] = useState();
-  const [isLoading, setIsLoading] = useState(true);
   const regex = /%20/g;
   const regex1 = /%27/g;
 
@@ -40,29 +35,27 @@ export default function Search() {
       .slice(1, 35)}`;
   }, []); //------------------------------------------------
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(
-          `https://site--tmdb-back--zqfvjrr4byql.code.run/search?query=${search}`
-        );
+  const { data, isLoading, error, isFetching } = useQuery(
+    ["data", search],
+    async () => {
+      const response = await axios.get(
+        `https://site--tmdb-back--zqfvjrr4byql.code.run/search?query=${search}`
+      );
+      return response.data;
+    }
+  );
 
-        setData(response.data);
-        console.log(response.data, "response.data search-🚸--------------");
+  if (isLoading || isFetching)
+    return (
+      <div className="mainContainerLoader">
+        <Loader />
+      </div>
+    );
+  if (error) {
+    return <div>Une erreur s'est produite : {error.message}</div>;
+  }
 
-        setIsLoading(false);
-      } catch (error) {
-        console.log(error.message);
-      }
-    };
-    fetchData();
-  }, [search]);
-
-  return isLoading ? (
-    <div className="mainContainerLoader">
-      <Loader />
-    </div>
-  ) : (
+  return (
     <div className="mainSearchContainer">
       <div className="mainSearchContainerMinColumn">
         <div className="searchh1">
