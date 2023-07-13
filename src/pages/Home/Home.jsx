@@ -34,10 +34,10 @@ export default function Home() {
   }, []);
 
   const { data, isLoading, error } = useQuery(["data", page], async () => {
-    const response = await fetch(
+    const response = await axios.get(
       `https://site--tmdb-back--zqfvjrr4byql.code.run/home?page=${page}`
     );
-    return response.json();
+    return response.data;
   });
 
   if (isLoading)
