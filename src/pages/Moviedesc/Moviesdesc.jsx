@@ -27,14 +27,17 @@ export default function Moviedesc() {
     document.title = `TMDB`;
   }, []);
 
-  const { data, isLoading, error } = useQuery(["data", page], async () => {
-    const response = await fetch(
-      `https://site--tmdb-back--zqfvjrr4byql.code.run/averagedesc?page=${page}`
-    );
-    return response.json();
-  });
+  const { data, isLoading, error, isFetching } = useQuery(
+    ["data", page],
+    async () => {
+      const response = await fetch(
+        `https://site--tmdb-back--zqfvjrr4byql.code.run/averagedesc?page=${page}`
+      );
+      return response.json();
+    }
+  );
 
-  if (isLoading)
+  if (isLoading || isFetching)
     return (
       <div className="mainContainerLoader">
         <Loader />

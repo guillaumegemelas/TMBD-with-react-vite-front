@@ -33,14 +33,17 @@ export default function Home() {
     document.title = "TMDB New movies";
   }, []);
 
-  const { data, isLoading, error } = useQuery(["data", page], async () => {
-    const response = await axios.get(
-      `https://site--tmdb-back--zqfvjrr4byql.code.run/home?page=${page}`
-    );
-    return response.data;
-  });
+  const { data, isLoading, error, isFetching } = useQuery(
+    ["data", page],
+    async () => {
+      const response = await axios.get(
+        `https://site--tmdb-back--zqfvjrr4byql.code.run/home?page=${page}`
+      );
+      return response.data;
+    }
+  );
 
-  if (isLoading)
+  if (isLoading || isFetching)
     return (
       <div className="mainContainerLoader">
         <Loader />
