@@ -10,7 +10,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
 // import uuid4 from "uuid4";
 
-//test infinite scroll--------------------------
+//test infinite scroll-----------------------
 // import InfiniteScroll from "react-infinite-scroller";
 //--------------------------------------------
 
