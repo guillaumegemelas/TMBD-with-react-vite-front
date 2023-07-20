@@ -32,15 +32,15 @@ export default function UpcomingMovie() {
 
   //pas besoin de try catch car REact Query gère le système d'erreur
 
-  const { data, isLoading, error, isFetching } = useQuery(
-    ["data", page],
-    async () => {
+  const { data, isLoading, error, isFetching } = useQuery({
+    querykey: ["data", page],
+    queryFn: async () => {
       const response = await axios.get(
         `https://site--tmdb-back--zqfvjrr4byql.code.run/upcoming?page=${page}`
       );
       return response.data;
-    }
-  );
+    },
+  });
   if (isLoading || isFetching)
     return (
       <div className="mainContainerLoader">
