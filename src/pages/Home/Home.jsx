@@ -43,6 +43,7 @@ export default function Home() {
   //   }
   // );
 
+  //seconde méthode avec queryKey et queryFn:
   const { data, isLoading, error, isFetching } = useQuery({
     queryKey: ["data", page],
     queryFn: async () => {
