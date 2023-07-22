@@ -64,7 +64,7 @@ export default function Home() {
     return <div>Une erreur s'est produite : {error.message}</div>;
   }
 
-  // Testscrollinfinite-------------------------------------------------------
+  // Testscrollinfinite---------------------------------------------------------
   // const fetchData = async () => {
   //   try {
   //     const response = await axios.get(
