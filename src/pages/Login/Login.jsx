@@ -101,6 +101,8 @@ export default function Login({ handleToken }) {
           className="formSign1"
           onSubmit={(event) => {
             event.preventDefault();
+            // console.log(event.currentTarget);
+            // console.log(event.target);
             handleLogin();
           }}
         >
