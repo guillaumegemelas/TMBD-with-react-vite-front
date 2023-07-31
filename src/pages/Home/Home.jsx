@@ -44,7 +44,7 @@ export default function Home() {
   // );
 
   //seconde méthode avec queryKey et queryFn:
-  const { data, isLoading, error, isFetching } = useQuery({
+  const { data, isLoading, isError, error, isFetching } = useQuery({
     queryKey: ["data", page],
     queryFn: async () => {
       const response = await axios.get(
@@ -61,7 +61,7 @@ export default function Home() {
         <Loader />
       </div>
     );
-  if (error) {
+  if (isError) {
     return <div>Une erreur s'est produite : {error.message}</div>;
   }
 
