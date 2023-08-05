@@ -44,6 +44,7 @@ export default function Home() {
   // );
 
   //seconde méthode avec queryKey et queryFn:
+  //test avec ajout de isError: équivalent à seulement error...
   const { data, isLoading, isError, error, isFetching } = useQuery({
     queryKey: ["data", page],
     queryFn: async () => {
