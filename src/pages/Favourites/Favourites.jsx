@@ -40,7 +40,6 @@ export default function Favourites({ token }) {
     document.title = `TMDB Favourites movies`;
   }, []);
 
-  //useEffect pour se positionner en haut de la page en venant de charachter page
   //il va falloir faire une requete au user pour récupérer le userId-----------
   useEffect(() => {
     const fetchFavourites = async () => {
@@ -48,7 +47,7 @@ export default function Favourites({ token }) {
         const response = await axios.get(
           `https://site--tmdb-back--zqfvjrr4byql.code.run/favourites/${id}`,
           {
-            //ajout bearer token pour authentification avecmiddleware
+            //ajout bearer token pour authentification avec middleware
             headers: {
               Authorization: `Bearer ${token}`,
             },
@@ -66,28 +65,7 @@ export default function Favourites({ token }) {
   }, []);
   //----------------------------------------------------------------------------
 
-  // useEffect(() => {
-  //   const fetchFavourites = async () => {
-  //     try {
-  //       const response = await axios.get(
-  //         `https://site--tmdb-back--zqfvjrr4byql.code.run/favourites`,
-  //         {
-  //           //ajout bearer token pour authentification avecmiddleware
-  //           headers: {
-  //             Authorization: `Bearer ${token}`,
-  //           },
-  //         }
-  //       );
-  //       setMovies(response.data);
-  //       console.log(response.data, "response data favourites ***********");
-  //       setIsloading(false);
-  //     } catch (error) {
-  //       console.log(error.message);
-  //       console.log(error.response);
-  //     }
-  //   };
-  //   fetchFavourites();
-  // }, []);
+ 
 
   return isLoading ? (
     <div className="mainContainerLoader">
