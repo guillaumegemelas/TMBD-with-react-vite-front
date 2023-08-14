@@ -92,7 +92,8 @@ export default function Home() {
       {/* test react player--------------------------------------- */}
       <div className="mainContainerMinColumn">
         <h2>Films du moment</h2>
-
+        {/* pour visualiser le retour de l'API avec data: */}
+        {data && console.log(data, "log de data")}
         <div className="containerToOverflow">
           {/* <InfiniteScroll
             pageStart={0}
