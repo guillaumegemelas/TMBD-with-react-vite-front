@@ -66,27 +66,6 @@ export default function Home() {
     return <div>Une erreur s'est produite : {error.message}</div>;
   }
 
-  // Testscrollinfinite---------------------------------------------------------
-  // const fetchData = async () => {
-  //   try {
-  //     const response = await axios.get(
-  //       `https://site--tmdb-back--zqfvjrr4byql.code.run/home?page=${page}`
-  //     );
-  //     setData(response.data);
-  //     // setPage(page + 1);
-  //     console.log(response.data, "data page home ++++++++++++");
-  //     setIsLoading(false);
-  //   } catch (error) {
-  //     console.log(error.message, "error message 🤒");
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   fetchData();
-  // }, []);
-
-  // Testscrollinfinite----------------------------------------------------------
-
   return (
     <div className="mainContainer">
       {/* test react player--------------------------------------- */}
@@ -95,18 +74,7 @@ export default function Home() {
         {/* pour visualiser le retour de l'API avec data: */}
         {data && console.log(data, "log de data")}
         <div className="containerToOverflow">
-          {/* <InfiniteScroll
-            pageStart={0}
-            loadMore={fetchData}
-            hasMore={true}
-            loader={
-              <div className="loader" key={0}>
-                Loading ...
-              </div>
-            }
-          > */}
           <MovieCard data={data} />
-          {/* </InfiniteScroll> */}
         </div>
         <div className="pagination">
           <FontAwesomeIcon icon="file" />
