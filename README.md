@@ -18,7 +18,6 @@ This project (Front-End) is deployed with Netlify. You can find it: https://tmdb
 
 ## How does it works
 
-
 You arrive directly on the home page and you are not yet logged
 
 <img width="1000" alt="accueil" src="https://user-images.githubusercontent.com/121306549/234829988-d563594d-e0a3-41c1-8631-6b65854c3f66.jpg">
