@@ -10,7 +10,6 @@ to reinstall node_modules, please run:
 
 In the project directory, you can run:
 
-
 ### `yarn dev`
 
 ## Deployment
