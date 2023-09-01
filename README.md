@@ -12,7 +12,6 @@ In the project directory, you can run:
 
 ### `yarn dev`
 
-
 ## Deployment
 
 This project (Front-End) is deployed with Netlify. You can find it: https://tmdb-gui-gems.netlify.app
