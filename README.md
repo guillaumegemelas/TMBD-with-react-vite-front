@@ -14,7 +14,6 @@ In the project directory, you can run:
 
 ## Deployment
 
-
 This project (Front-End) is deployed with Netlify. You can find it: https://tmdb-gui-gems.netlify.app
 
 ## How does it works
