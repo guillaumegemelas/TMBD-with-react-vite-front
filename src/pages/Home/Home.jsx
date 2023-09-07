@@ -12,7 +12,7 @@ import axios from "axios";
 
 //test infinite scroll---------------------
 // import InfiniteScroll from "react-infinite-scroller";
-//--------------------------------------------
+//------------------------------------------------
 
 //test import react query------------
 import { useQuery } from "react-query";
