@@ -18,7 +18,7 @@ import MovieCard from "../../components/MovieCard/MovieCard";
 export default function Moviedesc() {
   const [page, setPage] = useState(1);
 
-  //useEffect pour se positionner en haut de la page en venant de charachter page
+  //useEffect pour se positionner en haut de la page en venant de character page
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
