@@ -22,7 +22,7 @@ export default function Moviedesc() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  //test changement titre page navigateur..
+  //test changement titre page navigateur
   useEffect(() => {
     document.title = `TMDB`;
   }, []);
