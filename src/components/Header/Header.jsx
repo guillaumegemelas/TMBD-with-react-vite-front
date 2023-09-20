@@ -15,7 +15,7 @@ export default function Header({ token, handleToken }) {
   //pour la searchbar
   const [search, setSearch] = useState("");
 
-  //pour récup les users
+  //pour récup les users.
   const [dataUsers, setDataUsers] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
