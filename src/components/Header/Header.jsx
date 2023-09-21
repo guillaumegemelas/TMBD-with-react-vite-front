@@ -11,7 +11,7 @@ import "../Header/style.css";
 import uuid4 from "uuid4";
 
 export default function Header({ token, handleToken }) {
-  // console.log(token, "log token header");
+  // console.log(token, "log token header")
   //pour la searchbar
   const [search, setSearch] = useState("");
 
