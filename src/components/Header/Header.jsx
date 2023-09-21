@@ -19,9 +19,9 @@ export default function Header({ token, handleToken }) {
   const [dataUsers, setDataUsers] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  //visibilité modale-------------------------------------
+  //visibilité modale--------------------------------------
   // const [visible, setVisible] = useState(false);
-  //------------------------------------------------------
+  //-------------------------------------------------------
 
   const navigate = useNavigate();
 
