@@ -64,7 +64,7 @@ export default function Signup({ handleToken }) {
           setVisible(false);
           navigate("/home");
         }, 3000);
-        //-----------------------
+        //----------------------
       }
     } catch (error) {
       console.log(error.response.data, "erreur signup");
