@@ -71,12 +71,18 @@ export default function MoviebyIdDetails({ token }) {
   }, []);
 
   useEffect(() => {
+    const abortController = new AbortController();
+    const signal = abortController.signal;
+
     const fetchData = async () => {
       try {
         //à voir pour filtrer les films par pafge, date de sortie, notes...
         const response = await axios.get(
           // `https://api.themoviedb.org/3/movie/${id}?api_key=ec1d52844155d66f88c3111938c459f7`
-          `https://site--tmdb-back--zqfvjrr4byql.code.run/movie/${id}`
+          `https://site--tmdb-back--zqfvjrr4byql.code.run/movie/${id}`,
+          {
+            cancelToken: signal.token,
+          }
         );
         setDataId(response.data);
         console.log(response.data, "response initiale++++");
@@ -92,15 +98,23 @@ export default function MoviebyIdDetails({ token }) {
     };
 
     fetchData();
+    return () => {
+      abortController.abort();
+    };
   }, []);
 
   useEffect(() => {
+    const abortController = new AbortController();
+    const signal = abortController.signal;
     const fetchDataSimilar = async () => {
       try {
         //à voir pour filtrer les films par pafge, date de sortie, notes...
         const response = await axios.get(
           // `https://api.themoviedb.org/3/movie/${id}?api_key=ec1d52844155d66f88c3111938c459f7`
-          `https://site--tmdb-back--zqfvjrr4byql.code.run/movie/${id}/similar`
+          `https://site--tmdb-back--zqfvjrr4byql.code.run/movie/${id}/similar`,
+          {
+            cancelToken: signal.token,
+          }
         );
         setDataIdSimilar(response.data);
         // console.log(response.data, "response data similar-----------");
@@ -111,15 +125,24 @@ export default function MoviebyIdDetails({ token }) {
     };
 
     fetchDataSimilar();
+    return () => {
+      abortController.abort();
+    };
   }, []);
 
   //troisième requete pour les images: voir pour implanter un carroussel d'images
   useEffect(() => {
+    const abortController = new AbortController();
+    const signal = abortController.signal;
+
     const fetchDataImages = async () => {
       try {
         const response = await axios.get(
           // `https://api.themoviedb.org/3/movie/${id}?api_key=ec1d52844155d66f88c3111938c459f7`
-          `https://site--tmdb-back--zqfvjrr4byql.code.run/movie/${id}/images`
+          `https://site--tmdb-back--zqfvjrr4byql.code.run/movie/${id}/images`,
+          {
+            cancelToken: signal.token,
+          }
         );
         setDataImages(response.data);
         console.log(response.data, "response data images-----------");
@@ -130,15 +153,24 @@ export default function MoviebyIdDetails({ token }) {
     };
 
     fetchDataImages();
+    return () => {
+      abortController.abort();
+    };
   }, []);
 
   //quatrième requete pour les perso: voir pour implanter un carroussel d'images
   useEffect(() => {
+    const abortController = new AbortController();
+    const signal = abortController.signal;
+
     const fetchDataCast = async () => {
       try {
         const response = await axios.get(
           // `https://api.themoviedb.org/3/movie/${id}?api_key=ec1d52844155d66f88c3111938c459f7`
-          `https://site--tmdb-back--zqfvjrr4byql.code.run/movie/${id}/credits`
+          `https://site--tmdb-back--zqfvjrr4byql.code.run/movie/${id}/credits`,
+          {
+            cancelToken: signal.token,
+          }
         );
         setDataCast(response.data);
         // console.log(response.data, "response data cast-----------");
@@ -149,15 +181,24 @@ export default function MoviebyIdDetails({ token }) {
     };
 
     fetchDataCast();
+    return () => {
+      abortController.abort();
+    };
   }, []);
 
   //cinquième requete pour les perso: voir pour implanter un carroussel d'images
   useEffect(() => {
+    const abortController = new AbortController();
+    const signal = abortController.signal;
+
     const fetchDataVideos = async () => {
       try {
         const response = await axios.get(
           // `https://api.themoviedb.org/3/movie/${id}?api_key=ec1d52844155d66f88c3111938c459f7`
-          `https://site--tmdb-back--zqfvjrr4byql.code.run/movie/${id}/videos`
+          `https://site--tmdb-back--zqfvjrr4byql.code.run/movie/${id}/videos`,
+          {
+            cancelToken: signal.token,
+          }
         );
         setDataVideos(response.data);
         console.log(response.data, "response data videos-----------");
@@ -169,6 +210,9 @@ export default function MoviebyIdDetails({ token }) {
     };
 
     fetchDataVideos();
+    return () => {
+      abortController.abort();
+    };
   }, []);
 
   return isLoading ? (

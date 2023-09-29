@@ -51,12 +51,18 @@ export default function Profil({ handleToken, token }) {
 
   //on va chercher les infos du user par rapport à son id:
   useEffect(() => {
+    const abortController = new AbortController();
+    const signal = abortController.signal;
+
     const fetchUserId = async () => {
       try {
         // const response = await axios.get("http://localhost:3000/user");
         //requete Northflanck au lieu de localhost:
         const response = await axios.get(
-          `https://site--tmdb-back--zqfvjrr4byql.code.run/user/${id}`
+          `https://site--tmdb-back--zqfvjrr4byql.code.run/user/${id}`,
+          {
+            cancelToken: signal.token,
+          }
         );
 
         setDataUserId(response.data.user);
@@ -71,6 +77,9 @@ export default function Profil({ handleToken, token }) {
       }
     };
     fetchUserId();
+    return () => {
+      abortController.abort();
+    };
   }, []);
 
   //-------------------------------------------------------------------------------------
