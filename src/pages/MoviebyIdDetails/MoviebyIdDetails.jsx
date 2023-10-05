@@ -10,7 +10,7 @@ import image from "../../img/movieimg.jpg";
 
 //import de la modale vidéo--------------
 import ModalVideo from "react-modal-video";
-//---------------------------------------
+//-------------------------------------------------
 
 //import du Loader
 import Loader from "../../components/Loader/Loader";
