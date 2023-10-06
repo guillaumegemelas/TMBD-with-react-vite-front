@@ -35,7 +35,8 @@ export default function Login({ handleToken }) {
   }, []);
 
   //décalaration de fonction pour requete vers Backend
-  const handleLogin = async () => {
+  const handleLogin = async (event) => {
+    event.preventDefault();
     try {
       const response = await axios.post(
         "https://site--tmdb-back--zqfvjrr4byql.code.run/user/login",
@@ -99,12 +100,11 @@ export default function Login({ handleToken }) {
 
         <form
           className="formSign1"
-          onSubmit={(event) => {
-            event.preventDefault();
+          onSubmit={
             // console.log(event.currentTarget);
             // console.log(event.target);
-            handleLogin();
-          }}
+            handleLogin
+          }
         >
           <input
             id="email"
