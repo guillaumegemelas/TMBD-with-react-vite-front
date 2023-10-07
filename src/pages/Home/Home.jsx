@@ -51,7 +51,7 @@ export default function Home() {
       const response = await axios.get(
         `https://site--tmdb-back--zqfvjrr4byql.code.run/home?page=${page}`
       );
-
+      // console.log(response, "log de response");
       return response.data;
     },
   });
