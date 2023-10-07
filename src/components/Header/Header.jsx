@@ -59,7 +59,7 @@ export default function Header({ token, handleToken }) {
       {isLoading ? (
         <div></div>
       ) : (
-        //il faut faire un hader avec une navbar avec liens vers pages du site
+        //il faut faire un header avec une navbar avec liens vers pages du site
         <div className="headerContainer">
           <div className="headerContainerMinColumn">
             <div className="firstHeader">
