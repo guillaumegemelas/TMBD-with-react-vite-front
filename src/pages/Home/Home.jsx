@@ -16,7 +16,7 @@ import axios from "axios";
 
 //test import react query------------
 import { useQuery } from "react-query";
-//-----------------------------------
+//---------------------------------------
 
 import MovieCard from "../../components/MovieCard/MovieCard";
 
