@@ -78,7 +78,6 @@ export default function MoviebyIdDetails({ token }) {
       try {
         //à voir pour filtrer les films par pafge, date de sortie, notes...
         const response = await axios.get(
-          // `https://api.themoviedb.org/3/movie/${id}?api_key=ec1d52844155d66f88c3111938c459f7`
           `https://site--tmdb-back--zqfvjrr4byql.code.run/movie/${id}`,
           {
             cancelToken: signal.token,
@@ -110,7 +109,6 @@ export default function MoviebyIdDetails({ token }) {
       try {
         //à voir pour filtrer les films par pafge, date de sortie, notes...
         const response = await axios.get(
-          // `https://api.themoviedb.org/3/movie/${id}?api_key=ec1d52844155d66f88c3111938c459f7`
           `https://site--tmdb-back--zqfvjrr4byql.code.run/movie/${id}/similar`,
           {
             cancelToken: signal.token,
@@ -138,7 +136,6 @@ export default function MoviebyIdDetails({ token }) {
     const fetchDataImages = async () => {
       try {
         const response = await axios.get(
-          // `https://api.themoviedb.org/3/movie/${id}?api_key=ec1d52844155d66f88c3111938c459f7`
           `https://site--tmdb-back--zqfvjrr4byql.code.run/movie/${id}/images`,
           {
             cancelToken: signal.token,
@@ -166,7 +163,6 @@ export default function MoviebyIdDetails({ token }) {
     const fetchDataCast = async () => {
       try {
         const response = await axios.get(
-          // `https://api.themoviedb.org/3/movie/${id}?api_key=ec1d52844155d66f88c3111938c459f7`
           `https://site--tmdb-back--zqfvjrr4byql.code.run/movie/${id}/credits`,
           {
             cancelToken: signal.token,
@@ -194,7 +190,6 @@ export default function MoviebyIdDetails({ token }) {
     const fetchDataVideos = async () => {
       try {
         const response = await axios.get(
-          // `https://api.themoviedb.org/3/movie/${id}?api_key=ec1d52844155d66f88c3111938c459f7`
           `https://site--tmdb-back--zqfvjrr4byql.code.run/movie/${id}/videos`,
           {
             cancelToken: signal.token,
