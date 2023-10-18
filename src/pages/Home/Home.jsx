@@ -68,7 +68,7 @@ export default function Home() {
 
   return (
     <div className="mainContainer">
-      {/* test react player------------------------------ */}
+      {/* test react player-------------------------------- */}
       <div className="mainContainerMinColumn">
         <h2>Films du moment</h2>
         {/* pour visualiser le retour de l'API avec data: */}
