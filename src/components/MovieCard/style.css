@@ -18,6 +18,7 @@
   /* box-shadow: 1px 1px 15px rgb(190, 188, 188); */
   box-shadow: 1px 1px 15px #21a1b3;
   opacity: 0.85;
+  /* transform: scale(1.01); */
 }
 
 .movieCardImg img {
